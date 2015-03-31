@@ -1,3 +1,3 @@
-Do-While:
+Do-While
 -------------
 To-Do application.
