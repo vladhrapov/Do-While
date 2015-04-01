@@ -1,14 +1,14 @@
 var gulp = require('gulp'),
 	sass = require('gulp-sass'),
 	uglify = require('gulp-uglify'),
-	livereload = require('gulp-livereload');
-	connect = require('gulp-connect')
+	livereload = require('gulp-livereload'),
+	connect = require('gulp-connect');
 
 
 gulp.task('default', ['connect', 'watch']);
 
 // connection to server for live reload
-gulp.task('connect', function () {
+gulp.task('connect', function() {
 	connect.server({
 		root: 'dist',
 		livereload: true
@@ -37,7 +37,7 @@ gulp.task('copy_styles', function() {
 // copy bower components
 gulp.task('copy_comp', function() {
    gulp.src('./bower_components/**')
-   .pipe(gulp.dest('./dist/vendor'))
+   .pipe(gulp.dest('./dist/vendor'));
 });
 
 // copy html files
@@ -48,7 +48,7 @@ gulp.task('copy_html', function() {
 });
 
 // watch html,scss,js files in src directory
-gulp.task('watch', function () {
+gulp.task('watch', function() {
 	gulp.watch('./src/scss/*.scss', ['copy_styles']);
 	gulp.watch('./src/js/*.js', ['copy_js']);
 	gulp.watch('./src/*.html', ['copy_html']);
