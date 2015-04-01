@@ -1,0 +1,19 @@
+body {
+	box-sizing: border-box;
+	opacity: .8;
+	border-radius: 5px;
+	h1 {
+		background: #00f;
+		&:hover {
+			background: #f0f;
+		}
+	}
+	p {
+		width: 400px;
+		height: 250px;
+		background: #ff0;
+		&:hover {
+			background: #0f0;
+		}
+	}
+}
