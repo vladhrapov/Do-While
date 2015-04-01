@@ -1,0 +1,22 @@
+$font-stack:    Helvetica, sans-serif;
+$primary-color: red;
+$h: 100px;
+
+body {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color: green;
+}
+
+p {
+  height: $h;
+}
+
+.red {
+  background-color: red;
+  height: 100px;
+  width: 100px;
+  color: black;
+  font-size: 28px;
+  margin: 69px;
+}
