@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     del = require('del'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    sass = require('gulp-sass');
 
 //region src markup copy
 
@@ -27,6 +28,20 @@ gulp.task('vendor', ['clean:vendor'], function () {
 
 gulp.task('clean:vendor', function (onDone) {
     del(['dist/vendor/**/*.*'], onDone);
+});
+
+//endregion
+
+//region scss compile to dist
+
+gulp.task('scss', ['clean:css'], function () {
+    return gulp.src('src/scss/styles.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('clean:css', function (onDone) {
+    del(['dist/css/**/*.*'], onDone);
 });
 
 //endregion
