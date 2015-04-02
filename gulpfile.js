@@ -91,7 +91,7 @@ gulp.task('clean:vendor', function (onDone) {
 
 gulp.task('scss', ['clean:css'], function () {
     return gulp.src('src/scss/styles.scss')
-        .pipe(sass())
+        .pipe(sass({errLogToConsole: true}))
         .pipe(gulp.dest('dist/css'))
         .pipe(connect.reload());
 });
