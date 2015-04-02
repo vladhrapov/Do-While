@@ -4,21 +4,21 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     connect = require('gulp-connect');
 
-gulp.task('default', ['deploy', 'server', 'watch']);
+gulp.task('default', ['build', 'server', 'watch']);
 
-gulp.task('deploy', ['vendor', 'js', 'scss', 'img', 'markup']);
+gulp.task('build', ['copy:vendor:js', 'copy:js', 'build:scss', 'copy:img', 'copy:html']);
 
 //region observing
 
 gulp.task('watch', function () {
-    gulp.watch('src/*.*', ['markup']);
-    gulp.watch('src/scss/**/*.scss', ['scss']);
-    gulp.watch('src/js/**/*.js', ['js']);
-    gulp.watch('src/img/**/*.*', ['img']);
-    gulp.watch('bower_components/*/dist/*.js', ['vendor']);
+    gulp.watch('src/*.*', ['copy:html']);
+    gulp.watch('src/scss/**/*.scss', ['build:scss']);
+    gulp.watch('src/js/**/*.js', ['copy:js']);
+    gulp.watch('src/img/**/*.*', ['copy:img']);
+    gulp.watch('bower_components/*/dist/*.js', ['copy:vendor:js']);
 });
 
-gulp.task('server', ['deploy'], function () {
+gulp.task('server', ['build'], function () {
     connect.server({
         port: 8000,
         root: 'dist',
@@ -30,7 +30,7 @@ gulp.task('server', ['deploy'], function () {
 
 //region markup copy
 
-gulp.task('markup', ['clean:markup'], function () {
+gulp.task('copy:html', ['clean:markup'], function () {
     return gulp.src('src/*.*')
         .pipe(gulp.dest('dist'))
         .pipe(connect.reload());
@@ -44,7 +44,7 @@ gulp.task('clean:markup', function (onDone) {
 
 //region js copy
 
-gulp.task('js', ['clean:js'], function () {
+gulp.task('copy:js', ['clean:js'], function () {
     return gulp.src('src/js/**/*.js')
         .pipe(gulp.dest('dist/js'))
         .pipe(connect.reload());
@@ -58,7 +58,7 @@ gulp.task('clean:js', function (onDone) {
 
 //region img copy
 
-gulp.task('img', ['clean:img'], function () {
+gulp.task('copy:img', ['clean:img'], function () {
     return gulp.src('src/img/**/*.*')
         .pipe(gulp.dest('dist/img'))
         .pipe(connect.reload());
@@ -72,7 +72,7 @@ gulp.task('clean:img', function (onDone) {
 
 //region vendor js copy
 
-gulp.task('vendor', ['clean:vendor'], function () {
+gulp.task('copy:vendor:js', ['clean:vendor'], function () {
     return gulp.src('bower_components/*/dist/*.js')
         .pipe(rename({
             dirname: ""
@@ -89,7 +89,7 @@ gulp.task('clean:vendor', function (onDone) {
 
 //region scss compile
 
-gulp.task('scss', ['clean:css'], function () {
+gulp.task('build:scss', ['clean:css'], function () {
     return gulp.src('src/scss/styles.scss')
         .pipe(sass({errLogToConsole: true}))
         .pipe(gulp.dest('dist/css'))
