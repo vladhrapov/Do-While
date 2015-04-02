@@ -3,6 +3,8 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass');
 
+gulp.task('deploy', ['markup', 'vendor', 'scss']);
+
 //region src markup copy
 
 gulp.task('markup', ['clean:markup'], function () {
