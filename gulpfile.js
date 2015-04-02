@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass');
 
-gulp.task('deploy', ['markup', 'vendor', 'scss']);
+gulp.task('deploy', ['vendor', 'js', 'scss', 'img', 'markup']);
 
 //region src markup copy
 
@@ -14,6 +14,32 @@ gulp.task('markup', ['clean:markup'], function () {
 
 gulp.task('clean:markup', function (onDone) {
     del(['dist/*.*'], onDone);
+});
+
+//endregion
+
+//region src js copy
+
+gulp.task('js', ['clean:js'], function () {
+    return gulp.src('src/js/**/*.js')
+        .pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('clean:js', function (onDone) {
+    del(['dist/js/**/*.*'], onDone);
+});
+
+//endregion
+
+//region src img copy
+
+gulp.task('img', ['clean:img'], function () {
+    return gulp.src('src/img/**/*.*')
+        .pipe(gulp.dest('dist/img'));
+});
+
+gulp.task('clean:img', function (onDone) {
+    del(['dist/img/**/*.*'], onDone);
 });
 
 //endregion
