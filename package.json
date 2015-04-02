@@ -1,0 +1,21 @@
+{
+  "name": "Do-While",
+  "version": "1.0.0",
+  "description": "To-do application",
+  "homepage": "https://github.com/frontend-school/Do-While",
+  "private" : true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frontend-school/Do-While"
+  },
+  "keywords": [
+    "to-do"
+  ],
+  "author": {
+    "name": "Borys Ihnatyev",
+    "email": "paur.link@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/frontend-school/Do-While/issues"
+  }
+}
