@@ -23,6 +23,6 @@ npm install && bower install && gulp build
 
 # Gulp basic tasks
 + __default__ task compiles all sources into _./dist_ folder, starts server on __http://localhost:8000__
-and realoads page while changes handeled in _src/*_ files.
+and realoads page while changes handled in _src/*_ files.
 
 + __build__ task compiles all sources into _./dist_ folder
