@@ -5,7 +5,7 @@ var gulp = require('gulp'),
 
 gulp.task('deploy', ['vendor', 'js', 'scss', 'img', 'markup']);
 
-//region src markup copy
+//region markup copy
 
 gulp.task('markup', ['clean:markup'], function () {
     return gulp.src('src/*.*')
@@ -18,7 +18,7 @@ gulp.task('clean:markup', function (onDone) {
 
 //endregion
 
-//region src js copy
+//region js copy
 
 gulp.task('js', ['clean:js'], function () {
     return gulp.src('src/js/**/*.js')
@@ -31,7 +31,7 @@ gulp.task('clean:js', function (onDone) {
 
 //endregion
 
-//region src img copy
+//region img copy
 
 gulp.task('img', ['clean:img'], function () {
     return gulp.src('src/img/**/*.*')
@@ -60,7 +60,7 @@ gulp.task('clean:vendor', function (onDone) {
 
 //endregion
 
-//region scss compile to dist
+//region scss compile
 
 gulp.task('scss', ['clean:css'], function () {
     return gulp.src('src/scss/styles.scss')
