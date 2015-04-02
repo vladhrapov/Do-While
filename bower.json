@@ -1,23 +1,28 @@
 {
   "name": "Do-While",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "homepage": "https://github.com/frontend-school/Do-While",
+  "private": true,
   "authors": [
-    "piton13 <igor13luk@gmail.com>"
+    {
+      "name": "Igor Mykhaylyuk",
+      "email": "igor13luk@gmail.com"
+    }
   ],
-  "description": "To Do application",
+  "description": "To-do application",
   "keywords": [
     "to-do"
   ],
   "license": "MIT",
   "ignore": [
+    ".idea",
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
   ],
-  "dependencies": {
+  "devDependencies": {
     "jquery": "~2.1.3"
   }
 }
