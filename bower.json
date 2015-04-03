@@ -1,18 +1,29 @@
 {
-  "name": "bower",
-  "version": "0.0.1",
+  "name": "Do-While",
+  "version": "1.0.0",
   "homepage": "https://github.com/frontend-school/Do-While",
+  "private": true,
   "authors": [
-    "VK"
+    {
+      "name": "Vladyslav Khrapov",
+      "email": "vlad.hrapov@gmail.com"
+    }
   ],
-  "description": "bower json file",
-  "main": "bower.json",
+  "description": "To-do application",
+  "keywords": [
+    "to-do"
+  ],
   "license": "MIT",
   "ignore": [
+    ".idea",
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.3"
+  }
+
 }

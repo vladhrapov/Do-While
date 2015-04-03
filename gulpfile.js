@@ -1,55 +1,107 @@
 var gulp = require('gulp'),
-	sass = require('gulp-sass'),
-	uglify = require('gulp-uglify'),
-	livereload = require('gulp-livereload'),
-	connect = require('gulp-connect');
+    del = require('del'),
+    rename = require('gulp-rename'),
+    sass = require('gulp-sass'),
+    connect = require('gulp-connect'),
+    layout = require('./project-layout'),
+    paths = layout.paths,
+    patterns = layout.patterns;
 
+gulp.task('default', ['build', 'server', 'watch']);
 
-gulp.task('default', ['connect', 'watch']);
+gulp.task('build', ['copy:bower:js', 'copy:js', 'build:scss', 'copy:img', 'copy:html']);
 
-// connection to server for live reload
-gulp.task('connect', function() {
-	connect.server({
-		root: 'dist',
-		livereload: true
-	})
-})
+//region observing
 
-// copy all js,scss,sass,less and bower components files
-gulp.task('copy', ['copy_js', 'copy_styles', 'copy_comp', 'copy_html']);
-
-// copy js files and minimize them
-gulp.task('copy_js', function() {
-   gulp.src('./src/js/*.js')
-   .pipe(uglify())
-   .pipe(gulp.dest('./dist/js'))
-   .pipe(connect.reload());
+gulp.task('watch', function () {
+    gulp.watch(patterns.src.html, ['copy:html']);
+    gulp.watch(patterns.src.scss, ['build:scss']);
+    gulp.watch(patterns.src.js, ['copy:js']);
+    gulp.watch(patterns.src.img, ['copy:img']);
+    gulp.watch(patterns.bower.js, ['copy:bower:js']);
 });
 
-// copy css and make css from scss
-gulp.task('copy_styles', function() {
-   gulp.src('./src/scss/*.scss')
-   .pipe(sass())
-   .pipe(gulp.dest('./dist/css'))
-   .pipe(connect.reload());
+gulp.task('server', ['build'], function () {
+    connect.server({
+        port: 8000,
+        root: paths.dist._root,
+        livereload: true
+    })
 });
 
-// copy bower components
-gulp.task('copy_comp', function() {
-   gulp.src('./bower_components/**')
-   .pipe(gulp.dest('./dist/vendor'));
+//endregion
+
+//region markup copy
+
+gulp.task('copy:html', ['clean:html'], function () {
+    return gulp.src(patterns.src.html)
+        .pipe(gulp.dest(paths.dist.html))
+        .pipe(connect.reload());
 });
 
-// copy html files
-gulp.task('copy_html', function() {
-   gulp.src('./src/*.html')
-   .pipe(gulp.dest('./dist'))
-   .pipe(connect.reload());
+gulp.task('clean:html', function (onDone) {
+    del(patterns.dist.html, onDone);
 });
 
-// watch html,scss,js files in src directory
-gulp.task('watch', function() {
-	gulp.watch('./src/scss/*.scss', ['copy_styles']);
-	gulp.watch('./src/js/*.js', ['copy_js']);
-	gulp.watch('./src/*.html', ['copy_html']);
+//endregion
+
+//region js copy
+
+gulp.task('copy:js', ['clean:js'], function () {
+    return gulp.src(patterns.src.js)
+        .pipe(gulp.dest(paths.dist.js))
+        .pipe(connect.reload());
 });
+
+gulp.task('clean:js', function (onDone) {
+    del(patterns.dist.js, onDone);
+});
+
+//endregion
+
+//region img copy
+
+gulp.task('copy:img', ['clean:img'], function () {
+    return gulp.src(patterns.src.img)
+        .pipe(gulp.dest(paths.dist.img))
+        .pipe(connect.reload());
+});
+
+gulp.task('clean:img', function (onDone) {
+    del(patterns.dist.img, onDone);
+});
+
+//endregion
+
+//region vendor js copy
+
+gulp.task('copy:bower:js', ['clean:vendor'], function () {
+    return gulp.src(patterns.bower.js)
+        .pipe(rename({
+            dirname: ''
+        }))
+        .pipe(gulp.dest(paths.dist.vendor))
+        .pipe(connect.reload());
+});
+
+gulp.task('clean:vendor', function (onDone) {
+    del(patterns.dist.vendor, onDone);
+});
+
+//endregion
+
+//region scss compile
+
+gulp.task('build:scss', ['clean:css'], function () {
+    return gulp.src(paths.src.scss_main)
+        .pipe(sass({errLogToConsole: true}))
+        .pipe(gulp.dest(paths.dist.css))
+        .pipe(connect.reload());
+});
+
+gulp.task('clean:css', function (onDone) {
+    del(patterns.dist.css, onDone);
+});
+
+//endregion
+
