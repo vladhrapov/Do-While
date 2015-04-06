@@ -32,7 +32,7 @@
     &-title {
       width: 232px;
 
-      // display: table-cell;
+      display: table;
       // vertical-align: middle;
 
       text-align: center;
@@ -41,21 +41,24 @@
       float: left;
       &__text {
         position: relative;
-        background: #f00;
-        background: url(../img/pen.jpg) no-repeat;
-          background-position: left center;
         line-height: 44px;
+
+        display: table-cell;
+        vertical-align: middle;
+
 
         font-size: 14px;
         color: #fff;
         &:after {
-          content: "";
-          position: absolute;
-          top: 50%;
-          width: 9px;
-          height: 9px;
-          background: url(../img/pen.jpg) no-repeat;
-          background-position: left top;
+          content: "a";
+          color: transparent;
+          width: 15px;
+          height: 15px;
+          margin-left: 6px;
+          margin-top: 3px;
+          background-image: url(../img/pen.jpg);
+          background-repeat: no-repeat;
+          background-position: left center;
         }
       }
     }
