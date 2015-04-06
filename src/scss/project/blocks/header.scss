@@ -1,0 +1,38 @@
+$header-size: 50px;
+
+%header__button {
+  width: $header-size;
+  font-size: .5em;
+}
+
+.header {
+  margin: auto;
+  height: $header-size;
+  font-size: $header-size;
+
+  &__title {
+    float: left;
+    font-size: .3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: $header-size;
+    text-align: center;
+    width: calc(100% - #{$header-size} * 2);
+
+    &-icon {
+      display: inline-block;
+      opacity: .7;
+      font-size: .7em;
+    }
+  }
+
+  &__menu-button {
+    @extend %header__button;
+    float: left;
+  }
+
+  &__add-task-button {
+    @extend %header__button;
+    float: right;
+  }
+}

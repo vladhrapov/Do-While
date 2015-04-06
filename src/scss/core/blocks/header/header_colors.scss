@@ -1,0 +1,12 @@
+@each $color-name, $color in $colors {
+  .header_#{$color-name} {
+    background-color: $color;
+    .button {
+      color: $gray-scale-0;
+      background-color: $color;
+      &:hover {
+        background-color: darken($color, 11%);
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@each $color-name, $color in $colors {
+  .button_#{$color-name} {
+    color: $gray-scale-0;
+    background-color: $color;
+    &:hover {
+      background-color: darken($color, 13%);
+    }
+  }
+}
