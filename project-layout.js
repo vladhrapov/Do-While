@@ -23,8 +23,7 @@ var paths = new Layout({
         fonts: 'fonts',
         vendor: {
             js: 'js',
-            css: 'css',
-            fonts: 'fonts'
+            css: 'css'
         }
     },
     bower: 'bower_components'
@@ -53,8 +52,7 @@ var patterns = new Layout({
     bower: {
         _root: paths.bower,
         js: glob(['/*/dist/*', '/*/dist/js/*'], 'js'),
-        css: glob(['/*/*', '/*/css/*', '/*/dist/*', '/*/dist/css/*'], 'css'),
-        fonts: glob(['/*/fonts/*', '/*/dist/fonts/*'])
+        css: glob(['/*/*', '/*/css/*', '/*/dist/*', '/*/dist/css/*'], 'css')
     },
     dist: {
         html: {
@@ -71,9 +69,6 @@ var patterns = new Layout({
             },
             css: {
                 all: glob.deepAllOfType('css')
-            },
-            fonts: {
-                all: glob.deepAllOfType()
             },
             all: glob.deepAllOfType()
         }

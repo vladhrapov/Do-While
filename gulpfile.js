@@ -90,7 +90,7 @@ gulp.task('clean:fonts', function (onDone) {
 
 //region vendor copy
 
-gulp.task('copy:bower', ['copy:bower:js', 'copy:bower:css', 'copy:bower:fonts']);
+gulp.task('copy:bower', ['copy:bower:js', 'copy:bower:css']);
 
 //region vendor js copy
 
@@ -122,23 +122,6 @@ gulp.task('copy:bower:css', ['clean:vendor:css'], function () {
 
 gulp.task('clean:vendor:css', function (onDone) {
     del(patterns.dist.vendor.css.all, onDone);
-});
-
-//endregion
-
-// region vendor fonts copy
-
-gulp.task('copy:bower:fonts', ['clean:vendor:fonts'], function () {
-    return gulp.src(patterns.bower.fonts)
-        .pipe(rename({
-            dirname: ''
-        }))
-        .pipe(gulp.dest(paths.dist.vendor.fonts))
-        .pipe(connect.reload());
-});
-
-gulp.task('clean:vendor:fonts', function (onDone) {
-    del(patterns.dist.vendor.fonts.all, onDone);
 });
 
 //endregion
