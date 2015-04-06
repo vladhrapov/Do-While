@@ -2,6 +2,7 @@ var gulp = require('gulp'),
     del = require('del'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
+    include = require('gulp-file-include'),
     connect = require('gulp-connect'),
     layout = require('./project-layout'),
     paths = layout.paths,
@@ -9,17 +10,9 @@ var gulp = require('gulp'),
 
 gulp.task('default', ['build', 'server', 'watch']);
 
-gulp.task('build', ['copy:bower:js', 'copy:js', 'build:scss', 'copy:img', 'copy:html']);
+gulp.task('build', ['copy:bower:js', 'copy:js', 'build:scss', 'copy:img', 'build:html']);
 
 //region observing
-
-gulp.task('watch', function () {
-    gulp.watch(patterns.src.html, ['copy:html']);
-    gulp.watch(patterns.src.scss, ['build:scss']);
-    gulp.watch(patterns.src.js, ['copy:js']);
-    gulp.watch(patterns.src.img, ['copy:img']);
-    gulp.watch(patterns.bower.js, ['copy:bower:js']);
-});
 
 gulp.task('server', ['build'], function () {
     connect.server({
@@ -29,12 +22,21 @@ gulp.task('server', ['build'], function () {
     })
 });
 
+gulp.task('watch', function () {
+    gulp.watch(patterns.src.html, ['build:html']);
+    gulp.watch(patterns.src.scss, ['build:scss']);
+    gulp.watch(patterns.src.js, ['copy:js']);
+    gulp.watch(patterns.src.img, ['copy:img']);
+    gulp.watch(patterns.bower.js, ['copy:bower:js']);
+});
+
 //endregion
 
 //region markup copy
 
-gulp.task('copy:html', ['clean:html'], function () {
+gulp.task('build:html', ['clean:html'], function () {
     return gulp.src(patterns.src.html)
+        .pipe(include())
         .pipe(gulp.dest(paths.dist.html))
         .pipe(connect.reload());
 });
