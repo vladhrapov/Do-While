@@ -6,6 +6,15 @@ $color-yellow: #F0C33C;
 $color-orange: #E77A35;
 $color-violet: #9E54B2;
 
+$colors: (
+        red: $color-red,
+        green: $color-green,
+        blue: $color-blue,
+        yellow: $color-yellow,
+        orange: $color-orange,
+        violet: $color-violet
+);
+
 // gray scale
 $gray-scale-0: #FFF;
 $gray-scale-1: #F1F3F6;
