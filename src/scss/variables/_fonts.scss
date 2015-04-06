@@ -1,0 +1,6 @@
+$fonts-root: '../fonts';
+
+@font-face {
+  font-family: EncodeSans;
+  src: url('#{$fonts-root}/EncodeSans-Regular.ttf')
+}
