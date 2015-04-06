@@ -1,0 +1,90 @@
+.tasks {
+	&-task {
+		$width: 320px;
+	  $height: 56px;
+		width: $width;
+		height: $height;
+		overflow: hidden;
+		list-style: none;
+		border-bottom: 1px solid #d3dbe4;
+
+		// display: table;
+
+		&__checkbox {
+			line-height: $height;
+			margin-left: 12px;
+			width: 16px;
+			background-image: url(../img/inputCheckBox0.png);
+			background-repeat: no-repeat;
+			background-position: center center;
+
+			margin-right: 12px;
+			float: left;
+			&:hover {
+				background-image: url(../img/inputCheckBox1.png);
+			}
+		}
+		&-content {
+			width: 202px;
+			height: $height;
+
+			// margin-right: 12px;
+			float: left;
+			// position: relative;
+
+			display: table;
+
+			&-wrapper {
+				// position: absolute;
+				// top: 50%;
+				// transform: translateY(-50%);
+
+				display: table-cell;
+				vertical-align: middle;
+
+				&__name {
+					font-size: 15px;
+					line-height: 23px;
+				}
+				&__date {
+					font-size: 9px;
+					line-height: 17px;
+					padding-left: 13px;
+					padding-top: 3px;
+					vertical-align: middle;
+					background-image: url(../img/ic_today.png);
+					background-repeat: no-repeat;
+					background-position: left center;
+				}
+			}
+		}
+		&-time {
+			width: 78px;
+			height: $height;
+			font-size: 9px;
+
+			display: table;
+
+			padding-left: 12px;
+			padding-right: 12px;
+			float: left;
+			&-wrapper {
+				display: table-cell;
+				vertical-align: middle;
+
+				&__alarm {
+					padding-left: 12px;
+					background-image: url(../img/ic_notifications_none.png);
+					background-repeat: no-repeat;
+					background-position: left center;
+				}
+				&__measurement {
+					padding-left: 12px;
+					background-image: url(../img/ic_access_time.png);
+					background-repeat: no-repeat;
+					background-position: left center;
+				}
+			}
+		}
+	}
+}
