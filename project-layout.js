@@ -48,7 +48,7 @@ var patterns = new Layout({
     bower: {
         _root: paths.bower,
         js: glob(['/*/dist/*', '/*/dist/js/*'], 'js'),
-        css: glob(['/*/dist/*', '/*/dist/css/*'], 'css')
+        css: glob(['/*/*', '/*/dist/*', '/*/dist/css/*'], 'css')
     },
     dist: {
         html: {all: glob.allOfType()},
@@ -56,7 +56,11 @@ var patterns = new Layout({
         css: {all: glob.deepAllOfType()},
         img: {all: glob.deepAllOfType()},
         fonts: {all: glob.deepAllOfType()},
-        vendor: {all: glob.deepAllOfType()}
+        vendor: {
+            js: glob.deepAllOfType('js'),
+            css: glob.deepAllOfType('css'),
+            all: glob.deepAllOfType()
+        }
     }
 });
 

@@ -10,7 +10,7 @@ var gulp = require('gulp'),
 
 gulp.task('default', ['build', 'server', 'watch']);
 
-gulp.task('build', ['copy:bower:js', 'copy:js', 'build:scss', 'copy:img', 'copy:fonts', 'build:html']);
+gulp.task('build', ['copy:bower', 'copy:js', 'build:scss', 'copy:img', 'copy:fonts', 'build:html']);
 
 //region observing
 
@@ -89,9 +89,13 @@ gulp.task('clean:fonts', function (onDone) {
 
 //endregion
 
+//region vendor copy
+
+gulp.task('copy:bower', ['copy:bower:js', 'copy:bower:css']);
+
 //region vendor js copy
 
-gulp.task('copy:bower:js', ['clean:vendor'], function () {
+gulp.task('copy:bower:js', ['clean:vendor:js'], function () {
     return gulp.src(patterns.bower.js)
         .pipe(rename({
             dirname: ''
@@ -100,8 +104,25 @@ gulp.task('copy:bower:js', ['clean:vendor'], function () {
         .pipe(connect.reload());
 });
 
-gulp.task('clean:vendor', function (onDone) {
-    del(patterns.dist.vendor.all, onDone);
+gulp.task('clean:vendor:js', function (onDone) {
+    del(patterns.dist.vendor.js, onDone);
+});
+
+//endregion
+
+// region vendor js copy
+
+gulp.task('copy:bower:css', ['clean:vendor:css'], function () {
+    return gulp.src(patterns.bower.css)
+        .pipe(rename({
+            dirname: ''
+        }))
+        .pipe(gulp.dest(paths.dist.vendor))
+        .pipe(connect.reload());
+});
+
+gulp.task('clean:vendor:css', function (onDone) {
+    del(patterns.dist.vendor.css, onDone);
 });
 
 //endregion
