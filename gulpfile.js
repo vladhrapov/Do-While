@@ -23,11 +23,11 @@ gulp.task('server', ['build'], function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch(patterns.src.html, ['build:html']);
-    gulp.watch(patterns.src.scss, ['build:scss']);
-    gulp.watch(patterns.src.js, ['copy:js']);
-    gulp.watch(patterns.src.img, ['copy:img']);
-    gulp.watch(patterns.bower.js, ['copy:bower:js']);
+    gulp.watch(patterns.src.html.all, ['build:html']);
+    gulp.watch(patterns.src.scss.all, ['build:scss']);
+    gulp.watch(patterns.src.js.all, ['copy:js']);
+    gulp.watch(patterns.src.img.all, ['copy:img']);
+    gulp.watch(patterns.bower.allJs, ['copy:bower:js']);
 });
 
 //endregion
@@ -35,14 +35,14 @@ gulp.task('watch', function () {
 //region markup copy
 
 gulp.task('build:html', ['clean:html'], function () {
-    return gulp.src(patterns.src.html)
+    return gulp.src(patterns.src.html.pages)
         .pipe(include())
         .pipe(gulp.dest(paths.dist.html))
         .pipe(connect.reload());
 });
 
 gulp.task('clean:html', function (onDone) {
-    del(patterns.dist.html, onDone);
+    del(patterns.dist.html.all, onDone);
 });
 
 //endregion
@@ -50,13 +50,13 @@ gulp.task('clean:html', function (onDone) {
 //region js copy
 
 gulp.task('copy:js', ['clean:js'], function () {
-    return gulp.src(patterns.src.js)
+    return gulp.src(patterns.src.js.all)
         .pipe(gulp.dest(paths.dist.js))
         .pipe(connect.reload());
 });
 
 gulp.task('clean:js', function (onDone) {
-    del(patterns.dist.js, onDone);
+    del(patterns.dist.js.all, onDone);
 });
 
 //endregion
@@ -64,13 +64,13 @@ gulp.task('clean:js', function (onDone) {
 //region img copy
 
 gulp.task('copy:img', ['clean:img'], function () {
-    return gulp.src(patterns.src.img)
+    return gulp.src(patterns.src.img.all)
         .pipe(gulp.dest(paths.dist.img))
         .pipe(connect.reload());
 });
 
 gulp.task('clean:img', function (onDone) {
-    del(patterns.dist.img, onDone);
+    del(patterns.dist.img.all, onDone);
 });
 
 //endregion
@@ -87,7 +87,7 @@ gulp.task('copy:bower:js', ['clean:vendor'], function () {
 });
 
 gulp.task('clean:vendor', function (onDone) {
-    del(patterns.dist.vendor, onDone);
+    del(patterns.dist.vendor.all, onDone);
 });
 
 //endregion
@@ -95,14 +95,14 @@ gulp.task('clean:vendor', function (onDone) {
 //region scss compile
 
 gulp.task('build:scss', ['clean:css'], function () {
-    return gulp.src(paths.src.scss_main)
+    return gulp.src(paths.src.scss.main)
         .pipe(sass({errLogToConsole: true}))
         .pipe(gulp.dest(paths.dist.css))
         .pipe(connect.reload());
 });
 
 gulp.task('clean:css', function (onDone) {
-    del(patterns.dist.css, onDone);
+    del(patterns.dist.css.all, onDone);
 });
 
 //endregion
