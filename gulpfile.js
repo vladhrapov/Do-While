@@ -27,12 +27,11 @@ gulp.task('watch', function () {
     gulp.watch(patterns.src.scss.all, ['build:scss']);
     gulp.watch(patterns.src.js.all, ['copy:js']);
     gulp.watch(patterns.src.img.all, ['copy:img']);
-    gulp.watch(patterns.bower.js, ['copy:bower:js']);
 });
 
 //endregion
 
-//region markup copy
+//region html build
 
 gulp.task('build:html', ['clean:html'], function () {
     return gulp.src(patterns.src.html.pages)
@@ -91,7 +90,7 @@ gulp.task('clean:fonts', function (onDone) {
 
 //region vendor copy
 
-gulp.task('copy:bower', ['copy:bower:js', 'copy:bower:css']);
+gulp.task('copy:bower', ['copy:bower:js', 'copy:bower:css', 'copy:bower:fonts']);
 
 //region vendor js copy
 
@@ -100,12 +99,12 @@ gulp.task('copy:bower:js', ['clean:vendor:js'], function () {
         .pipe(rename({
             dirname: ''
         }))
-        .pipe(gulp.dest(paths.dist.vendor))
+        .pipe(gulp.dest(paths.dist.vendor.js))
         .pipe(connect.reload());
 });
 
 gulp.task('clean:vendor:js', function (onDone) {
-    del(patterns.dist.vendor.js, onDone);
+    del(patterns.dist.vendor.js.all, onDone);
 });
 
 //endregion
@@ -117,12 +116,29 @@ gulp.task('copy:bower:css', ['clean:vendor:css'], function () {
         .pipe(rename({
             dirname: ''
         }))
-        .pipe(gulp.dest(paths.dist.vendor))
+        .pipe(gulp.dest(paths.dist.vendor.css))
         .pipe(connect.reload());
 });
 
 gulp.task('clean:vendor:css', function (onDone) {
-    del(patterns.dist.vendor.css, onDone);
+    del(patterns.dist.vendor.css.all, onDone);
+});
+
+//endregion
+
+// region vendor fonts copy
+
+gulp.task('copy:bower:fonts', ['clean:vendor:fonts'], function () {
+    return gulp.src(patterns.bower.fonts)
+        .pipe(rename({
+            dirname: ''
+        }))
+        .pipe(gulp.dest(paths.dist.vendor.fonts))
+        .pipe(connect.reload());
+});
+
+gulp.task('clean:vendor:fonts', function (onDone) {
+    del(patterns.dist.vendor.fonts.all, onDone);
 });
 
 //endregion

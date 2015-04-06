@@ -9,10 +9,11 @@ var paths = new Layout({
         js: 'js',
         img: 'img',
         fonts: 'fonts',
-        html: new Layout('/', {
+        html: {
+            _root: '/',
             pages: '',
             components: 'html'
-        })
+        }
     },
     dist: {
         html: '',
@@ -20,7 +21,11 @@ var paths = new Layout({
         css: 'css',
         img: 'img',
         fonts: 'fonts',
-        vendor: 'vendor'
+        vendor: {
+            js: 'js',
+            css: 'css',
+            fonts: 'fonts'
+        }
     },
     bower: 'bower_components'
 });
@@ -48,17 +53,28 @@ var patterns = new Layout({
     bower: {
         _root: paths.bower,
         js: glob(['/*/dist/*', '/*/dist/js/*'], 'js'),
-        css: glob(['/*/*', '/*/dist/*', '/*/dist/css/*'], 'css')
+        css: glob(['/*/*', '/*/css/*', '/*/dist/*', '/*/dist/css/*'], 'css'),
+        fonts: glob(['/*/fonts/*', '/*/dist/fonts/*'])
     },
     dist: {
-        html: {all: glob.allOfType()},
-        js: {all: [glob.deepAllOfType(), '../']},
+        html: {
+            _root: '/',
+            all: glob.allOfType()
+        },
+        js: {all: glob.deepAllOfType()},
         css: {all: glob.deepAllOfType()},
         img: {all: glob.deepAllOfType()},
         fonts: {all: glob.deepAllOfType()},
         vendor: {
-            js: glob.deepAllOfType('js'),
-            css: glob.deepAllOfType('css'),
+            js: {
+                all: glob.deepAllOfType('js')
+            },
+            css: {
+                all: glob.deepAllOfType('css')
+            },
+            fonts: {
+                all: glob.deepAllOfType()
+            },
             all: glob.deepAllOfType()
         }
     }
