@@ -8,6 +8,7 @@ var paths = new Layout({
         },
         js: 'js',
         img: 'img',
+        fonts: 'fonts',
         html: new Layout('/', {
             pages: '',
             components: 'html'
@@ -18,6 +19,7 @@ var paths = new Layout({
         js: 'js',
         css: 'css',
         img: 'img',
+        fonts: 'fonts',
         vendor: 'vendor'
     },
     bower: 'bower_components'
@@ -38,6 +40,9 @@ var patterns = new Layout({
         },
         img: {
             all: glob.deepAllOfType()
+        },
+        fonts: {
+            all: glob.deepAllOfType()
         }
     },
     bower: {
@@ -47,9 +52,10 @@ var patterns = new Layout({
     },
     dist: {
         html: {all: glob.allOfType()},
-        js: {all: [ glob.deepAllOfType(), '../']},
+        js: {all: [glob.deepAllOfType(), '../']},
         css: {all: glob.deepAllOfType()},
         img: {all: glob.deepAllOfType()},
+        fonts: {all: glob.deepAllOfType()},
         vendor: {all: glob.deepAllOfType()}
     }
 });
