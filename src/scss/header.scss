@@ -1,11 +1,10 @@
 .header {
   width: $width;
-  background: #0f0;
   &-nav {
     display: table;
 
     height: $height-header;
-    background: #f1f3f6;
+    background: $gray0;
 
 
     overflow: hidden;
@@ -24,11 +23,11 @@
       padding: 0 12px;
       float: left;
       &:hover {
-        background-color: #ced3da;
+        background-color: $gray2;
       }
 
-      &_work:hover {
-        background-color: #2980b9;
+      &_project-3:hover {
+        background-color: $project-color3-hover;
       }
     }
     &-title {
@@ -48,11 +47,11 @@
         display: table-cell;
         vertical-align: middle;
 
-        color: #b9c1ca;
+        color: $gray3;
         font-family: "EncodeSansWide_semibold";
         font-size: 14px;
         &_projects {
-          color: #fff;
+          color: white;
           &:after {
             content: "a";
             color: transparent;
@@ -79,14 +78,14 @@
       padding: 0 12px;
       float: left;
       &:hover {
-        background-color: #ced3da;
+        background-color: $gray2;
       }
-      &_work:hover {
-        background-color: #2980b9;
+      &_project-3:hover {
+        background-color: $project-color3-hover;
       }
     }
-    &_work {
-      background: $work;
+    &_project-3 {
+      background: $project-color3;
     }
   }
 }

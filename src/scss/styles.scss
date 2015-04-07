@@ -2,8 +2,21 @@ $width: 320px;
 $height-header: 44px;
 $height-tasks: 56px;
 
+$gray0: #f1f3f6;
+$gray1: #d3dbe4;
+$gray2: #ced3da;
+$gray3: #b9c1ca;
+$gray4: #58626a;
+$gray5: #abb4be;
+$gray6: #d5d9de;
 
-$work: #3799d7;
+$project-color1: #1abc9c;  // project education
+$project-color2: #e74c3c;  // project home
+$project-color3: #3799d7;  // project work
+$project-color3-hover: #2980b9;  // project work-hover
+$project-color4: #f0c33c;  // project kids
+$project-color5: #e77a35;  // project study
+$project-color6: #9e54b2;  // project sport
 
 @font-face {
   font-family: 'EncodeSansWide_reg';
