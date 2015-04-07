@@ -1,28 +1,58 @@
 $header-size: 44px;
 
+%i-header__content-part {
+  display: block;
+  text-align: center;
+  height: inherit;
+}
+
 %i-header__button {
-  position: absolute;
-  top: 0;
-  height: $header-size;
+  position: relative;
+  z-index: 100;
+  @extend %i-header__content-part;
   min-width: $header-size;
-  z-index: 10;
+
+  .icon {
+    margin-left: -6px;
+  }
 }
 
 .header {
-  color: $gray-scale-4;
+  @extend %clearfix;
+  position: fixed;
+  top:0;
+  left: 0;
+  display: block;
+  width: 100%;
   height: $header-size;
-  font-size: $header-size;
-  line-height: $header-size;
+
+  color: $gray-scale-4;
+  background-color: $gray-scale-1;
 
   &__menu-button {
-    left: 0;
     @extend %i-header__button;
+    float: left;
   }
 
   &__add-task-button {
-    right: 0;
     @extend %i-header__button;
+    float: right;
+  }
+
+  &__title {
+    @extend %i-header__content-part;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    @include font-semi-bold(14px);
+    text-transform: uppercase;
+
+    .icon {
+      vertical-align: baseline;
+    }
   }
 }
 
-@import "title/header-title";
+@import "header_colors";
