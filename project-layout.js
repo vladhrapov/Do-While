@@ -16,7 +16,8 @@ var paths = {
         scss: 'src/scss',
         scss_main: 'src/scss/styles.scss',
         js: 'src/js',
-        img: 'src/img'
+        img: 'src/img',
+        fonts: 'src/fonts'
     },
     dist: {
         _root: 'dist',
@@ -24,6 +25,7 @@ var paths = {
         js: 'dist/js',
         css: 'dist/css',
         img: 'dist/img',
+        fonts: 'dist/fonts',
         vendor: 'dist/vendor'
     },
     bower: {
@@ -36,7 +38,8 @@ var patterns = {
         html: allOfType(paths.src._root, 'html'),
         js: deepAllOfType(paths.src.js, 'js'),
         scss: deepAllOfType(paths.src.scss, 'scss'),
-        img: deepAllOfType(paths.src.img)
+        img: deepAllOfType(paths.src.img),
+        fonts: deepAllOfType(paths.src.fonts)
     },
     bower: {
         js: paths.bower._root + '/*/dist/*.js'
@@ -46,6 +49,7 @@ var patterns = {
         js: deepAllOfType(paths.dist.js),
         css: deepAllOfType(paths.dist.css),
         img: deepAllOfType(paths.dist.img),
+        fonts: deepAllOfType(paths.dist.fonts),
         vendor: deepAllOfType(paths.dist.vendor)
     }
 };

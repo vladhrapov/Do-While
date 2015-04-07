@@ -61,6 +61,35 @@ $white-color: rgb(255,255,255);
   }
 }
 
+.top-line__title {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  height: 88px;
+  width: 464px;
+  line-height: 88px;
+  text-align: center;
+}
+
+.title-row {
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: EncodeSansWide-DemiBold;
+  font-size: 28px;
+}
+
+.edit-project-button {
+  height:20px;
+  width: 20px;
+  margin: 0px 5px;
+  border: 0px;
+  padding: 0px;
+  background: transparent;
+  background-image: url("../img/edit-project-button.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
 // ***MODIFICATORS***
 
 .nav-batton--mod-blue {
@@ -82,4 +111,9 @@ $white-color: rgb(255,255,255);
   &::before {
     border-color: $white-color;
   }
+}
+
+.top-line__title--mod-blue {
+  background-color: $blue-color;
+  color: $white-color;
 }
