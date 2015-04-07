@@ -109,7 +109,7 @@ gulp.task('build:img:icons', ['clean:img:icons'], function () {
             retinaImgName: paths.dist.img.__layout.retinaIcons,
             cssName: '_icons.scss',
             cssVarMap: function (sprite) {
-                sprite.name = 'icon-' + sprite.name.replace('@', '-')
+                sprite.name = 'icon_' + sprite.name.replace('@', '-')
             }
         }));
 
