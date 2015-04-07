@@ -1,29 +1,29 @@
-
-
 .header {
-  $width: 320px;
-  $height: 44px;
   width: $width;
   background: #0f0;
   &-nav {
     display: table;
 
-    height: $height;
+    height: $height-header;
 
     background: #3799d7;
     overflow: hidden;
     &-options {
       width: 44px;
+      outline: none;
+      border: none;
+
+      background: url(../img/iconHamburger.png) center center no-repeat transparent;
 
       // display: table-cell;
       // vertical-align: middle;
 
       text-align: center;
-      line-height: 44px;
+      line-height: $height-header;
       padding: 0 12px;
       float: left;
       &:hover {
-        background: #2980b9;
+        background-color: #2980b9;
       }
       &__menu {
         vertical-align: middle;
@@ -36,12 +36,12 @@
       // vertical-align: middle;
 
       text-align: center;
-      line-height: 44px;
+      line-height: $height-header;
       padding: 0 12px;
       float: left;
       &__text {
         position: relative;
-        line-height: 44px;
+        // line-height: $height-header;
 
         display: table-cell;
         vertical-align: middle;
@@ -64,13 +64,20 @@
     }
     &-add {
       width: 44px;
+      outline: none;
+      border: none;
+
+      background: url(../img/iconPlus.png) center center no-repeat transparent;
+      // background-image: url(../img/iconPlus.png);
+      // background-repeat: no-repeat;
+      // background-position: center center;
 
       text-align: center;
       line-height: 44px;
       padding: 0 12px;
       float: left;
       &:hover {
-        background: #2980b9;
+        background-color: #2980b9;
       }
       &__plus {
         vertical-align: middle;
