@@ -1,9 +1,8 @@
+
 .tasks {
 	&-task {
-		$width: 320px;
-	  $height: 56px;
 		width: $width;
-		height: $height;
+		height: $height-tasks;
 		overflow: hidden;
 		list-style: none;
 		border-bottom: 1px solid #d3dbe4;
@@ -11,7 +10,7 @@
 		// display: table;
 
 		&__checkbox {
-			line-height: $height;
+			line-height: $height-tasks;
 			margin-left: 12px;
 			width: 16px;
 			background-image: url(../img/inputCheckBox0.png);
@@ -26,7 +25,7 @@
 		}
 		&-content {
 			width: 202px;
-			height: $height;
+			height: $height-tasks;
 
 			// margin-right: 12px;
 			float: left;
@@ -48,19 +47,16 @@
 				}
 				&__date {
 					font-size: 9px;
-					line-height: 17px;
+					line-height: 13px;
 					padding-left: 13px;
-					padding-top: 3px;
 					vertical-align: middle;
-					background-image: url(../img/ic_today.png);
-					background-repeat: no-repeat;
-					background-position: left center;
+					background: url(../img/ic_today.png) left top no-repeat transparent;
 				}
 			}
 		}
 		&-time {
 			width: 78px;
-			height: $height;
+			height: $height-tasks;
 			font-size: 9px;
 
 			display: table;
@@ -73,16 +69,16 @@
 				vertical-align: middle;
 
 				&__alarm {
+					font-size: 9px;
+
 					padding-left: 12px;
-					background-image: url(../img/ic_notifications_none.png);
-					background-repeat: no-repeat;
-					background-position: left center;
+					background: url(../img/ic_notifications_none.png) left center no-repeat;
 				}
 				&__measurement {
+					font-size: 9px;
+
 					padding-left: 12px;
-					background-image: url(../img/ic_access_time.png);
-					background-repeat: no-repeat;
-					background-position: left center;
+					background: url(../img/ic_access_time.png) left center no-repeat;
 				}
 			}
 		}

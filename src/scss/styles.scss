@@ -1,6 +1,6 @@
 $width: 320px;
-$height-tasks: 56px;
 $height-header: 44px;
+$height-tasks: 56px;
 
 
 @import "reset";
@@ -11,6 +11,6 @@ $height-header: 44px;
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  width: 320px;
+  width: $width;
   margin: 0 auto;
 }
