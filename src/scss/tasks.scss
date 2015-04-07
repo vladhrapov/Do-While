@@ -57,6 +57,26 @@
 					vertical-align: middle;
 					background: url(../img/ic_today.png) left top no-repeat transparent;
 				}
+				&-project {
+					
+
+					&__indicator {
+						display: inline-block;
+						width: 8px;
+						height: 8px;
+						border-radius: 8px;
+						background-color: #f00;
+						vertical-align: middle;
+					}
+					&__name {
+						display: inline-block;
+
+						color: #000;
+						font-family: "EncodeSansWide_semibold", Arial, sans-serif;
+						font-size: 9px;
+						line-height: 13px;
+					}
+				}
 			}
 		}
 		&-time {
