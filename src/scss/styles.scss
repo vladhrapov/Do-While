@@ -1,4 +1,10 @@
-@import "reset";
+@import "reset",
+"top-line";
+
+@font-face {
+    font-family: EncodeSansWide-DemiBold;
+    src: url(../fonts/EncodeSansWide-SemiBold.ttf);
+}
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;

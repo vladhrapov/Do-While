@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 
 gulp.task('default', ['build', 'server', 'watch']);
 
-gulp.task('build', ['copy:bower:js', 'copy:js', 'build:scss', 'copy:img', 'copy:html']);
+gulp.task('build', ['copy:bower:js', 'copy:js', 'build:scss', 'copy:img', 'copy:fonts', 'copy:html']);
 
 //region observing
 
@@ -18,6 +18,7 @@ gulp.task('watch', function () {
     gulp.watch(patterns.src.scss, ['build:scss']);
     gulp.watch(patterns.src.js, ['copy:js']);
     gulp.watch(patterns.src.img, ['copy:img']);
+    gulp.watch(patterns.src.fonts, ['copy:fonts']);
     gulp.watch(patterns.bower.js, ['copy:bower:js']);
 });
 
@@ -67,8 +68,18 @@ gulp.task('copy:img', ['clean:img'], function () {
         .pipe(connect.reload());
 });
 
+gulp.task('copy:fonts', ['clean:fonts'], function () {
+    return gulp.src(patterns.src.fonts)
+        .pipe(gulp.dest(paths.dist.fonts))
+        .pipe(connect.reload());
+});
+
 gulp.task('clean:img', function (onDone) {
     del(patterns.dist.img, onDone);
+});
+
+gulp.task('clean:fonts', function (onDone) {
+    del(patterns.dist.fonts, onDone);
 });
 
 //endregion

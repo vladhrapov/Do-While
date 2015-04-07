@@ -1,0 +1,85 @@
+$blue-color: rgb(11,152,218);
+$dark-blue-color :rgb(0,126,188);
+$white-color: rgb(255,255,255);
+
+// ***BLOCKS***
+.top-line {
+
+}
+
+// ***ELEMENTS***
+
+.nav-batton {
+    width: 40px;
+    position: relative;
+    border-style: solid;
+    border-width: 6px 0px;
+    margin: 24px;
+    padding: 9px 0px;
+    &::before {
+      content: "";
+      position: absolute;
+      top: -30px;
+      left: -24px;
+      width: 88px;
+      height: 88px;
+      z-index: -1;
+    }
+    &::after {
+      display: block;
+      content: "";
+      border-style: solid;
+      border-width: 3px 0px;
+    }
+}
+
+.add-button {
+  position: relative;
+  width: 88px;
+  height: 88px;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  &::after{
+    content: "";
+    display: block;
+    width: 40px;
+    margin: auto;
+    border: 3px 0px;
+    border-style: solid;
+  }
+  &::before{
+    content: "";
+    position: absolute;
+    top: 21px;
+    left: 41px;
+    display: block;
+    height: 40px;
+    width: 0px;
+    border: 0px 3px;
+    border-style: solid;
+  }
+}
+
+// ***MODIFICATORS***
+
+.nav-batton--mod-blue {
+    background-color: $blue-color;
+    border-color: $white-color;
+    &::before {
+      background-color: $blue-color;
+    }
+    &::after {
+      border-color: $white-color;
+    }
+}
+
+.add-button--mod-blue {
+  background-color: $dark-blue-color;
+  &::after {
+    border-color: $white-color;
+  }
+  &::before {
+    border-color: $white-color;
+  }
+}
