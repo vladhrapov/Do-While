@@ -7,11 +7,9 @@
     height: $height-header;
     background: #f1f3f6;
 
-    &_work {
-      background: $work;
-    }
+
     overflow: hidden;
-    &-options {
+    &__options {
       width: 44px;
       outline: none;
       border: none;
@@ -26,10 +24,11 @@
       padding: 0 12px;
       float: left;
       &:hover {
-        background-color: #2980b9;
+        background-color: #ced3da;
       }
-      &__menu {
-        vertical-align: middle;
+
+      &_work:hover {
+        background-color: #2980b9;
       }
     }
     &-title {
@@ -49,27 +48,26 @@
         display: table-cell;
         vertical-align: middle;
 
-
+        color: #b9c1ca;
         font-family: "EncodeSansWide_semibold";
         font-size: 14px;
-        color: #fff;
-        &_projects:after {
-          content: "a";
-          color: transparent;
-          position: absolute;
-          top: 25%;
-          width: 15px;
-          height: 15px;
-          margin-left: 6px;
-          margin-top: 2px;
-          background: url(../img/pen.jpg) left center no-repeat;
-        }
-        &_today {
-          color: #b9c1ca;
+        &_projects {
+          color: #fff;
+          &:after {
+            content: "a";
+            color: transparent;
+            position: absolute;
+            top: 25%;
+            width: 15px;
+            height: 15px;
+            margin-left: 6px;
+            margin-top: 2px;
+            background: url(../img/pen.jpg) left center no-repeat;
+          }
         }
       }
     }
-    &-add {
+    &__add {
       width: 44px;
       outline: none;
       border: none;
@@ -81,11 +79,14 @@
       padding: 0 12px;
       float: left;
       &:hover {
+        background-color: #ced3da;
+      }
+      &_work:hover {
         background-color: #2980b9;
       }
-      &__plus {
-        vertical-align: middle;
-      }
+    }
+    &_work {
+      background: $work;
     }
   }
 }
