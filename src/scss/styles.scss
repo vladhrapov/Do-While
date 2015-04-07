@@ -1,22 +1,181 @@
-$font-stack:    Helvetica, sans-serif;
-$primary-color: red;
-$h: 100px;
+//Rendering cross-browser font
+@font-face {
+  font-family: 'encode_sans_wideregular';
+  src: url('../font/EncodeSansWide-Regular-webfont.eot');
+  src: url('../font/EncodeSansWide-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../font/EncodeSansWide-Regular-webfont.woff2') format('woff2'),
+  url('../font/EncodeSansWide-Regular-webfont.woff') format('woff'),
+  url('../font/EncodeSansWide-Regular-webfont.ttf') format('truetype'),
+  url('../font/EncodeSansWide-Regular-webfont.svg#encode_sans_wideregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 
+}
+
+@font-face {
+  font-family: 'encode_sans_widesemibold';
+  src: url('../font/EncodeSansWide-SemiBold-webfont.eot');
+  src: url('../font/EncodeSansWide-SemiBold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../font/EncodeSansWide-SemiBold-webfont.woff2') format('woff2'),
+  url('../font/EncodeSansWide-SemiBold-webfont.woff') format('woff'),
+  url('../font/EncodeSansWide-SemiBold-webfont.ttf') format('truetype'),
+  url('../font/EncodeSansWide-SemiBold-webfont.svg#encode_sans_widesemibold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+//Rendering global styles
 body {
-  font: 100% $font-stack;
-  color: $primary-color;
-  background-color: green;
+  margin: 0px;
+  width: 320px;
+  font-family: 'encode_sans_wideregular', sans-serif;
 }
 
-p {
-  height: $h;
+//Rendering styles for header menu stripe
+.header {
+  top: 0;
+  background-color: #3799D7;
+  width: auto;
+  font-size: 17px;
+  color: white;
+  line-height: 55px;
+  text-align: center;
+  font-family: 'encode_sans_widesemibold', sans-serif;
+
+  &__menu {
+    float: left;
+    border-bottom: 4px solid white;
+    border-top: 4px solid white;
+    width: 27px;
+    height: 19px;
+    margin: 14px 0px 0px 12px ;
+
+    &:before {
+      content: "";
+      position: relative;
+      top: 7px;
+      border-top: 4px solid white;
+      width: 27px;
+      display: flex;
+    }
+  }
+
+  &__add {
+    background-color: #00008B;
+    height: 55px;
+    width: 55px;
+    float: right;
+    background-image: url("../img/add.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
 }
 
-.red {
-  background-color: red;
-  height: 100px;
-  width: 100px;
-  color: black;
-  font-size: 28px;
-  margin: 69px;
+//Rendering styles for list of tasks
+.project {
+
+  &-list {
+    background: #E7E7E7;
+    padding: 0px;
+    margin: 0px;
+
+    &-item {
+      background: white;
+      font-size: 17px;
+      margin-left: 0px;
+      color: #464F57;
+      padding-bottom: 35px;
+      clear: both;
+      padding-top: 25px;
+      border-bottom: 1px solid #E7E7E7;
+
+      &-content {
+        float: left;
+
+        &__checkbox-control {
+          margin-right: 15px;
+          margin-left: 15px;
+          vertical-align: super;
+        }
+
+        &-row {
+          display: inline-block;
+          line-height: 20px;
+
+          &__checkbox-icon {
+            background-image: url("../img/inputCheckBox0@2x.png");
+            background-repeat: no-repeat;
+            background-size: 50%;
+            width: 39px;
+            height: 39px;
+            position: absolute;
+            margin-left: -36px;
+            margin-top: 12px;
+
+          }
+        }
+      }
+
+      &-watch {
+        float: right;
+        margin-top: 5px;
+      }
+    }
+  }
 }
+
+//Rendering styles for row with date icons and content
+.datepicker {
+  font-size: 12px;
+  color: #a3a3a3;
+  font-family: 'encode_sans_widesemibold', sans-serif;
+
+  &__calendar {
+    background-image: url("../img/calendar.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 17px;
+    height: 17px;
+  }
+
+  &__notificator {
+    background-image: url("../img/ring.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    vertical-align: sub;
+  }
+
+  &__timer {
+    background-image: url("../img/timer.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    vertical-align: middle;
+  }
+}
+
+//Rendering styles for editor icon
+.editor-icon {
+  background-image: url("../img/edit.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  vertical-align: sub;
+}
+
+
+
+
+
+
