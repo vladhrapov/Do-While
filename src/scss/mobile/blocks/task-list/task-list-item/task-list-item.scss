@@ -1,6 +1,8 @@
 $task-list-item-height: 55px;
 
 .task-list-item {
+  @extend %clearfix;
+
   height: $task-list-item-height;
   color: $gray-scale-5;
   background-color: $gray-scale-0;
@@ -25,7 +27,6 @@ $task-list-item-height: 55px;
     text-align: left;
     padding-right: 18px;
   }
-
 
   &__title {
     @include font-regular(15px);
