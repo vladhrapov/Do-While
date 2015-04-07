@@ -3,14 +3,16 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     include = require('gulp-file-include'),
+    spritesmith = require('gulp.spritesmith'),
     connect = require('gulp-connect'),
+    path = require('path'),
     layout = require('./project-layout'),
     paths = layout.paths,
     patterns = layout.patterns;
 
 gulp.task('default', ['build', 'server', 'watch']);
 
-gulp.task('build', ['copy:bower', 'copy:js', 'build:scss', 'copy:img', 'copy:fonts', 'build:html']);
+gulp.task('build', ['copy:bower', 'copy:js', 'build:scss', 'build:img', 'copy:fonts', 'build:html']);
 
 //region observing
 
@@ -26,7 +28,6 @@ gulp.task('watch', function () {
     gulp.watch(patterns.src.html.all, ['build:html']);
     gulp.watch(patterns.src.scss.all, ['build:scss']);
     gulp.watch(patterns.src.js.all, ['copy:js']);
-    gulp.watch(patterns.src.img.all, ['copy:img']);
 });
 
 //endregion
@@ -46,6 +47,21 @@ gulp.task('clean:html', function (onDone) {
 
 //endregion
 
+//region scss build
+
+gulp.task('build:scss', ['build:img:icons', 'clean:css'], function () {
+    return gulp.src(paths.src.scss.main)
+        .pipe(sass({errLogToConsole: true}))
+        .pipe(gulp.dest(paths.dist.css))
+        .pipe(connect.reload());
+});
+
+gulp.task('clean:css', function (onDone) {
+    del(patterns.dist.css.all, onDone);
+});
+
+//endregion
+
 //region js copy
 
 gulp.task('copy:js', ['clean:js'], function () {
@@ -60,17 +76,52 @@ gulp.task('clean:js', function (onDone) {
 
 //endregion
 
-//region img copy
+//region img build
 
-gulp.task('copy:img', ['clean:img'], function () {
+gulp.task('build:img', ['copy:img:pictures', 'build:img:icons']);
+
+//region pictures
+gulp.task('copy:img:pictures', ['clean:img:pictures'], function () {
     return gulp.src(patterns.src.img.all)
-        .pipe(gulp.dest(paths.dist.img))
+        .pipe(gulp.dest(paths.dist.img._root))
         .pipe(connect.reload());
 });
 
-gulp.task('clean:img', function (onDone) {
-    del(patterns.dist.img.all, onDone);
+gulp.task('clean:img:pictures', function (onDone) {
+    del(patterns.dist.img.pictures, onDone);
 });
+//endregion
+
+//region icon sprites
+
+gulp.task('build:img:icons', ['clean:img:icons'], function () {
+    var imgPath = path.relative(paths.dist.css, paths.dist.img.icons)
+            .replace(/\\/g, '/'),
+        retinaImgPath = path.relative(paths.dist.css, paths.dist.img.retinaIcons)
+            .replace(/\\/g, '/');
+
+    var spriteData = gulp.src(patterns.src.img.icons.all)
+        .pipe(spritesmith({
+            retinaSrcFilter: patterns.src.img.icons.retina,
+            imgPath: imgPath,
+            retinaImgPath: retinaImgPath,
+            imgName: paths.dist.img.__layout.icons,
+            retinaImgName: paths.dist.img.__layout.retinaIcons,
+            cssName: '_icons.scss',
+            cssVarMap: function (sprite) {
+                sprite.name = 'icon-' + sprite.name.replace('@', '-')
+            }
+        }));
+
+    spriteData.img.pipe(gulp.dest(paths.dist.img._root));
+    spriteData.css.pipe(gulp.dest(paths.src.scss.core));
+});
+
+gulp.task('clean:img:icons', function (onDone) {
+    del(patterns.dist.img.icons, onDone);
+});
+
+//endregion
 
 //endregion
 
@@ -125,18 +176,5 @@ gulp.task('clean:vendor:css', function (onDone) {
 });
 
 //endregion
-
-//region scss compile
-
-gulp.task('build:scss', ['clean:css'], function () {
-    return gulp.src(paths.src.scss.main)
-        .pipe(sass({errLogToConsole: true}))
-        .pipe(gulp.dest(paths.dist.css))
-        .pipe(connect.reload());
-});
-
-gulp.task('clean:css', function (onDone) {
-    del(patterns.dist.css.all, onDone);
-});
 
 //endregion

@@ -4,7 +4,8 @@ var glob = require('./lib/glob'),
 var paths = new Layout({
     src: {
         scss: {
-            main: 'styles.scss'
+            main: 'styles.scss',
+            core: 'core'
         },
         js: 'js',
         img: 'img',
@@ -19,7 +20,10 @@ var paths = new Layout({
         html: '',
         js: 'js',
         css: 'css',
-        img: 'img',
+        img: {
+            icons: 'icons.png',
+            retinaIcons: 'icons@2x.png'
+        },
         fonts: 'fonts',
         vendor: {
             js: 'js',
@@ -43,7 +47,11 @@ var patterns = new Layout({
             all: glob.deepAllOfType('scss')
         },
         img: {
-            all: glob.deepAllOfType()
+            icons: {
+                all: glob.allOfType('png'),
+                retina: glob('/*@2x', 'png')
+            },
+            all: glob.allOfType()
         },
         fonts: {
             all: glob.deepAllOfType()
@@ -61,7 +69,11 @@ var patterns = new Layout({
         },
         js: {all: glob.deepAllOfType()},
         css: {all: glob.deepAllOfType()},
-        img: {all: glob.deepAllOfType()},
+        img: {
+            icons: glob('/icons*','png'),
+            pictures: [glob.deepAllOfType(), glob('/icons*','png').exclude()],
+            all: glob.deepAllOfType()
+        },
         fonts: {all: glob.deepAllOfType()},
         vendor: {
             js: {
