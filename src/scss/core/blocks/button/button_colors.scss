@@ -1,9 +1,15 @@
-@each $color-name, $color in $colors {
-  .button_#{$color-name} {
-    color: $gray-scale-0;
-    background-color: $color;
+@mixin colored-button($color-name, $text-color, $bg-color){
+  .button.button_#{$color-name} {
+    color: $text-color;
+    background-color: $bg-color;
     &:hover {
-      background-color: darken($color, 13%);
+      background-color: darken($bg-color, 13%);
     }
   }
+}
+
+@include colored-button('default', $gray-scale-5, $gray-scale-1);
+
+@each $color-name, $color in $colors {
+  @include colored-button($color-name, $gray-scale-0, $color);
 }

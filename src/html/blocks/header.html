@@ -1,16 +1,16 @@
-<header class="header @@color">
-    <button class="button header__menu-button">
-        <i class="fa fa-reorder"></i>
-        <span class="icon icon_hamburger header__title-icon"></span>
+<header class="header header_@@color">
+    <button class="button button_@@color header__menu-button">
+        <span class="icon icon_hamburger @@if (color !== 'default') { icon_inverted }"></span>
     </button>
 
-    <div class="header__title">
+    <div class="header-title">
         @@text
-        <span class="icon icon_pencil header__title-icon"></span>
+        @@if (title_icon === true) {
+        <span class="icon icon_create header-title__icon"></span>
+        }
     </div>
 
-    <button class="button header__add-task-button">
-        <i class="fa fa-plus"></i>
-        <span class="icon icon_plus"></span>
+    <button class="button button_@@color header__add-task-button">
+        <span class="icon icon_plus @@if (color !== 'default') { icon_inverted }"></span>
     </button>
 </header>

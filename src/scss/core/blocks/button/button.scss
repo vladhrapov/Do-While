@@ -1,13 +1,9 @@
 .button {
   display: block;
+  text-align: center;
   height: 100%;
   outline: none;
-  background-color: $gray-scale-1;
   border: 0;
-
-  &:hover {
-    background-color: $gray-scale-2;
-  }
 }
 
 @import "button_colors";

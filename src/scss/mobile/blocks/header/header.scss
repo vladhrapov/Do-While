@@ -1,0 +1,28 @@
+$header-size: 44px;
+
+%i-header__button {
+  position: absolute;
+  top: 0;
+  height: $header-size;
+  min-width: $header-size;
+  z-index: 10;
+}
+
+.header {
+  color: $gray-scale-4;
+  height: $header-size;
+  font-size: $header-size;
+  line-height: $header-size;
+
+  &__menu-button {
+    left: 0;
+    @extend %i-header__button;
+  }
+
+  &__add-task-button {
+    right: 0;
+    @extend %i-header__button;
+  }
+}
+
+@import "title/header-title";
