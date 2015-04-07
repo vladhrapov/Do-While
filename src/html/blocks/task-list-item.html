@@ -1,7 +1,7 @@
 <li class="task-list-item">
     <div class="task-list-item__left">
         <div class="i-v-box">
-            <span class="icon icon_check-box"></span>
+            <span class="icon icon_check-box@@checkbox_mod"></span>
         </div>
     </div>
 
@@ -11,13 +11,10 @@
                 @@title
             </span>
 
-            @@if(deadline_date !== false ) {
-
             <span class="task-list-item__label task-list-item__label_group">
-                <i class="badge badge_circle badge_blue"></i>
-                @@deadline_date
+                <i class="badge badge_circle @@group_mixin"></i>
+                @@group
             </span>
-            }
         </div>
     </div>
 

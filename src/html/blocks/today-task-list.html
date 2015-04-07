@@ -1,0 +1,57 @@
+<ul class="task-list">
+    @@include('./task-list-item.html', { "title": "Lesson",
+        "group": "education",
+        "group_mixin":"color_green",
+        "deadline_date": "education",
+        "checkbox_mod" : "_checked"
+    })
+
+    @@include('./task-list-item.html',{
+        "title": "Do the home work",
+        "group": "education",
+        "group_mixin":"color_green",
+        "deadline_date": false,
+        "checkbox_mod" : ""
+    })
+
+    @@include('./task-list-item.html', {
+        "title": "Buy food in Wallmart",
+        "group": "home",
+        "group_mixin":"color_orange",
+        "deadline_date": "21 mar",
+        "checkbox_mod" : ""
+    })
+
+    @@include('./task-list-item.html', {
+        "title": "Gym",
+        "group": "health",
+        "group_mixin":"color_orange",
+        "deadline_date": false,
+        "checked": true
+    })
+
+    @@include('./task-list-item.html', {
+        "title": "Do the home work",
+        "group": "education",
+        "group_mixin":"color_green",
+        "deadline_date": "21 mar",
+        "checkbox_mod" : "_checked"
+    })
+
+    @@include('./task-list-item.html', {
+        "title": "By food in Wallmart",
+        "group": "home",
+        "group_mixin":"color_orange",
+        "deadline_date": "21 mar",
+        "checkbox_mod" : ""
+    })
+
+    @@include('./task-list-item.html', {
+        "title": "Gym",
+        "group": "health",
+        "group_mixin":"color_orange",
+        "deadline_date": false,
+        "checkbox_mod" : "_checked"
+
+    })
+</ul>
