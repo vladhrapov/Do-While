@@ -1,0 +1,13 @@
+.badge {
+  display: inline-block;
+  margin-right: .2em; // todo remove if need
+  min-width: .9em;
+  min-height: .9em;
+
+  &_circle {
+    border: 0;
+    border-radius: 50%;
+  }
+}
+
+@import "badge_colors";

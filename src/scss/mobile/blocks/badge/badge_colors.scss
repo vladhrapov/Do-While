@@ -1,0 +1,15 @@
+@mixin colored-badge($color-name, $text-color, $bg-color){
+  .badge.badge_#{$color-name} {
+    color: $text-color;
+    background-color: $bg-color;
+    &:hover {
+      background-color: darken($bg-color, 13%);
+    }
+  }
+}
+
+@include colored-badge('default', $gray-scale-0, $gray-scale-5);
+
+@each $color-name, $color in $colors {
+  @include colored-badge($color-name, $gray-scale-0, $color);
+}

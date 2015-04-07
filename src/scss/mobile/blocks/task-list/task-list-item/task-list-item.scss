@@ -1,0 +1,56 @@
+$task-list-item-height: 55px;
+
+.task-list-item {
+  height: $task-list-item-height;
+  color: $gray-scale-5;
+  background-color: $gray-scale-0;
+  border-bottom: 1px solid $gray-scale-3;
+
+  &__left {
+    @include i-v-box-container($task-list-item-height);
+    float: left;
+    width: $header-size - 5px;
+  }
+
+  &__center {
+    @include i-v-box-container($task-list-item-height);
+    float: left;
+    text-align: left;
+    padding-top: 2px;
+  }
+
+  &__right {
+    @include i-v-box-container($task-list-item-height);
+    float: right;
+    text-align: left;
+    padding-right: 18px;
+  }
+
+
+  &__title {
+    @include font-regular(15px);
+    display: block;
+  }
+
+  &__label {
+    @include font-semi-bold(9px);
+    display: block;
+    color: $gray-scale-3;
+    text-transform: uppercase;
+
+    &_group {
+      margin-left: 0;
+      margin-top: 4px;
+    }
+
+    &_notification {
+
+    }
+
+    &_access-time {
+      margin-top: 4px;
+    }
+  }
+}
+
+@import "task-list-item__checkbox";

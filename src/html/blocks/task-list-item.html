@@ -1,0 +1,52 @@
+<li class="task-list-item">
+    <div class="task-list-item__left">
+        <div class="i-v-box">
+            <span class="icon icon_check-box"></span>
+        </div>
+    </div>
+
+    <div class="task-list-item__center">
+        <div class="i-v-box">
+            <span class="task-list-item__title">
+                @@title
+            </span>
+
+            @@if(deadline_date !== false ) {
+
+            <span class="task-list-item__label task-list-item__label_group">
+                <i class="badge badge_circle badge_blue"></i>
+                @@deadline_date
+            </span>
+            }
+        </div>
+    </div>
+
+    <div class="task-list-item__right">
+        <div class="i-v-box">
+            <span class="task-list-item__label task-list-item__label_notification">
+                <i class="icon icon_notifications-none"></i>
+                17:00
+            </span>
+            <span class="task-list-item__label task-list-item__label_access-time">
+                <i class="icon icon_access-time"></i>
+                12:43:34
+            </span>
+        </div>
+    </div>
+
+    <!--<div class="task-list-item-buttons">
+        <button class="button button_green task-list-item-button">
+            <span class="task-list-item-button__content">
+                <i class="icon icon_create"></i>
+                edit
+            </span>
+        </button>
+
+        <button class="button button_blue">
+            <span class="task-list-item-button__content">
+                <i class="icon icon_triangle_blue"></i>
+                start
+            </span>
+        </button>
+    </div>-->
+</li>

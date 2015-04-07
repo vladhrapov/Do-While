@@ -1,4 +1,5 @@
 .button {
+  @extend ._middle-content;
   display: block;
   text-align: center;
   height: 100%;
