@@ -5,8 +5,11 @@
     display: table;
 
     height: $height-header;
+    background: #f1f3f6;
 
-    background: #3799d7;
+    &_work {
+      background: $work;
+    }
     overflow: hidden;
     &-options {
       width: 44px;
@@ -47,18 +50,22 @@
         vertical-align: middle;
 
 
+        font-family: "EncodeSansWide_semibold";
         font-size: 14px;
         color: #fff;
-        &:after {
+        &_projects:after {
           content: "a";
           color: transparent;
+          position: absolute;
+          top: 25%;
           width: 15px;
           height: 15px;
           margin-left: 6px;
-          margin-top: 3px;
-          background-image: url(../img/pen.jpg);
-          background-repeat: no-repeat;
-          background-position: left center;
+          margin-top: 2px;
+          background: url(../img/pen.jpg) left center no-repeat;
+        }
+        &_today {
+          color: #b9c1ca;
         }
       }
     }
@@ -68,9 +75,6 @@
       border: none;
 
       background: url(../img/iconPlus.png) center center no-repeat transparent;
-      // background-image: url(../img/iconPlus.png);
-      // background-repeat: no-repeat;
-      // background-position: center center;
 
       text-align: center;
       line-height: 44px;

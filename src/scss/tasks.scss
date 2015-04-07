@@ -42,12 +42,17 @@
 				vertical-align: middle;
 
 				&__name {
+					color: #58626a;
+					font-family: "EncodeSansWide_reg", Arial, sans-serif;
 					font-size: 15px;
 					line-height: 23px;
 				}
 				&__date {
+					color: #b9c1ca;
+					font-family: "EncodeSansWide_semibold", Arial, sans-serif;
 					font-size: 9px;
 					line-height: 13px;
+
 					padding-left: 13px;
 					vertical-align: middle;
 					background: url(../img/ic_today.png) left top no-repeat transparent;
@@ -69,12 +74,16 @@
 				vertical-align: middle;
 
 				&__alarm {
+					color: #b9c1ca;
+					font-family: "EncodeSansWide_semibold", Arial, sans-serif;
 					font-size: 9px;
 
 					padding-left: 12px;
 					background: url(../img/ic_notifications_none.png) left center no-repeat;
 				}
 				&__measurement {
+					color: #b9c1ca;
+					font-family: "EncodeSansWide_semibold", Arial, sans-serif;
 					font-size: 9px;
 
 					padding-left: 12px;

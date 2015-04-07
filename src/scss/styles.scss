@@ -2,15 +2,44 @@ $width: 320px;
 $height-header: 44px;
 $height-tasks: 56px;
 
+$work: #3799d7;
 
-@import "reset";
-@import "header";
-@import "tasks";
+@font-face {
+  font-family: 'EncodeSansWide_reg';
+  src: url('../fonts/EncodeSansWide-Regular-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/EncodeSansWide-Regular-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/EncodeSansWide-Regular-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/EncodeSansWide-Regular-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/EncodeSansWide-Regular-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/EncodeSansWide-Regular-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'EncodeSansWide_bold';
+  src: url('../fonts/EncodeSansWide-Bold-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/EncodeSansWide-Bold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/EncodeSansWide-Bold-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/EncodeSansWide-Bold-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/EncodeSansWide-Bold-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/EncodeSansWide-Bold-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'EncodeSansWide_semibold';
+  src: url('../fonts/EncodeSansWide-SemiBold-webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/EncodeSansWide-SemiBold-webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/EncodeSansWide-SemiBold-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/EncodeSansWide-SemiBold-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/EncodeSansWide-SemiBold-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/EncodeSansWide-SemiBold-webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@import 'reset';
+@import 'header';
+@import 'tasks';
 
 
 
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+//  font-family: "EncodeSansWide-reg";
   width: $width;
-  margin: 0 auto;
+//  margin: 0 auto;
 }

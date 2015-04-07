@@ -9,7 +9,7 @@ var gulp = require('gulp'),
 
 gulp.task('default', ['build', 'server', 'watch']);
 
-gulp.task('build', ['copy:bower:js', 'copy:js', 'build:scss', 'copy:img', 'copy:html']);
+gulp.task('build', ['copy:bower:js', 'copy:js', 'build:scss', 'copy:img', 'copy:fonts', 'copy:html']);
 
 //region observing
 
@@ -71,6 +71,22 @@ gulp.task('clean:img', function (onDone) {
     del(patterns.dist.img, onDone);
 });
 
+//endregion
+
+//region fonts copy
+gulp.task('copy:fonts', function() {
+   gulp.src('src/fonts/*.*')
+   .pipe(gulp.dest('dist/fonts'));
+});
+// gulp.task('copy:fonts', ['clean:fonts'], function () {
+//     return gulp.src(patterns.src.fonts.all)
+//         .pipe(gulp.dest(paths.dist.fonts))
+//         .pipe(connect.reload());
+// });
+// 
+// gulp.task('clean:fonts', function (onDone) {
+//     del(patterns.dist.fonts.all, onDone);
+// });
 //endregion
 
 //region vendor js copy
