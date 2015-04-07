@@ -26,7 +26,7 @@ gulp.task('server', ['build'], function () {
 
 gulp.task('watch', function () {
     gulp.watch(patterns.src.html.all, ['build:html']);
-    gulp.watch(patterns.src.scss.all, ['build:scss']);
+    gulp.watch(patterns.src.scss.all, ['build:scss_light']);
     gulp.watch(patterns.src.js.all, ['copy:js']);
 });
 
@@ -49,11 +49,19 @@ gulp.task('clean:html', function (onDone) {
 
 //region scss build
 
-gulp.task('build:scss', ['build:img:icons', 'clean:css'], function () {
+function buildScss() {
     return gulp.src(paths.src.scss.main)
         .pipe(sass({errLogToConsole: true}))
         .pipe(gulp.dest(paths.dist.css))
         .pipe(connect.reload());
+}
+
+gulp.task('build:scss', ['build:img:icons', 'clean:css'], function () {
+    return buildScss();
+});
+
+gulp.task('build:scss_light', ['clean:css'], function () {
+    return buildScss()
 });
 
 gulp.task('clean:css', function (onDone) {
