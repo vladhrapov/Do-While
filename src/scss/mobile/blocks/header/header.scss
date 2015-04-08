@@ -1,58 +1,40 @@
-$header-size: 44px;
-
-%i-header__content-part {
-  display: block;
-  text-align: center;
-  height: inherit;
-}
-
-%i-header__button {
-  position: relative;
-  z-index: 100;
-  @extend %i-header__content-part;
-  min-width: $header-size;
-
-  .icon {
-    margin-left: -6px;
-  }
-}
+$header-text-color: $gray-scale-4;
 
 .header {
-  @extend %clearfix;
+  display: inline-table;
   position: fixed;
   top:0;
   left: 0;
-  display: block;
   width: 100%;
   height: $header-size;
-
   color: $gray-scale-4;
   background-color: $gray-scale-1;
 
   &__menu-button {
-    @extend %i-header__button;
-    float: left;
-  }
-
-  &__add-task-button {
-    @extend %i-header__button;
-    float: right;
+    display: table-cell;
+    width: $header-size;
+    max-width: $header-size;
   }
 
   &__title {
-    @extend %i-header__content-part;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-
+    display: table-cell;
     @include font-semi-bold(14px);
     text-transform: uppercase;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
 
+    max-width: $mobile-min-width - 2 * $header-size;
     .icon {
       vertical-align: baseline;
     }
   }
+
+  &__add-task-button {
+    display: table-cell;
+    width: $header-size;
+    float: right;
+  }
 }
 
-@import "header_colors";
+@include colors-state-normal-for('.header');
