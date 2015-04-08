@@ -1,5 +1,84 @@
+.button {
+  width: 44px;
+  height: 44px;
+  outline: none;
+  border: none;
+
+  position: absolute;
+  z-index: 5;
+
+  &:hover {
+    background-color: rgba(170, 180, 190, 0.5);
+  }
+}
 .header {
   width: $width;
+
+  &__button {
+
+    /* &:hover {
+      background-color: $gray2;
+    } */
+
+    &_menu {
+      @extend .button;
+      background: url(../img/iconHamburger.png) center center no-repeat transparent;
+      left: 0;
+
+      .header-nav_project-3 &:hover {
+        background-color: $project-color3-hover;
+      }
+    }
+
+    &_add {
+      @extend .button;
+      background: url(../img/iconPlus.png) center center no-repeat transparent;
+      right: 0;
+
+      .header-nav_project-3 &:hover {
+        background-color: $project-color3-hover;
+      }
+    }
+  }
+
+  &__title {
+    //width: 232px;
+    width: 320px;
+    position: relative;
+
+    //display: table;
+
+    // display: inline-block;
+    // margin: 0 auto;
+    vertical-align: middle;
+
+    //text-align: center;
+    text-transform: uppercase;
+    line-height: $height-header;
+    padding-left: 44px + 12px;
+    padding-right: 44px + 12px;
+    //float: left;
+
+    color: $gray3;
+    font-family: "EncodeSansWide_semibold";
+    font-size: 14px;
+
+    .header-nav_project-3 & {
+      color: white;
+
+      &:after {
+        content: "a";
+        color: transparent;
+        position: absolute;
+        top: 0;
+        width: 15px;
+        height: 15px;
+        margin-left: 6px;
+        //margin-top: 2px;
+        background: url(../img/pen.jpg) left center no-repeat;
+      }
+    }
+  }
 
   &-nav {
     //display: table;
@@ -9,96 +88,10 @@
     //overflow: hidden;
     position: relative;
 
-    &__options {
-      width: 44px;
-      height: 44px;
-      outline: none;
-      border: none;
-
-      background: url(../img/iconHamburger.png) center center no-repeat transparent;
-
-      // display: table-cell;
-      // vertical-align: middle;
-
-      //text-align: center;
-      // line-height: $height-header;
-      // padding: 0 12px;
-      //float: left;
-      position: absolute;
-      left: 0;
-      z-index: 5;
-
-      &:hover {
-        background-color: $gray2;
-      }
-
-      .header-nav_project-3 &:hover {
-        background-color: $project-color3-hover;
-      }
-    }
-
-    &__title {
-      //width: 232px;
-      width: 320px;
-      position: relative;
-
-      //display: table;
-
-      // display: inline-block;
-      // margin: 0 auto;
-      vertical-align: middle;
-
-      //text-align: center;
-      text-transform: uppercase;
-      line-height: $height-header;
-      padding-left: 44px + 12px;
-      padding-right: 44px + 12px;
-      //float: left;
-
-      color: $gray3;
-      font-family: "EncodeSansWide_semibold";
-      font-size: 14px;
-
-      .header-nav_project-3 & {
-        color: white;
-
-        &:after {
-          content: "a";
-          color: transparent;
-          position: absolute;
-          top: 0;
-          width: 15px;
-          height: 15px;
-          margin-left: 6px;
-          //margin-top: 2px;
-          background: url(../img/pen.jpg) left center no-repeat;
-        }
-      }
-    }
-
     &__add {
-      width: 44px;
-      height: 44px;
-      outline: none;
-      border: none;
-
-      background: url(../img/iconPlus.png) center center no-repeat transparent;
-
-      //text-align: center;
-      //line-height: 44px;
-      /* padding: 0 12px; */
-      //float: right;
-      position: absolute;
-      right: 0;
-      z-index: 5;
-
-      &:hover {
-        background-color: $gray2;
-      }
-
-      .header-nav_project-3 &:hover {
-        background-color: $project-color3-hover;
-      }
+     /*  &:hover {
+       background-color: $gray2;
+     } */
     }
 
     &_project-3 {
