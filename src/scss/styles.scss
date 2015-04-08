@@ -1,10 +1,14 @@
 //Block of variables
 $white: white;
+$dark-white: #f1f2f6;
 $very-light-gray: #E7E7E7;
 $light-gray: #a3a3a3;
+$light-gray2: #aab2bd;
 $gray: #464F57;
 $blue: #3799D7;
 $dark-blue: #00008B;
+$orange: #E07a3a;
+$green: #3ebc9a;
 
 //Rendering cross-browser font
 @font-face {
@@ -43,40 +47,84 @@ body {
 //Rendering styles for header menu stripe
 .header {
   top: 0;
-  background-color: $blue;
   width: auto;
-  font-size: 17px;
-  color: $white;
-  line-height: 55px;
+  font-size: 14px;
+  line-height: 40px;
   text-align: center;
   font-family: 'encode_sans_widesemibold', sans-serif;
 
+  &_default {
+    background-color: $dark-white;
+    color: $light-gray;
+  }
+
+  &_blue {
+    background-color: $blue;
+    color: $white;
+  }
+
   &__menu {
     float: left;
-    border-bottom: 4px solid $white;
-    border-top: 4px solid $white;
-    width: 27px;
-    height: 19px;
-    margin: 14px 0px 0px 12px ;
+    width: 22px;
+    height: 13px;
+    margin: 10px 0px 0px 10px ;
+    top: 0;
+    left: 0;
+    cursor: pointer;
 
-    &:before {
+    &_default {
+      border-bottom: 3px solid $light-gray2;
+      border-top: 3px solid $light-gray2;
+
+      &:before {
+        content: "";
+        position: relative;
+        top: 5px;
+        border-top: 3px solid $light-gray2;
+        display: flex;
+      }
+    }
+
+    &_blue {
+      border-bottom: 3px solid $white;
+      border-top: 3px solid $white;
+
+      &:before {
+        content: "";
+        position: relative;
+        top: 5px;
+        border-top: 3px solid $white;
+        display: flex;
+      }
+    }
+
+    &:after {
       content: "";
-      position: relative;
-      top: 7px;
-      border-top: 4px solid $white;
-      width: 27px;
-      display: flex;
+      position: absolute;
+      padding: 20px;
+      top: 0;
+      left: 0;
     }
   }
 
   &__add {
-    background-color: $dark-blue;
-    height: 55px;
-    width: 55px;
+    height: 40px;
+    width: 40px;
     float: right;
-    background-image: url("../img/add.png");
-    background-size: 100%;
     background-repeat: no-repeat;
+    cursor: pointer;
+
+    &_default {
+      background-color: $very-light-gray;
+      background-image: url("../img/add-def.png");
+      background-size: 102%;
+    }
+
+    &_blue {
+      background-color: $dark-blue;
+      background-image: url("../img/add.png");
+      background-size: 100%;
+    }
   }
 }
 
@@ -99,20 +147,28 @@ body {
 
   &__item {
     background: $white;
-    font-size: 17px;
+    font-size: 14px;
     margin-left: 0px;
-    color: $gray;
-    padding-bottom: 35px;
+    padding-bottom: 10px;
     clear: both;
-    padding-top: 25px;
+    padding-top: 10px;
     border-bottom: 1px solid $very-light-gray;
+
+    &_default {
+      color: $gray;
+    }
+
+    &_active {
+      color: $light-gray2;
+    }
+
   }
 }
 
 //Rendering styles for task content
-.content {
+.note-header {
   display: inline-block;
-  line-height: 20px;
+  line-height: 17px;
 }
 
 //Rendering styles for checkbox
@@ -120,29 +176,38 @@ body {
   margin-right: 15px;
   margin-left: 15px;
   vertical-align: super;
+  visibility: hidden;
 }
 
 //Rendering styles for time block
 .time-info {
   float: right;
+  line-height: 4px;
 }
 
 //Rendering styles for checkbox icon
-.checkbox-icon {
-  background-image: url("../img/inputCheckBox0@2x.png");
+.checkbox {
   background-repeat: no-repeat;
   background-size: 50%;
-  width: 39px;
-  height: 39px;
+  width: 35px;
+  height: 35px;
   position: absolute;
-  display: inline-table;
+  display: inline-block;
   margin-left: 13px;
-  margin-top: 13px;
+  margin-top: 9px;
+
+  &_default {
+    background-image: url("../img/inputCheckBox0@2x.png");
+  }
+
+  &_active {
+    background-image: url("../img/inputCheckBox1@2x.png");
+  }
 }
 
 //Rendering styles for row with date icons and content
-.datepicker {
-  font-size: 12px;
+.additional-info {
+  font-size: 9px;
   color: $light-gray;
   font-family: 'encode_sans_widesemibold', sans-serif;
 
@@ -164,17 +229,36 @@ body {
     display: inline-block;
     width: 15px;
     height: 15px;
-    vertical-align: sub;
+    vertical-align: middle;
+    margin-right: 10px;
+    text-align: inherit;
   }
 
   &__timer {
     background-image: url("../img/timer.png");
     background-repeat: no-repeat;
     background-size: 100%;
-    display: inline-block;
+    display: inline-table;
     width: 15px;
     height: 15px;
     vertical-align: middle;
   }
 }
 
+//Render styles for circle icons
+.circle {
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  position: relative;
+  display: inline-block;
+  vertical-align: baseline;
+
+  &_orange {
+    background-color: $orange;
+  }
+
+  &_green {
+    background-color: $green;
+  }
+}
