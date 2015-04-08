@@ -1,3 +1,11 @@
+//Block of variables
+$white: white;
+$very-light-gray: #E7E7E7;
+$light-gray: #a3a3a3;
+$gray: #464F57;
+$blue: #3799D7;
+$dark-blue: #00008B;
+
 //Rendering cross-browser font
 @font-face {
   font-family: 'encode_sans_wideregular';
@@ -35,18 +43,18 @@ body {
 //Rendering styles for header menu stripe
 .header {
   top: 0;
-  background-color: #3799D7;
+  background-color: $blue;
   width: auto;
   font-size: 17px;
-  color: white;
+  color: $white;
   line-height: 55px;
   text-align: center;
   font-family: 'encode_sans_widesemibold', sans-serif;
 
   &__menu {
     float: left;
-    border-bottom: 4px solid white;
-    border-top: 4px solid white;
+    border-bottom: 4px solid $white;
+    border-top: 4px solid $white;
     width: 27px;
     height: 19px;
     margin: 14px 0px 0px 12px ;
@@ -55,14 +63,14 @@ body {
       content: "";
       position: relative;
       top: 7px;
-      border-top: 4px solid white;
+      border-top: 4px solid $white;
       width: 27px;
       display: flex;
     }
   }
 
   &__add {
-    background-color: #00008B;
+    background-color: $dark-blue;
     height: 55px;
     width: 55px;
     float: right;
@@ -72,63 +80,70 @@ body {
   }
 }
 
+//Rendering styles for editor icon
+.editor-icon {
+  background-image: url("../img/edit.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 17px;
+  height: 17px;
+  display: inline-block;
+  vertical-align: sub;
+}
+
 //Rendering styles for list of tasks
-.project {
+.project-list {
+  background: $very-light-gray;
+  padding: 0px;
+  margin: 0px;
 
-  &-list {
-    background: #E7E7E7;
-    padding: 0px;
-    margin: 0px;
-
-    &-item {
-      background: white;
-      font-size: 17px;
-      margin-left: 0px;
-      color: #464F57;
-      padding-bottom: 35px;
-      clear: both;
-      padding-top: 25px;
-      border-bottom: 1px solid #E7E7E7;
-
-      &-content {
-        float: left;
-
-        &__checkbox-control {
-          margin-right: 15px;
-          margin-left: 15px;
-          vertical-align: super;
-        }
-
-        &-row {
-          display: inline-block;
-          line-height: 20px;
-
-          &__checkbox-icon {
-            background-image: url("../img/inputCheckBox0@2x.png");
-            background-repeat: no-repeat;
-            background-size: 50%;
-            width: 39px;
-            height: 39px;
-            position: absolute;
-            margin-left: -36px;
-            margin-top: 12px;
-
-          }
-        }
-      }
-
-      &-watch {
-        float: right;
-        margin-top: 5px;
-      }
-    }
+  &__item {
+    background: $white;
+    font-size: 17px;
+    margin-left: 0px;
+    color: $gray;
+    padding-bottom: 35px;
+    clear: both;
+    padding-top: 25px;
+    border-bottom: 1px solid $very-light-gray;
   }
+}
+
+//Rendering styles for task content
+.content {
+  display: inline-block;
+  line-height: 20px;
+}
+
+//Rendering styles for checkbox
+.checkbox-control {
+  margin-right: 15px;
+  margin-left: 15px;
+  vertical-align: super;
+}
+
+//Rendering styles for time block
+.time-info {
+  float: right;
+}
+
+//Rendering styles for checkbox icon
+.checkbox-icon {
+  background-image: url("../img/inputCheckBox0@2x.png");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  width: 39px;
+  height: 39px;
+  position: absolute;
+  display: inline-table;
+  margin-left: 13px;
+  margin-top: 13px;
 }
 
 //Rendering styles for row with date icons and content
 .datepicker {
   font-size: 12px;
-  color: #a3a3a3;
+  color: $light-gray;
   font-family: 'encode_sans_widesemibold', sans-serif;
 
   &__calendar {
@@ -162,20 +177,4 @@ body {
     vertical-align: middle;
   }
 }
-
-//Rendering styles for editor icon
-.editor-icon {
-  background-image: url("../img/edit.png");
-  background-repeat: no-repeat;
-  background-size: 100%;
-  width: 17px;
-  height: 17px;
-  display: inline-block;
-  vertical-align: sub;
-}
-
-
-
-
-
 
