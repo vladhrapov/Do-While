@@ -52,6 +52,41 @@
 			background: url(../img/ic_today.png) left center no-repeat transparent;
 		}
 
+		&__project {
+			display: inline-block;
+			position: relative;
+			padding-left: 8px + 4px;
+
+			color: $gray3;
+			font-family: "EncodeSansWide_semibold", Arial, sans-serif;
+			text-transform: uppercase;
+			font-size: 9px;
+			line-height: 17px;
+
+			&:before {
+				content: "";
+				position: absolute;
+				top: 25%;
+				left: 0;
+				width: 8px;
+				height: 8px;
+				border-radius: 8px;
+				background-color: $gray3;
+				vertical-align: middle;
+
+				.task-item_project-1 & {
+					background-color: $project-color1;
+				}
+
+				.task-item_project-2 & {
+					background-color: $project-color2;
+				}
+				.task-item_project-6 & {
+					background-color: $project-color6;
+				}
+			}
+		}
+
 		&__alarm {
 			color: $gray3;
 			font-family: "EncodeSansWide_semibold", Arial, sans-serif;
@@ -71,56 +106,24 @@
 			padding-left: 12px;
 			background: url(../img/ic_access_time.png) left center no-repeat;
 		}
-	}
 
-	&-content {
-		width: 202px;
-		height: $height-tasks;
-
-		float: left;
-
-		display: table;
-
-		&-wrapper {
-			display: table-cell;
-			vertical-align: middle;
-			
-			
-			&-project {
-				line-height: 9px;
-
-				&__indicator {
-					display: inline-block;
-					width: 8px;
-					height: 8px;
-					border-radius: 8px;
-					background-color: $gray3;
-					vertical-align: middle;
-				}
-
-				&__name {
-					display: inline-block;
-
-					color: $gray3;
-					font-family: "EncodeSansWide_semibold", Arial, sans-serif;
-					text-transform: uppercase;
-					font-size: 9px;
-					line-height: 17px;
-				}
-			}
+		&-content {
+			width: 202px;
+			height: $height-tasks;
+			float: left;
+			display: table;
 		}
-	}
 
-	&-time {
-		width: 78px;
-		height: $height-tasks;
-		font-size: 9px;
+		&-time {
+			width: 78px;
+			height: $height-tasks;
+			font-size: 9px;
+			display: table;
 
-		display: table;
-
-		padding-left: 12px;
-		padding-right: 12px;
-		float: left;
+			padding-left: 12px;
+			padding-right: 12px;
+			float: left;
+		}
 
 		&-wrapper {
 			display: table-cell;
@@ -128,15 +131,10 @@
 		}
 	}
 }
-.project-1 {
+/* .project-1 {
 	background-color: $project-color1;
-}
-.project-2 {
-	background-color: $project-color2;
-}
-.project-6 {
-	background-color: $project-color6;
-}
+} */
+
 .clearfix:after,
 .clearfix:before {
 	content: "";
