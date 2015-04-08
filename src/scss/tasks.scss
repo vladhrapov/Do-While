@@ -1,4 +1,4 @@
-.task {
+.tasks {
 
 	&__header {
 		text-align: center;
@@ -74,14 +74,14 @@
 				background-color: $gray3;
 				vertical-align: middle;
 
-				.task-item_project-1 & {
+				.tasks-item_project-1 & {
 					background-color: $project-color1;
 				}
 
-				.task-item_project-2 & {
+				.tasks-item_project-2 & {
 					background-color: $project-color2;
 				}
-				.task-item_project-6 & {
+				.tasks-item_project-6 & {
 					background-color: $project-color6;
 				}
 			}
