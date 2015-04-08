@@ -1,4 +1,5 @@
-.tasks {
+.task {
+
 	&__header {
 		text-align: center;
 		text-transform: uppercase;
@@ -8,7 +9,8 @@
 		color: white;
 		background-color: $bg-tasks-header;
 	}
-	&-task {
+
+	&-item {
 		width: $width;
 		height: $height-tasks;
 		overflow: hidden;
@@ -25,93 +27,104 @@
 
 			margin-right: 12px;
 			float: left;
+
 			&:hover {
 				background-image: url(../img/inputCheckBox1.png);
 			}
 		}
-		&-content {
-			width: 202px;
-			height: $height-tasks;
 
-			float: left;
+		&__name {
+			color: $gray4;
+			font-family: "EncodeSansWide_reg", Arial, sans-serif;
+			font-size: 15px;
+			line-height: 23px;
+		}
 
-			display: table;
+		&__date {
+			color: $gray3;
+			font-family: "EncodeSansWide_semibold", Arial, sans-serif;
+			font-size: 9px;
+			text-transform: uppercase;
+			line-height: 17px;
 
-			&-wrapper {
-				display: table-cell;
-				vertical-align: middle;
-				&__name {
-					color: $gray4;
-					font-family: "EncodeSansWide_reg", Arial, sans-serif;
-					font-size: 15px;
-					line-height: 23px;
+			padding-left: 13px;
+			vertical-align: middle;
+			background: url(../img/ic_today.png) left center no-repeat transparent;
+		}
+
+		&__alarm {
+			color: $gray3;
+			font-family: "EncodeSansWide_semibold", Arial, sans-serif;
+			font-size: 9px;
+			line-height: 17px;
+
+			padding-left: 12px;
+			background: url(../img/ic_notifications_none.png) left center no-repeat;
+		}
+
+		&__measurement {
+			color: $gray3;
+			font-family: "EncodeSansWide_semibold", Arial, sans-serif;
+			font-size: 9px;
+			line-height: 17px;
+
+			padding-left: 12px;
+			background: url(../img/ic_access_time.png) left center no-repeat;
+		}
+	}
+
+	&-content {
+		width: 202px;
+		height: $height-tasks;
+
+		float: left;
+
+		display: table;
+
+		&-wrapper {
+			display: table-cell;
+			vertical-align: middle;
+			
+			
+			&-project {
+				line-height: 9px;
+
+				&__indicator {
+					display: inline-block;
+					width: 8px;
+					height: 8px;
+					border-radius: 8px;
+					background-color: $gray3;
+					vertical-align: middle;
 				}
-				&__date {
+
+				&__name {
+					display: inline-block;
+
 					color: $gray3;
 					font-family: "EncodeSansWide_semibold", Arial, sans-serif;
-					font-size: 9px;
 					text-transform: uppercase;
+					font-size: 9px;
 					line-height: 17px;
-
-					padding-left: 13px;
-					vertical-align: middle;
-					background: url(../img/ic_today.png) left center no-repeat transparent;
-				}
-				&-project {
-					line-height: 9px;
-					&__indicator {
-						display: inline-block;
-						width: 8px;
-						height: 8px;
-						border-radius: 8px;
-						background-color: $gray3;
-						vertical-align: middle;
-					}
-					&__name {
-						display: inline-block;
-
-						color: $gray3;
-						font-family: "EncodeSansWide_semibold", Arial, sans-serif;
-						text-transform: uppercase;
-						font-size: 9px;
-						line-height: 17px;
-					}
 				}
 			}
 		}
-		&-time {
-			width: 78px;
-			height: $height-tasks;
-			font-size: 9px;
+	}
 
-			display: table;
+	&-time {
+		width: 78px;
+		height: $height-tasks;
+		font-size: 9px;
 
-			padding-left: 12px;
-			padding-right: 12px;
-			float: left;
-			&-wrapper {
-				display: table-cell;
-				vertical-align: middle;
+		display: table;
 
-				&__alarm {
-					color: $gray3;
-					font-family: "EncodeSansWide_semibold", Arial, sans-serif;
-					font-size: 9px;
-					line-height: 17px;
+		padding-left: 12px;
+		padding-right: 12px;
+		float: left;
 
-					padding-left: 12px;
-					background: url(../img/ic_notifications_none.png) left center no-repeat;
-				}
-				&__measurement {
-					color: $gray3;
-					font-family: "EncodeSansWide_semibold", Arial, sans-serif;
-					font-size: 9px;
-					line-height: 17px;
-
-					padding-left: 12px;
-					background: url(../img/ic_access_time.png) left center no-repeat;
-				}
-			}
+		&-wrapper {
+			display: table-cell;
+			vertical-align: middle;
 		}
 	}
 }
