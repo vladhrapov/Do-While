@@ -88,5 +88,32 @@
     &_project-3 {
       background: $project-color3;
     }
+
+  }
+  &-subnavigation {
+    list-style: none;
+    background-color: #f00;
+    height: 44px;
+    // color: $gray4;
+    &-item {
+      width: 40px;
+      margin-right: 5px;
+      float: left;
+      background-color: #0f0;
+      &:first-child {
+        margin-left: 5px;
+      }
+      &:hover {
+        border-bottom: 4px solid #00f;
+      }
+      &__dayNumber {
+        display: block;
+        text-align: center;
+      }
+      &__dayName {
+        display: block;
+        text-align: center;
+      }
+    }
   }
 }
