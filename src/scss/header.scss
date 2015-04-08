@@ -3,6 +3,7 @@
   height: 44px;
   outline: none;
   border: none;
+  cursor: pointer;
 
   position: absolute;
   z-index: 5;
@@ -59,7 +60,7 @@
     padding-right: 44px + 12px;
     //float: left;
 
-    color: $gray3;
+    color: $color-text-light;
     font-family: "EncodeSansWide_semibold";
     font-size: 14px;
 
@@ -99,34 +100,57 @@
     }
   }
 
-  &-subnavigation {
+  &-subnav {
     list-style: none;
-    background-color: #f00;
+    //background-color: #f00;
     height: 44px;
     // color: $gray4;
 
     &-item {
       width: 40px;
+      height: 100%;
       margin-right: 5px;
+      cursor: pointer;
       float: left;
-      background-color: #0f0;
+      //background-color: #0f0;
 
       &:first-child {
         margin-left: 5px;
       }
 
       &:hover {
-        border-bottom: 4px solid #00f;
+        border-bottom: 4px solid $project-color3;
+
+        .header-subnav-item__dayNumber & {
+          color: $txt-header-on-hover;
+        }
+
+        .header-subnav-item__dayName & {
+          color: $txt-header-on-hover;
+        }
       }
 
       &__dayNumber {
         display: block;
+
         text-align: center;
+        text-transform: uppercase;
+        font-size: 15px;
+        line-height: 15px + 8px;
+        margin-top: 2px;
+        font-family: "EncodeSansWide_reg", Arial, sans-serif;
+        color: $color-text-dark;
       }
 
       &__dayName {
         display: block;
+
         text-align: center;
+        text-transform: uppercase;
+        font-size: 7px;
+        line-height: 7px + 8px;
+        font-family: "EncodeSansWide_bold", Arial, sans-serif;
+        color: $color-text-light;
       }
     }
   }
