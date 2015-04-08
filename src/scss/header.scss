@@ -1,15 +1,17 @@
 .header {
   width: $width;
+
   &-nav {
-    display: table;
-
+    //display: table;
     height: $height-header;
+    text-align: center;
     background: $gray0;
+    //overflow: hidden;
+    position: relative;
 
-
-    overflow: hidden;
     &__options {
       width: 44px;
+      height: 44px;
       outline: none;
       border: none;
 
@@ -18,98 +20,117 @@
       // display: table-cell;
       // vertical-align: middle;
 
-      text-align: center;
-      line-height: $height-header;
-      padding: 0 12px;
-      float: left;
+      //text-align: center;
+      // line-height: $height-header;
+      // padding: 0 12px;
+      //float: left;
+      position: absolute;
+      left: 0;
+      z-index: 5;
+
       &:hover {
         background-color: $gray2;
       }
 
-      &_project-3:hover {
+      .header-nav_project-3 &:hover {
         background-color: $project-color3-hover;
       }
     }
-    &-title {
-      width: 232px;
 
-      display: table;
-      // vertical-align: middle;
+    &__title {
+      //width: 232px;
+      width: 320px;
+      position: relative;
 
-      text-align: center;
+      //display: table;
+
+      // display: inline-block;
+      // margin: 0 auto;
+      vertical-align: middle;
+
+      //text-align: center;
       text-transform: uppercase;
       line-height: $height-header;
-      padding: 0 12px;
-      float: left;
-      &__text {
-        position: relative;
-        // line-height: $height-header;
+      padding-left: 44px + 12px;
+      padding-right: 44px + 12px;
+      //float: left;
 
-        display: table-cell;
-        vertical-align: middle;
+      color: $gray3;
+      font-family: "EncodeSansWide_semibold";
+      font-size: 14px;
 
-        color: $gray3;
-        font-family: "EncodeSansWide_semibold";
-        font-size: 14px;
-        &_projects {
-          color: white;
-          &:after {
-            content: "a";
-            color: transparent;
-            position: absolute;
-            top: 25%;
-            width: 15px;
-            height: 15px;
-            margin-left: 6px;
-            margin-top: 2px;
-            background: url(../img/pen.jpg) left center no-repeat;
-          }
+      .header-nav_project-3 & {
+        color: white;
+
+        &:after {
+          content: "a";
+          color: transparent;
+          position: absolute;
+          top: 0;
+          width: 15px;
+          height: 15px;
+          margin-left: 6px;
+          //margin-top: 2px;
+          background: url(../img/pen.jpg) left center no-repeat;
         }
       }
     }
+
     &__add {
       width: 44px;
+      height: 44px;
       outline: none;
       border: none;
 
       background: url(../img/iconPlus.png) center center no-repeat transparent;
 
-      text-align: center;
-      line-height: 44px;
-      padding: 0 12px;
-      float: left;
+      //text-align: center;
+      //line-height: 44px;
+      /* padding: 0 12px; */
+      //float: right;
+      position: absolute;
+      right: 0;
+      z-index: 5;
+
       &:hover {
         background-color: $gray2;
       }
-      &_project-3:hover {
+
+      .header-nav_project-3 &:hover {
         background-color: $project-color3-hover;
       }
     }
+
     &_project-3 {
       background: $project-color3;
     }
-
   }
+
   &-subnavigation {
     list-style: none;
     background-color: #f00;
     height: 44px;
     // color: $gray4;
+
     &-item {
       width: 40px;
       margin-right: 5px;
       float: left;
       background-color: #0f0;
+
       &:first-child {
         margin-left: 5px;
       }
+
       &:hover {
         border-bottom: 4px solid #00f;
       }
+
       &__dayNumber {
         display: block;
         text-align: center;
       }
+
       &__dayName {
         display: block;
         text-align: center;
