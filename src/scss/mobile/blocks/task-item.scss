@@ -5,6 +5,7 @@
 
 .task-item {
   display: table;
+  line-height: normal;
 
   &__checkbox {
     @extend %i-task-item-col;
