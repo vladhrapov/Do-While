@@ -3,14 +3,15 @@
   width: 100%;
 
   height: $list-item-height;
+  line-height: $list-item-height;
   color: $gray-scale-5;
   background-color: $gray-scale-0;
   border-bottom: 1px solid $gray-scale-2;
 
   @include font-regular(15px);
-  text-transform: capitalize;
 
   &_small {
     height: $list-item_small-height;
+    line-height: $list-item_small-height;
   }
 }
