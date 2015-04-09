@@ -9,6 +9,9 @@ $color-text-light: #b9c1ca;
 $color-text-dark: #58626a;
 $bg-tasks-header: #abb4be;
 $bg-item-hover: #d5d9de;
+$bg-item-hover-opasity: rgba(213,217,222,.5);
+
+
 
 $project-color1: #1abc9c;  // project education
 $project-color2: #e74c3c;  // project home
@@ -18,6 +21,10 @@ $project-color3-hover: #2980b9;  // project work-hover
 $project-color4: #f0c33c;  // project kids
 $project-color5: #e77a35;  // project study
 $project-color6: #9e54b2;  // project health
+
+$bg-btn-edit: $project-color1;
+$bg-btn-start: $project-color3;
+
 
 @font-face {
   font-family: 'EncodeSansWide_reg';
