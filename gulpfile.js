@@ -122,7 +122,7 @@ gulp.task('build:img:icons', ['clean:img:icons'], function () {
         }));
 
     spriteData.img.pipe(gulp.dest(paths.dist.img._root));
-    spriteData.css.pipe(gulp.dest(paths.src.scss.core));
+    spriteData.css.pipe(gulp.dest(paths.src.scss.core + '/icons'));
 });
 
 gulp.task('clean:img:icons', function (onDone) {

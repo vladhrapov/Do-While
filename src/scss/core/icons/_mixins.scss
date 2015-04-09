@@ -1,0 +1,13 @@
+@mixin before-icon($icon-group) {
+  position: relative;
+  $icon: nth($icon-group, 2);
+  $icon-width: nth($icon, 5);
+  &:before {
+    content: "";
+    position: absolute;
+    left: -$icon-width - 3px;
+    top: 0;
+    @extend .icon;
+    @include retina-sprite($icon-group);
+  }
+}
