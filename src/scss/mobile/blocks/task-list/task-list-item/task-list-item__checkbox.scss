@@ -1,9 +1,0 @@
-.task-list-item__checkbox {
-  display: inline-block;
-  vertical-align: middle;
-  @include retina-sprite($icon-check-box-group);
-
-  &_checked {
-    @include retina-sprite($icon-check-box-checked-group);
-  }
-}

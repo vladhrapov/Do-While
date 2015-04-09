@@ -1,12 +1,22 @@
 $task-list-item-height: 55px;
 
-.task-list-item {
+.task-item {
   @extend %clearfix;
 
   height: $task-list-item-height;
   color: $gray-scale-5;
   background-color: $gray-scale-0;
   border-bottom: 1px solid $gray-scale-3;
+
+  &__checkbox {
+    display: inline-block;
+    vertical-align: middle;
+    @include retina-sprite($icon-check-box-group);
+
+    &_checked {
+      @include retina-sprite($icon-check-box-checked-group);
+    }
+  }
 
   &__left {
     @include i-v-box-container($task-list-item-height);
@@ -53,5 +63,3 @@ $task-list-item-height: 55px;
     }
   }
 }
-
-@import "task-list-item__checkbox";
