@@ -1,7 +1,13 @@
 $task-list-item-height: 55px;
 
+%i-task-item-col {
+  display: table-cell;
+  vertical-align: middle;
+}
+
 .task-item {
-  @extend %clearfix;
+  display: table;
+  width: 100%;
 
   height: $task-list-item-height;
   color: $gray-scale-5;
@@ -9,6 +15,62 @@ $task-list-item-height: 55px;
   border-bottom: 1px solid $gray-scale-3;
 
   &__checkbox {
+    @extend %i-task-item-col;
+    text-align: center;
+    width: $header-size - 5px;
+  }
+
+  //region info section
+
+  &__info {
+    @extend %i-task-item-col;
+    text-align: left;
+    padding-top: 2px;
+  }
+
+  &__name {
+    @include font-regular(15px);
+    display: block;
+  }
+
+  //endregion
+
+  //region notification area
+
+  &__notification {
+    @extend %i-task-item-col;
+    width: 7.4ch;
+    text-align: left;
+  }
+
+  //endregion
+
+  &__label {
+    @include font-semi-bold(9px);
+
+    display: block;
+    color: $gray-scale-3;
+    text-transform: uppercase;
+
+    &_project, &_date, &_access-time {
+      margin-top: 4px;
+    }
+
+    &_date {
+      @include before-icon($icon-today-group);
+    }
+
+    &_notification {
+      @include before-icon($icon-notifications-none-group);
+    }
+
+    &_access-time {
+      @include before-icon($icon-access-time-group);
+    }
+  }
+}
+
+/*&__checkbox {
     display: inline-block;
     vertical-align: middle;
     @include retina-sprite($icon-check-box-group);
@@ -16,50 +78,4 @@ $task-list-item-height: 55px;
     &_checked {
       @include retina-sprite($icon-check-box-checked-group);
     }
-  }
-
-  &__left {
-    @include i-v-box-container($task-list-item-height);
-    float: left;
-    width: $header-size - 5px;
-  }
-
-  &__center {
-    @include i-v-box-container($task-list-item-height);
-    float: left;
-    text-align: left;
-    padding-top: 2px;
-  }
-
-  &__right {
-    @include i-v-box-container($task-list-item-height);
-    float: right;
-    text-align: left;
-    padding-right: 18px;
-  }
-
-  &__title {
-    @include font-regular(15px);
-    display: block;
-  }
-
-  &__label {
-    @include font-semi-bold(9px);
-    display: block;
-    color: $gray-scale-3;
-    text-transform: uppercase;
-
-    &_group {
-      margin-left: 0;
-      margin-top: 4px;
-    }
-
-    &_notification {
-
-    }
-
-    &_access-time {
-      margin-top: 4px;
-    }
-  }
-}
+  }*/
