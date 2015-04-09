@@ -1,11 +1,20 @@
+.clearfix:after,
+.clearfix:before {
+	content: "";
+	display: block;
+	visibility: hidden;
+	clear: both;
+	height: 0;
+}
+
 .tasks {
 
 	&__header {
+		@extend %encodeSans-semibold;
+
 		text-align: center;
 		text-transform: uppercase;
-		font-size: 9px;
 		line-height: 9px + 13px;
-		font-family: "EncodeSansWide_semibold", Arial, sans-serif;
 		color: white;
 		background-color: $bg-tasks-header;
 	}
@@ -21,10 +30,10 @@
 		&__checkbox {
 			line-height: $height-tasks;
 			margin-left: 12px;
+			margin-right: 12px;
 			width: 16px;
 			background: url(../img/inputCheckBox0.png) center center no-repeat transparent;
 
-			margin-right: 12px;
 			float: left;
 			cursor: pointer;
 
@@ -34,22 +43,18 @@
 		}
 
 		&__name {
+			@extend %encodeSans-reg;
+
 			width: $width - 40px - 78px;
-			color: $color-text-dark;
-			font-family: "EncodeSansWide_reg", Arial, sans-serif;
-			font-size: 15px;
 			text-overflow: ellipsis;
 			white-space: nowrap;
 			overflow: hidden;
-			line-height: 15px + 8px;
 		}
 
 		&__date {
-			color: $color-text-light;
-			font-family: "EncodeSansWide_semibold", Arial, sans-serif;
-			font-size: 9px;
+			@extend %encodeSans-semibold;
+
 			text-transform: uppercase;
-			line-height: 9px + 8px;
 
 			padding-left: 13px;
 			vertical-align: middle;
@@ -57,6 +62,8 @@
 		}
 
 		&__project {
+			@extend %encodeSans-semibold;
+
 			display: inline-block;
 			position: relative;
 			padding-left: 8px + 4px;
@@ -66,11 +73,7 @@
 			white-space: nowrap;
 			overflow: hidden;
 
-			color: $color-text-light;
-			font-family: "EncodeSansWide_semibold", Arial, sans-serif;
 			text-transform: uppercase;
-			font-size: 9px;
-			line-height: 9px + 8px;
 
 			&:before {
 				content: "";
@@ -96,23 +99,20 @@
 			}
 		}
 
-		&__alarm {
-			color: $color-text-light;
-			font-family: "EncodeSansWide_semibold", Arial, sans-serif;
-			font-size: 9px;
-			line-height: 9px + 8px;
-
+		&__alarm,
+		&__measurement {
 			padding-left: 12px;
+		}
+
+		&__alarm {
+			@extend %encodeSans-semibold;
+
 			background: url(../img/ic_notifications_none.png) left center no-repeat transparent;
 		}
 
 		&__measurement {
-			color: $color-text-light;
-			font-family: "EncodeSansWide_semibold", Arial, sans-serif;
-			font-size: 9px;
-			line-height: 9px + 8px;
+			@extend %encodeSans-semibold;
 
-			padding-left: 12px;
 			background: url(../img/ic_access_time.png) left center no-repeat transparent;
 		}
 
@@ -131,11 +131,10 @@
 		}
 
 		&__button {
+			@extend %button;
+
 			width: 73px;
 			height: 100%;
-			outline: none;
-			border: none;
-			cursor: pointer;
 
 			float: right;
 
@@ -145,76 +144,60 @@
 			&_start {
 				background-color: $project-color3;
 			}
-			
+
 			&_edit {
 				background-color: $bg-btn-edit;
 			}
 		}
 
-		&__start {
+		&__start,
+		&__edit {
+			@extend %encodeSans-bold;
+
 			position: relative;
 			display: inline-block;
 			padding-top: 18px;
 
-			line-height: 9px + 14px;
 			text-transform: uppercase;
-			font-family: "EncodeSansWide_bold", Arial, sans-serif;
-			font-size: 9px;
-			color: #fff;
-
-			&:before {
-				content: "";
-				position: absolute;
-				left: 25%;
-				top: 0;
-			
-				width: 18px;
-				height: 18px;
-				background: url(../img/Triangle_3.png) center top no-repeat;
-			}
 		}
 
-		&__edit {
-			position: relative;
-			display: inline-block;
-			padding-top: 18px;
+		&__start:before,
+		&__edit:before {
+			content: "";
+			position: absolute;
+			top: 0;
 
-			line-height: 9px + 14px;
-			text-transform: uppercase;
-			font-family: "EncodeSansWide_bold", Arial, sans-serif;
-			font-size: 9px;
-			color: #fff;
+			width: 18px;
+			height: 18px;
+		}
 
-			&:before {
-				content: "";
-				position: absolute;
-				left: 10%;
-				top: 0;
-			
-				width: 18px;
-				height: 18px;
+		&__start:before {
+				left: 25%;
+
 				background: url(../img/Triangle_3.png) center top no-repeat;
-			}
+		}
+
+		&__edit:before {
+				left: 10%;
+
+				background: url(../img/ic_create@2x.png) center top no-repeat;
+		}
+
+		&-content,
+		&-time {
+			height: $height-tasks;
+			float: left;
+			display: table;
 		}
 
 		&-content {
 			width: 202px;
-			height: $height-tasks;
-			float: left;
-			display: table;
-			//position: relative;
 		}
 
 		&-time {
 			width: 78px;
-			height: $height-tasks;
-			font-size: 9px;
-			display: table;
-			//position: relative;
-
 			padding-left: 12px;
 			padding-right: 12px;
-			float: left;
 		}
 
 		&-wrapper {
@@ -227,15 +210,7 @@
 		} */
 	}
 }
+
 /* .project-1 {
 	background-color: $project-color1;
 } */
-
-.clearfix:after,
-.clearfix:before {
-	content: "";
-	display: block;
-	visibility: hidden;
-	clear: both;
-	height: 0;
-}

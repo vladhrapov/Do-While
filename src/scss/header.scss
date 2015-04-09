@@ -1,19 +1,29 @@
-.button {
-  width: 44px;
-  height: 44px;
+%button {
   outline: none;
   border: none;
   cursor: pointer;
-
-  position: absolute;
-  z-index: 5;
-
-  &:hover {
-    background-color: rgba(170, 180, 190, 0.5);
-  }
+}
+%encodeSans-reg {
+  font-family: "EncodeSansWide_reg", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 15px + 8px;
+  color: $color-text-dark;
+}
+%encodeSans-semibold {
+  font-family: "EncodeSansWide_semibold", Arial, sans-serif;
+  font-size: 9px;
+  line-height: 9px + 8px;
+  color: $color-text-light;
+}
+%encodeSans-bold {
+  font-family: "EncodeSansWide_bold", Arial, sans-serif;
+  font-size: 9px;
+  line-height: 9px + 14px;
+  color: #ffffff;
 }
 .header {
   width: $width;
+  overflow: hidden;
 
   &__button {
 
@@ -21,8 +31,20 @@
       background-color: $gray2;
     } */
 
+    &_menu,
+    &_add {
+      width: 44px;
+      height: 44px;
+      position: absolute;
+      z-index: 5;
+
+      &:hover {
+        background-color: rgba(170, 180, 190, 0.5);
+      }
+    }
+
     &_menu {
-      @extend .button;
+      @extend %button;
       background: url(../img/iconHamburger.png) center center no-repeat transparent;
       left: 0;
 
@@ -32,7 +54,7 @@
     }
 
     &_add {
-      @extend .button;
+      @extend %button;
       background: url(../img/iconPlus.png) center center no-repeat transparent;
       right: 0;
 
@@ -43,6 +65,8 @@
   }
 
   &__title {
+    @extend %encodeSans-semibold;
+
     //width: 232px;
     width: 315px;
     position: relative;
@@ -51,22 +75,17 @@
     white-space: nowrap;
     overflow: hidden;
 
-    //display: table;
-
+    // I need to turn on it when text in there container very large;
+    // else should to turn it off;
     display: inline-block;
-    // margin: 0 auto;
     vertical-align: middle;
 
     //text-align: center;
     text-transform: uppercase;
+    font-size: 14px;
     line-height: $height-header;
     padding-left: 44px + 12px;
     padding-right: 44px + 12px;
-    //float: left;
-
-    color: $color-text-light;
-    font-family: "EncodeSansWide_semibold";
-    font-size: 14px;
 
     .header-nav_project-3 & {
       color: white;
@@ -75,12 +94,12 @@
         content: "a";
         color: transparent;
         position: absolute;
-        top: 0;
+        top: 30%;
         width: 15px;
         height: 15px;
         margin-left: 6px;
         //margin-top: 2px;
-        background: url(../img/pen.jpg) left center no-repeat;
+        background: url(../img/ic_create.png) left center no-repeat;
       }
     }
   }
@@ -106,7 +125,6 @@
 
   &-subnav {
     list-style: none;
-    //background-color: #f00;
     height: 44px;
     // color: $gray4;
 
@@ -116,22 +134,22 @@
       margin-right: 5px;
       cursor: pointer;
       float: left;
-      //background-color: #0f0;
 
       &:first-child {
         margin-left: 5px;
       }
 
-      &__dayNumber {
+      &__dayNumber,
+      &__dayName {
         display: block;
-
         text-align: center;
         text-transform: uppercase;
-        font-size: 15px;
-        line-height: 15px + 8px;
+      }
+
+      &__dayNumber {
+
+        @extend %encodeSans-reg;
         margin-top: 2px;
-        font-family: "EncodeSansWide_reg", Arial, sans-serif;
-        color: $color-text-dark;
 
         .header-subnav-item:hover & {
           color: $txt-header-on-hover;
@@ -139,13 +157,10 @@
       }
 
       &__dayName {
-        display: block;
+        @extend %encodeSans-bold;
 
-        text-align: center;
-        text-transform: uppercase;
         font-size: 7px;
         line-height: 7px + 8px;
-        font-family: "EncodeSansWide_bold", Arial, sans-serif;
         color: $color-text-light;
 
         .header-subnav-item:hover & {
