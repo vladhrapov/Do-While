@@ -11,12 +11,14 @@
             @@title
         </span>
 
+        @@if (info_label) {
         <span class="task-item__label task-item__label_@@info_label_mod">
             @@if (project_color) {
             <i class="badge badge_circle @@project_color"> </i>
             }
             @@info_label
         </span>
+        }
     </div>
 
     <div class="task-item__notification">
