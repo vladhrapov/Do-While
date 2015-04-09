@@ -1,0 +1,28 @@
+.list {
+    &--checkbox {
+
+    }
+    &--item {
+        &--task {
+            &__title {
+
+            }
+            &__category {
+                &_by-date {
+
+                }
+                &_by-project {
+
+                }
+            }
+        }
+        &--time {
+            &__due {
+
+            }
+            &__estimation {
+                
+            }
+        }
+    }
+}

@@ -1,0 +1,82 @@
+.button {
+    &-nav {
+        width: 20px;
+        position: relative;
+        border-style: solid;
+        border-width: 4px 0px;
+        margin: 12px;
+        padding: 5px 0px;
+        background: transparent;
+        &::before {
+          content: "";
+          position: absolute;
+          top: -15px;
+          left: -12px;
+          width: 44px;
+          height: 44px;
+          z-index: -1;
+        }
+        &::after {
+          display: block;
+          content: "";
+          border-style: solid;
+          border-width: 2px 0;
+        }
+        &_blue {
+            border-color: $white-color;
+            &::before {
+                background-color: $blue-color;
+            }
+            &::after {
+                border-color: $white-color;
+            }
+        }
+    }
+    &-edit-project {
+        height:10px;
+        width: 10px;
+        margin: 0px 3px;
+        border: 0px;
+        padding: 0px;
+        background: transparent;
+        background-image: url("../img/edit-project-button.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    &-add {
+        position: relative;
+        width: 44px;
+        height: 44px;
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+        &::after{
+            content: "";
+            display: block;
+            width: 20px;
+            margin: auto;
+            border: 2px 0;
+            border-style: solid;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            top: 9px;
+            left: 19px;
+            display: block;
+            height: 20px;
+            width: 0px;
+            border: 0 2px;
+            border-style: solid;
+        }
+        &_blue {
+            background-color: $dark-blue-color;
+            &::after {
+                border-color: $white-color;
+            }
+            &::before {
+                border-color: $white-color;
+            }
+        }
+    }
+}

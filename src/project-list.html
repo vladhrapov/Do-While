@@ -6,33 +6,57 @@
     <link rel="stylesheet" href="css/styles.css"/>
 </head>
 <body>
-<header class="header">
-    <img class="logo" src="img/image.png" alt="html logo"/>
-    <h1 class="title">
-        Hello from Borys!
-    </h1>
-</header>
+
+<!-- BEM NAMING, EXAMPLE:
+        block-1-name--block-2-name__element_modificator -->
 
 <div class="do-while">
     <div class="navigation">
 
     </div>
     <div class="project-list">
-        <div class="top-line">
-            <div class="top-line__nav">
-                <button class="nav-batton nav-batton--mod-blue"></button>
-            </div>
-            <div class="top-line__title top-line__title--mod-blue">
-                <span class="title-row">Work</span>
-                <button class="edit-project-button"></button>
-            </div>
-            <div class="top-line__add">
-                <button class="add-button add-button--mod-blue"></button>
-            </div>
-        </div>
-        <div class="list-line">
 
+        <div class="head head_blue">
+            <div class="head--nav">
+                <div class="container">
+                    <button class="button-nav button-nav_blue"></button>
+                </div>
+            </div>
+            <div class="head--title">
+                <div class="container">
+                    <span class="head--title__text">Work</span>
+                    <button class="button-edit-project"></button>
+                </div>
+            </div>
+            <div class="head--add">
+                <div class="container">
+                    <button class="button-add button-add_blue"></button>
+                </div>
+            </div>
         </div>
+
+        <div class="list">
+            <div class="list--checkbox">
+                <div class="container">
+
+                </div>
+            </div>
+            <div class="list--item">
+                <div class="list--item--task">
+                    <div class="container">
+                        <p class="list--item--task__title">TITLE</p>
+                        <p class="list--item--task__category list--item--task__category_by-date">CATEGORY</p>
+                    </div>
+                </div>
+                <div class="list--item--time">
+                    <div class="container">
+                        <p class="list--item--time__due">DUE</p>
+                        <p class="list--item--time__estimation">ESTIMATION</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 </div>
 

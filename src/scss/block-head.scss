@@ -1,0 +1,34 @@
+.head {
+    height: 44px;
+    margin: 0 auto;
+    max-width: 320px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    &--nav {
+        float: left;
+        height: 100%;
+        width: 44px;
+    }
+    &--title {
+        clear: both;
+        display: inline-block;
+        box-sizing: border-box;
+        height: 100%;
+        &__text {
+            text-transform: uppercase;
+            font-family: EncodeSansWide-DemiBold;
+            font-size: 14px;
+        }
+    }
+    &--add {
+        float:right;
+        box-sizing: border-box;
+        height: 100%;
+        width: 44px;
+    }
+    &_blue {
+        background: $blue-color;
+        color: $white-color;
+    }
+}

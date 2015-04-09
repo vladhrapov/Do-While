@@ -1,37 +1,35 @@
+$blue-color: rgb(11,152,218);
+$dark-blue-color :rgb(0,126,188);
+$white-color: rgb(255,255,255);
+
 @import "reset",
-"top-line";
+"block-head",
+"block-list",
+"buttons";
 
 @font-face {
     font-family: EncodeSansWide-DemiBold;
     src: url(../fonts/EncodeSansWide-SemiBold.ttf);
 }
 
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+.do-while {
+
 }
 
-.header {
-  $padding: 10px;
-  $height: 100px;
-  $content-height: $height - $padding * 2;
+.navigation {
 
-  height: $height;
-  background: #f4f4f0;
-  padding: $padding;
-  width: 900px;
-  margin: 10px auto 10px auto;
+}
 
-  .logo {
-    width: $height;
-    height: $height;
-    float: left;
-  }
+.project-list {
 
-  .title {
-    color: #888;
-    display: block;
-    line-height: $content-height;
-    text-align: center;
-    transform: translate(-$height/2, 0);
-  }
+}
+
+.container {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    overflow: hidden;
 }
