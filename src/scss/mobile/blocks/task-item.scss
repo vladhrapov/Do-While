@@ -5,12 +5,6 @@
 
 .task-item {
   display: table;
-  width: 100%;
-
-  height: $task-list-item-height;
-  color: $gray-scale-5;
-  background-color: $gray-scale-0;
-  border-bottom: 1px solid $gray-scale-2;
 
   &__checkbox {
     @extend %i-task-item-col;
