@@ -1,17 +1,14 @@
 <header class="header color_@@color">
-    <button class="header__menu-button button color_@@color">
+    <button class="header__menu-button button">
         <i class="icon icon_hamburger @@if (color !== 'default') { icon_inverted }"></i>
     </button>
 
-    <span class="header__title">
-        ahdhsakdlsssssssssskashdlksahdlkhlkdsalkhslkhalhaksadhsl
-        @@if (title_icon === true) {
-        <i class="icon icon_create header-title__icon"></i>
-        }
+    <span class="header__title @@if(title_icon === true){header__title_project}">
+        @@title
     </span>
 
 
-    <button class="header__add-task-button button color_@@color">
+    <button class="header__add-task-button button">
         <i class="icon icon_plus @@if (color !== 'default') { icon_inverted }"></i>
     </button>
 </header>

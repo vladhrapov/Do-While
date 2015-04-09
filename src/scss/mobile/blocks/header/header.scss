@@ -1,9 +1,20 @@
 $header-text-color: $gray-scale-4;
 
+%header-button {
+  display: table-cell;
+  vertical-align: middle;
+  padding: 0;
+  width: $header-size;
+  max-width: $header-size;
+
+  background-color: transparent;
+  @include colorize-hover(rgba(70%, 80%, 90%, .5));
+}
+
 .header {
-  display: inline-table;
+  display: table;
   position: fixed;
-  top:0;
+  top: 0;
   left: 0;
   width: 100%;
   height: $header-size;
@@ -11,28 +22,36 @@ $header-text-color: $gray-scale-4;
   background-color: $gray-scale-1;
 
   &__menu-button {
-    display: table-cell;
-    width: $header-size;
-    max-width: $header-size;
+    @extend %header-button;
   }
 
   &__title {
     display: table-cell;
+    padding: 0;
     @include font-semi-bold(14px);
     text-transform: uppercase;
     text-overflow: ellipsis;
+    word-break: keep-all;
     overflow: hidden;
     text-align: center;
+    vertical-align: middle;
 
     max-width: $mobile-min-width - 2 * $header-size;
-    .icon {
-      vertical-align: baseline;
+
+    &_project {
+      &:after {
+        content: "";
+        vertical-align: baseline;
+        @extend .icon;
+        text-overflow: clip;
+        @include retina-sprite($icon-create-group);
+      }
     }
+
   }
 
   &__add-task-button {
-    display: table-cell;
-    width: $header-size;
+    @extend %header-button;
     float: right;
   }
 }
