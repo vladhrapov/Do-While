@@ -44,12 +44,16 @@
 
   &__title {
     //width: 232px;
-    width: 320px;
+    width: 315px;
     position: relative;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 
     //display: table;
 
-    // display: inline-block;
+    display: inline-block;
     // margin: 0 auto;
     vertical-align: middle;
 
@@ -118,18 +122,6 @@
         margin-left: 5px;
       }
 
-      &:hover {
-        border-bottom: 4px solid $project-color3;
-
-        .header-subnav-item__dayNumber & {
-          color: $txt-header-on-hover;
-        }
-
-        .header-subnav-item__dayName & {
-          color: $txt-header-on-hover;
-        }
-      }
-
       &__dayNumber {
         display: block;
 
@@ -140,6 +132,10 @@
         margin-top: 2px;
         font-family: "EncodeSansWide_reg", Arial, sans-serif;
         color: $color-text-dark;
+
+        .header-subnav-item:hover & {
+          color: $txt-header-on-hover;
+        }
       }
 
       &__dayName {
@@ -151,6 +147,14 @@
         line-height: 7px + 8px;
         font-family: "EncodeSansWide_bold", Arial, sans-serif;
         color: $color-text-light;
+
+        .header-subnav-item:hover & {
+          color: $txt-header-on-hover;
+        }
+      }
+
+      &:hover {
+        border-bottom: 4px solid $project-color3;
       }
     }
   }
