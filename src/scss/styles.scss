@@ -9,6 +9,7 @@ $blue: #3799D7;
 $dark-blue: #00008B;
 $orange: #E07a3a;
 $green: #3ebc9a;
+$transparent-gray: rgba(170,180,190,0.5);
 
 //Rendering cross-browser font
 @font-face {
@@ -44,6 +45,12 @@ body {
   font-family: 'encode_sans_wideregular', sans-serif;
 }
 
+//Delete browser default settings
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
 //Rendering styles for header menu stripe
 .header {
   top: 0;
@@ -52,6 +59,7 @@ body {
   line-height: 40px;
   text-align: center;
   font-family: 'encode_sans_widesemibold', sans-serif;
+  font-weight: bold;
 
   &_default {
     background-color: $dark-white;
@@ -98,6 +106,18 @@ body {
       }
     }
 
+    &_active {
+
+      &:after {
+        background-color: rgba(170,180,190,0.5);
+        content: "";
+        position: absolute;
+        padding: 20px;
+        top: 0;
+        left: 0;
+      }
+    }
+
     &:after {
       content: "";
       position: absolute;
@@ -125,6 +145,21 @@ body {
       background-image: url("../img/add.png");
       background-size: 100%;
     }
+
+    &_active {
+      background-color: $very-light-gray;
+      background-image: url("../img/add-def.png");
+      background-size: 102%;
+
+      &:after {
+        background-color: rgba(170,180,190,0.5);
+        content: "";
+        position: absolute;
+        padding: 20px;
+        margin-left: -20px;
+      }
+    }
+
   }
 }
 
@@ -137,6 +172,14 @@ body {
   height: 17px;
   display: inline-block;
   vertical-align: sub;
+
+  &_big {
+    background-image: url("../img/edt.png");
+    width: 20px;
+    height: 20px;
+    vertical-align: baseline;
+    margin-top: 12px;
+  }
 }
 
 //Rendering styles for list of tasks
@@ -144,6 +187,7 @@ body {
   background: $very-light-gray;
   padding: 0px;
   margin: 0px;
+  font-weight: bold;
 
   &__item {
     background: $white;
@@ -182,7 +226,9 @@ body {
 //Rendering styles for time block
 .time-info {
   float: right;
-  line-height: 4px;
+  line-height: 6px;
+  height: 30px;
+  padding-top: 6px;
 }
 
 //Rendering styles for checkbox icon
@@ -230,7 +276,6 @@ body {
     width: 15px;
     height: 15px;
     vertical-align: middle;
-    margin-right: 10px;
     text-align: inherit;
   }
 
@@ -242,6 +287,10 @@ body {
     width: 15px;
     height: 15px;
     vertical-align: middle;
+  }
+
+  &__time {
+    margin-right: 12px;
   }
 }
 
@@ -262,3 +311,94 @@ body {
     background-color: $green;
   }
 }
+
+
+//------------------------------------------------
+
+.date-strip {
+  background-color: $light-gray2;
+  font-size: 9px;
+  color: $white;
+  text-align: center;
+  padding: 4px 0px;
+  font-weight: bold;
+}
+
+.date-list {
+  padding-left: 2px;
+  padding-right: 2px;
+  top: 0;
+
+  &__date {
+    display: inline-block;
+    width: 13.2%;
+    text-align: center;
+    font-size: 15px;
+    line-height: 14px;
+    margin-top: 7px;
+    padding-bottom: 1px;
+    color: $gray;
+
+    &_active {
+      border-bottom: 4px solid $blue;
+      color: $blue;
+    }
+  }
+}
+
+.day-of-week {
+  font-size: 7px;
+  font-weight: bold;
+}
+
+//-------------------------2222222222222222222-----------------------
+
+
+.wrapper-block {
+  position: absolute;
+  clear: both;
+  background-color: $transparent-gray;
+  display: inline;
+  margin-top: -10px;
+  z-index: 1;
+  width: 320px;
+  height: 56px;
+  color: $white;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 0px;
+  text-align: center;
+  left: 0;
+
+  &__edit {
+    height: 56px;
+    width: 70px;
+    background-color: $green;
+    float: right;
+    border-left: 1px solid $white;
+    line-height: 15px;
+  }
+
+  &__start {
+    height: 56px;
+    width: 70px;
+    background-color: $blue;
+    float: right;
+    border-left: 1px solid $white;
+    line-height: 15px;
+  }
+}
+
+
+.triangle-icon {
+  background-image: url("../img/Triangle%203@2x.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-top: 12px;
+}
+
+
+

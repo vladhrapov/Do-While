@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>today-task-list</title>
+	<title>week-task-list</title>
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body>
@@ -12,6 +12,41 @@
             29 MAR 2015
         <div class="header__add header__add_default"></div>
     </header>
+
+    <ul class="date-list">
+        <li class="date-list__date date-list__date_active ">
+            28<br/>
+            <span class="day-of-week">TODAY</span>
+        </li>
+        <li class="date-list__date">
+            29<br/>
+            <span class="day-of-week">MON</span>
+        </li>
+        <li class="date-list__date">
+            30<br/>
+            <span class="day-of-week">TUE</span>
+        </li>
+        <li class="date-list__date">
+            31<br/>
+            <span class="day-of-week">WED</span>
+        </li>
+        <li class="date-list__date">
+            1<br/>
+            <span class="day-of-week">THU</span>
+        </li>
+        <li class="date-list__date">
+            2<br/>
+            <span class="day-of-week">FRI</span>
+        </li>
+        <li class="date-list__date">
+            3<br/>
+            <span class="day-of-week">SAT</span>
+        </li>
+    </ul>
+
+    <div class="date-strip">
+        28 SUN
+    </div>
 
     <ul class="project-list">
         <li class="project-list__item project-list__item_default">
@@ -96,14 +131,41 @@
                 </span>
             </div>
         </li>
+    </ul>
 
+    <div class="date-strip">
+        29 MON
+    </div>
+
+    <ul class="project-list">
         <li class="project-list__item project-list__item_default">
             <label for="chk5">
                 <div class="checkbox checkbox_default"></div>
             </label>
-            <input class="checkbox-control" id="chk5" name="height" type="checkbox" />
+            <input class="checkbox-control" id="chk5" name="chk1" type="checkbox" />
             <span class="note-header">
-                Do the home work
+                Lesson
+                <br />
+                <span class="additional-info">
+                    <span class="circle circle_green"></span>
+                    EDUCATION
+                </span>
+            </span>
+            <div class="time-info">
+                <span class="additional-info">
+                    <span class="additional-info__notificator"></span>
+                    <span class="additional-info__time">17:00</span>
+                </span>
+            </div>
+        </li>
+
+        <li class="project-list__item project-list__item_default">
+            <label for="chk6">
+                <div class="checkbox checkbox_default"></div>
+            </label>
+            <input class="checkbox-control" id="chk6" name="height" type="checkbox" />
+            <span class="note-header">
+                Home Work
                 <br />
                 <span class="additional-info">
                     <span class="circle circle_green"></span>
@@ -113,12 +175,12 @@
         </li>
 
         <li class="project-list__item project-list__item_default">
-            <label for="chk6">
+            <label for="chk7">
                 <div class="checkbox checkbox_default"></div>
             </label>
-            <input class="checkbox-control" id="chk6" name="height" type="checkbox" />
+            <input class="checkbox-control" id="chk7" name="height"  type="checkbox" />
             <span class="note-header">
-                Buy food in Wallmart
+                Buy food
                 <br />
                 <span class="additional-info">
                     <span class="circle circle_orange"></span>
@@ -128,28 +190,7 @@
             <div class="time-info">
                 <span class="additional-info">
                     <span class="additional-info__notificator"></span>
-                    <span class="additional-info__time">19:00</span>
-                </span>
-            </div>
-        </li>
-
-        <li class="project-list__item project-list__item_active">
-            <label for="chk7">
-                <div class="checkbox checkbox_active"></div>
-            </label>
-            <input class="checkbox-control" id="chk7" name="height" type="checkbox" />
-            <span class="note-header">
-                Gym
-                <br />
-                <span class="additional-info">
-                    <span class="circle circle_orange"></span>
-                    HEALTH
-                </span>
-            </span>
-            <div class="time-info">
-                <span class="additional-info">
-                    <span class="additional-info__timer"></span>
-                    12:43:34
+                    <span class="additional-info__time">17:00</span>
                 </span>
             </div>
         </li>
