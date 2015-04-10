@@ -5,7 +5,7 @@
 
 @mixin colorize-hover($bg-color) {
   &:hover {
-    background-color: darken($bg-color, 13%);
+    background-color: mix($bg-color, $hover-color);
   }
 }
 
