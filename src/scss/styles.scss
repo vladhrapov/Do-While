@@ -6,17 +6,21 @@ $white-color: rgb(255,255,255);
 $task-underline: rgb(210,219,229);
 $task-text-color: rgb(68,79,87);
 $task-category-color: rgb(170,180,191);
-$global-background: rgb(241,243,246);
+$global-background: rgb(241,243,255);
 $project-color-green: rgb(0,197,158);
 $project-color-orange: rgb(244,111,23);
+$overview-block-date: rgb(170,180,191);
+$overview-block-space: rgb(241,243,246);
 
 @import "reset",
 "block-head",
 "block-main",
-"buttons";
+"buttons",
+"block-week",
+"block-overview";
 
 @font-face {
-    font-family: EncodeSansWide-DemiBold;
+    font-family: EncodeSansWide-SemiBold;
     src: url(../fonts/EncodeSansWide-SemiBold.ttf);
 }
 
@@ -25,8 +29,10 @@ $project-color-orange: rgb(244,111,23);
     src: url(../fonts/EncodeSansWide-Regular.ttf);
 }
 
-body {
-    background-color: $global-background;
+
+@font-face {
+    font-family: EncodeSansWide-Bold;
+    src: url(../fonts/EncodeSansWide-Bold.ttf);
 }
 
 .do-while {
@@ -51,4 +57,21 @@ body {
     -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%,-50%);
     overflow: hidden;
+}
+
+.overview {
+    width: 100%;
+    &__date {
+        line-height: 20px;
+        text-transform: uppercase;
+        background-color: $overview-block-date;
+        color: $white-color;
+        text-align: center;
+        font-family: EncodeSansWide-SemiBold;
+        font-size: 9px;
+    }
+    &__space {
+        height: 40px;
+        background-color:$overview-block-space;
+    }
 }

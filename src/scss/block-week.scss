@@ -1,0 +1,44 @@
+.week {
+    background: $white-color;
+    height: 45px;
+    width: 100%;
+}
+
+.radioform {
+    display: table;
+    padding: 0, 2px;
+    height: 100%;
+    width: 100%;
+    border-spacing: 10px 0;
+    &--moment {
+        display: table-cell;
+        height: 100%;
+        padding: 0 5px;
+        box-sizing: border-box;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        &__date {
+            font-family: EncodeSansWide-Regular;
+            font-size: 15px;
+            //color: $task-text-color;
+        }
+        &__day-of-week {
+            text-transform: uppercase;
+            font-family: EncodeSansWide-Bold;
+            font-size: 7px;
+            color: $task-category-color;
+        }
+    }
+    &__radiobutton {
+        display: none;
+    }
+}
+
+.radioform__radiobutton:checked + .radioform--moment {
+    border-bottom: 4px solid $blue-color;
+    border-top: 4px solid transparent;
+}
+.radioform__radiobutton:checked + .radioform--moment > p {
+    color: $blue-color;
+}

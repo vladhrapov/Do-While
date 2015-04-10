@@ -43,7 +43,7 @@
             }
             &__category {
                 text-transform: uppercase;
-                font-family: EncodeSansWide-DemiBold;
+                font-family: EncodeSansWide-SemiBold;
                 font-size: 9px;
                 color: $task-category-color;
                 margin-top: 3px;
@@ -76,7 +76,7 @@
             display: table-cell;
             width: 70px;
             vertical-align: middle;
-            font-family: EncodeSansWide-DemiBold;
+            font-family: EncodeSansWide-SemiBold;
             font-size: 9px;
             color: $task-category-color;
             &__due {
