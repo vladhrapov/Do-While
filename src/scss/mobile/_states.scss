@@ -1,0 +1,20 @@
+.page_menu {
+
+  &_closed {
+    .page__header {
+      margin-left: 0;
+    }
+
+    .page__menu {
+      display: none;
+    }
+
+    .page__task-list {
+      display: block;
+    }
+
+    .page__task-list-overlap {
+      display: none;
+    }
+  }
+}

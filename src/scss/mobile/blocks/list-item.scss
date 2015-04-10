@@ -11,6 +11,9 @@
   border-bottom: 1px solid $gray-scale-2;
 
   text-decoration: none;
+  a {
+    text-decoration: none;
+  }
 
   @include font-regular(15px);
 
