@@ -6,9 +6,6 @@ $header-text-color: $gray-scale-4;
   padding: 0;
   width: $header-size;
   max-width: $header-size;
-
-  background-color: transparent;
-  @include colorize-hover(rgba(70%, 80%, 90%, .5));
 }
 
 .header {

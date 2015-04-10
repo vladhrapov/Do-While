@@ -4,7 +4,10 @@
   height: 100%;
   outline: none;
   border: 0;
-  @include colorize-all($gray-scale-0, $gray-scale-1);
+  background-color: transparent;
+  &:hover {
+    background-color: $hover-color;
+  }
 }
 
 @include colors-state-all-for('.button');
