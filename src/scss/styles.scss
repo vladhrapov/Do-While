@@ -9,6 +9,9 @@ $blue: #3799D7;
 $dark-blue: #00008B;
 $orange: #E07a3a;
 $green: #3ebc9a;
+$yellow: #ecc43e;
+$red: #df4d41;
+$violet: #994fb1;
 $transparent-gray: rgba(170,180,190,0.5);
 
 //Rendering cross-browser font
@@ -197,6 +200,7 @@ ul, li {
     clear: both;
     padding-top: 10px;
     border-bottom: 1px solid $very-light-gray;
+    list-style-type: none;
 
     &_default {
       color: $gray;
@@ -294,27 +298,55 @@ ul, li {
   }
 }
 
-//Render styles for circle icons
+//Rendering styles for circle icons
 .circle {
   border-radius: 50%;
   height: 10px;
   width: 10px;
   position: relative;
   display: inline-block;
-  vertical-align: baseline;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 12px;
+  color: $white;
+  margin-right: 2px;
+
+  &_green {
+    background-color: $green;
+  }
+
+  &_red {
+    background-color: $red;
+  }
+
+  &_blue {
+    background-color: $blue;
+  }
+
+  &_yellow {
+    background-color: $yellow;
+  }
 
   &_orange {
     background-color: $orange;
   }
 
-  &_green {
-    background-color: $green;
+  &_violet {
+    background-color: $violet;
+  }
+
+  &_big {
+    height: 18px;
+    width: 20px;
+    padding-top: 2px;
+  }
+
+  &_right {
+    float: right;
   }
 }
 
-
-//------------------------------------------------
-
+//Rendering strip for content
 .date-strip {
   background-color: $light-gray2;
   font-size: 9px;
@@ -324,6 +356,7 @@ ul, li {
   font-weight: bold;
 }
 
+//Rendering styles for date list
 .date-list {
   padding-left: 2px;
   padding-right: 2px;
@@ -338,6 +371,7 @@ ul, li {
     margin-top: 7px;
     padding-bottom: 1px;
     color: $gray;
+    list-style-type: none;
 
     &_active {
       border-bottom: 4px solid $blue;
@@ -346,14 +380,13 @@ ul, li {
   }
 }
 
+//Rendering styles for day of week (Monday, ...)
 .day-of-week {
   font-size: 7px;
   font-weight: bold;
 }
 
-//-------------------------2222222222222222222-----------------------
-
-
+//Rendering styles for block which edit task list item
 .wrapper-block {
   position: absolute;
   clear: both;
@@ -389,7 +422,7 @@ ul, li {
   }
 }
 
-
+//Rendering styles for triangle icon
 .triangle-icon {
   background-image: url("../img/Triangle%203@2x.png");
   background-repeat: no-repeat;
@@ -400,5 +433,73 @@ ul, li {
   margin-top: 12px;
 }
 
+//Rendering styles for settings in sidebar
+.sidebar-settings-list__item {
+  padding: 15px;
+  border-bottom: 1px solid $very-light-gray;
+  font-size: 14px;
 
+  &_bold {
+    font-family: 'encode_sans_widesemibold';
+  }
+}
 
+//Rendering styles for user projects in sidebar
+.sidebar-project-list__item {
+  padding: 15px;
+  border-bottom: 1px solid $very-light-gray;
+  font-size: 15px;
+  color: $gray;
+
+  &_green {
+    border-left: 6px solid $green;
+  }
+
+  &_red {
+    border-left: 6px solid $red;
+  }
+
+  &_blue {
+    border-left: 6px solid $blue;
+  }
+
+  &_yellow {
+    border-left: 6px solid $yellow;
+  }
+
+  &_orange {
+    border-left: 6px solid $orange;
+  }
+
+  &_violet {
+    border-left: 6px solid $violet;
+  }
+
+  &_center {
+    text-align: center;
+  }
+}
+
+//Rendering helper styles for sidebar
+.sidebar-list {
+  border-right: 1.5px solid $light-gray2;
+
+  &_indent {
+    background-color: $dark-white;
+  }
+}
+
+//Rendering styles for arrow icon
+.arrow {
+  background-image: url("../img/Triangle%201.png");
+  background-repeat: no-repeat;
+  background-size: 90%;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-left: 5px;
+
+  &_right {
+    float: right;
+  }
+}
