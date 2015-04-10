@@ -1,8 +1,7 @@
 .badge {
   display: inline-block;
-  margin-right: .2em; // todo remove if need
-  min-width: .9em;
-  min-height: .9em;
+  width: 8px;
+  height: 8px;
 
   &_circle {
     border: 0;
