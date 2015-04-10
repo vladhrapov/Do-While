@@ -1,15 +1,28 @@
 $blue-color: rgb(11,152,218);
 $dark-blue-color :rgb(0,126,188);
 $white-color: rgb(255,255,255);
+$task-underline: rgb(210,219,229);
+$task-text-color: rgb(68,79,87);
+$task-category-color: rgb(170,180,191);
+$global-background: rgb(241,243,246);
 
 @import "reset",
 "block-head",
-"block-list",
+"block-main",
 "buttons";
 
 @font-face {
     font-family: EncodeSansWide-DemiBold;
     src: url(../fonts/EncodeSansWide-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: EncodeSansWide-Regular;
+    src: url(../fonts/EncodeSansWide-Regular.ttf);
+}
+
+body {
+    background-color: $global-background;
 }
 
 .do-while {
@@ -21,7 +34,9 @@ $white-color: rgb(255,255,255);
 }
 
 .project-list {
-
+    max-width: 320px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .container {

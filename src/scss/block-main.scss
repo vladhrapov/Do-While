@@ -1,0 +1,106 @@
+.main {
+    list-style: none;
+    padding: 0;
+    background: $white-color;
+}
+
+.list {
+    height: 55px;
+    display: table;
+    border-bottom: 1px solid $task-underline;
+    width: 100%;
+    &--checkbox {
+        display: table-cell;
+        height: 100%;
+        width: 40px;
+        vertical-align: middle;
+        text-align: center;
+        &__input {
+            display: none;
+        }
+        &__label {
+            padding: 9px 9px;
+            cursor: pointer;
+            background: url("../img/inputCheckBox0@2x.png") center no-repeat;
+            background-size: contain;
+        }
+    }
+    &--item {
+        height: 100%;
+        width: 100%;
+        display: table;
+        &--task {
+            height: 100%;
+            display: table-cell;
+            vertical-align: middle;
+            &__title {
+                font-family: EncodeSansWide-Regular;
+                font-size: 15px;
+                color: $task-text-color;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            &__category {
+                text-transform: uppercase;
+                font-family: EncodeSansWide-DemiBold;
+                font-size: 9px;
+                color: $task-category-color;
+                margin-top: 3px;
+                &_by-date {
+                    &::before {
+                        content: "";
+                        padding: 4px 4px;
+                        background: url("../img/ic_today@2x.png") center no-repeat;
+                        background-size: contain;
+                        margin-right: 4px;
+                    }
+                }
+                &_by-project {
+
+                }
+                &_none {
+                    display: none;
+                }
+            }
+        }
+        &--time {
+            height: 100%;
+            display: table-cell;
+            width: 70px;
+            vertical-align: middle;
+            font-family: EncodeSansWide-DemiBold;
+            font-size: 9px;
+            color: $task-category-color;
+            &__due {
+                &::before {
+                    content: "";
+                    padding: 4px 4px;
+                    background: url("../img/ic_notifications_none@2x.png") center no-repeat;
+                    background-size: contain;
+                    margin-right: 4px;
+                }
+                &_none {
+                    display: none;
+                }
+            }
+            &__estimation {
+                &::before {
+                    content: "";
+                    padding: 4px 4px;
+                    background: url("../img/ic_access_time@2x.png") center no-repeat;
+                    background-size: contain;
+                    margin-right: 4px;
+                }
+                &_none {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.list--checkbox__input:checked + .list--checkbox__label {
+    background: url("../img/inputCheckBox1@2x.png") center no-repeat;
+    background-size: contain;
+}
