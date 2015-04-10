@@ -5,11 +5,16 @@
 	<title>Task list</title>
 	<link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-	<aside>
+<body class="clearfix">
+	<aside class="menu">
 		<ul>
 			<li class="menu-item menu-item_settings">settings</li>
-			<li class="menu-item menu-item_today">today <span class="tasks-item__project">&nbsp;</span></li>
+			<li class="menu-item menu-item_today">
+				today 
+				<span class="tasks-item__project tasks-item__project_menu">&nbsp;</span>
+				<span class="tasks-item__project tasks-item__project_menu">&nbsp;</span>
+				<span class="tasks-item__project tasks-item__project_menu">&nbsp;</span>
+			</li>
 			<li class="menu-item menu-item_next7">next 7 days</li>
 		</ul>
 		<ul>
@@ -41,7 +46,7 @@
 			</li>
 		</ul>
 	</aside>
-	<main>
+	<main class="main">
 		<header class="header">
 			<div class="header-nav">
 				<button class="header__button_menu">&nbsp;</button>

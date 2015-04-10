@@ -1,4 +1,5 @@
 $width: 320px;
+$width-of-menu: 272px;
 $height-header: 44px;
 $height-tasks-item: 56px;
 
@@ -64,6 +65,8 @@ $bg-btn-start: $project-color3;
 
 body {
 //  font-family: "EncodeSansWide-reg";
-  width: $width;
+  //width: $width;
+  //height: 100%;
+  //overflow: hidden;
 //  margin: 0 auto;
 }

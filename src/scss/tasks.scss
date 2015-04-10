@@ -7,6 +7,13 @@
 	height: 0;
 }
 
+.main {
+	position: relative;
+	width: 320px;
+	background-color: rgba(0,255,0,.3);
+	display: inline-block;
+}
+
 .tasks {
 
 	&__header {
@@ -16,6 +23,8 @@
 		text-transform: uppercase;
 		line-height: 9px + 13px;
 		color: white;
+
+		list-style: none;
 		background-color: $bg-tasks-header;
 	}
 
@@ -68,12 +77,16 @@
 			position: relative;
 			padding-left: 8px + 4px;
 
-			width: $width - 40px - 78px;
+			//width: $width - 40px - 78px;
 			text-overflow: ellipsis;
 			white-space: nowrap;
 			overflow: hidden;
 
 			text-transform: uppercase;
+
+			&_menu {
+				padding-left: 8px;
+			}
 
 			&:before {
 				content: "";
