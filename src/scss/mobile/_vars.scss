@@ -1,4 +1,8 @@
 $header-size: 44px;
-$list-item-height: 55px;
+$list-item-height: 56px;
 $list-item_small-height: 44px;
 $mobile-min-width: 320px;
+
+$menu-width: $mobile-min-width - $header-size - 4px;
+$menu-text-left-padding: 23px;
+$menu-icon-right-padding : 28px;

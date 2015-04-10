@@ -1,0 +1,39 @@
+<nav class="menu">
+
+    <ul class="list action-list">
+        <li class="list-item list-item_small menu__settings">
+            Settings
+        </li>
+
+        <li class="list-item menu__today">
+            today
+
+            <div class="badge-group">
+                <i class="badge badge_circle color_yellow"></i>
+                <i class="badge badge_circle color_red"></i>
+                <i class="badge badge_circle color_green"></i>
+            </div>
+        </li>
+
+        <li class="list-item menu__next-seven-days">
+            next 7 days
+        </li>
+    </ul>
+
+    <div class="separator"> projects</div>
+
+    <div class="list-item list-item_small menu__create-project">
+        Create new...
+    </div>
+
+    <ul class="list project-list">
+        @@include('./project-list-item.html', { "project" : "educationsdkjskjdksjdksjdkjskdjskdjksdjksjskdjs", "color":
+        "green", "count" : "8" })
+        @@include('./project-list-item.html', { "project" : "home", "color": "red", "count" : "3" })
+        @@include('./project-list-item.html', { "project" : "work", "color": "blue", "count" : "2" })
+        @@include('./project-list-item.html', { "project" : "kids", "color": "yellow", "count" : "8" })
+        @@include('./project-list-item.html', { "project" : "study", "color": "orange", "count" : "8" })
+        @@include('./project-list-item.html', { "project" : "health", "color": "violet", "count" : "7" })
+    </ul>
+
+</nav>
