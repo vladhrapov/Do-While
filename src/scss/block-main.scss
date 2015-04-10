@@ -57,7 +57,14 @@
                     }
                 }
                 &_by-project {
-
+                    &::before {
+                        content:"";
+                        display: inline-block;
+                        border-radius: 4px;
+                        margin-right: 4px;
+                        width: 8px;
+                        height: 8px;
+                    }
                 }
                 &_none {
                     display: none;
@@ -85,6 +92,7 @@
                 }
             }
             &__estimation {
+                margin-top: 3px;
                 &::before {
                     content: "";
                     padding: 4px 4px;
@@ -103,4 +111,17 @@
 .list--checkbox__input:checked + .list--checkbox__label {
     background: url("../img/inputCheckBox1@2x.png") center no-repeat;
     background-size: contain;
+}
+
+.circle {
+    &-green {
+        &::before {
+            background: $project-color-green;
+        }
+    }
+    &-orange {
+        &::before {
+            background: $project-color-orange;
+        }
+    }
 }

@@ -32,6 +32,15 @@
                 border-color: $white-color;
             }
         }
+        &_grey {
+            border-color: $dark-grey-color;
+            &::before {
+                background-color: $grey-color;
+            }
+            &::after {
+                border-color: $dark-grey-color;
+            }
+        }
     }
     &-edit-project {
         height:10px;
@@ -43,6 +52,9 @@
         background-image: url("../img/edit-project-button.png");
         background-size: contain;
         background-repeat: no-repeat;
+        &_none {
+            display: none;
+        }
     }
     &-add {
         position: relative;
@@ -78,6 +90,15 @@
             }
             &::before {
                 border-color: $white-color;
+            }
+        }
+        &_grey {
+            background-color: $grey-color;
+            &::after {
+                border-color: $dark-grey-color;
+            }
+            &::before {
+                border-color: $dark-grey-color;
             }
         }
     }
