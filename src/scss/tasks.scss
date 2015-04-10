@@ -21,14 +21,14 @@
 
 	&-item {
 		width: $width;
-		height: $height-tasks;
+		height: $height-tasks-item;
 		overflow: hidden;
 		position: relative;
 		list-style: none;
 		border-bottom: 1px solid $item-border;
 
 		&__checkbox {
-			line-height: $height-tasks;
+			line-height: $height-tasks-item;
 			margin-left: 12px;
 			margin-right: 12px;
 			width: 16px;
@@ -185,7 +185,7 @@
 
 		&-content,
 		&-time {
-			height: $height-tasks;
+			height: $height-tasks-item;
 			float: left;
 			display: table;
 		}

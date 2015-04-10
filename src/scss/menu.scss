@@ -1,0 +1,133 @@
+.menu-item {
+
+	background: url(../img/Triangle_1.png) right center no-repeat;
+	margin-right: 22px;
+	padding-left: 24px;
+	//padding-right: 8px + 10px;
+
+	&_settings {
+		@extend %encodeSans-reg;
+
+		line-height: 44px;
+		text-transform: capitalize;
+		position: relative;
+
+		&:before {
+			content: "";
+			width: 15px;
+			height: 15px;
+			position: absolute;
+			background-color: #0f0;
+			top: 32%;
+			left: 2%;
+		}
+	}
+
+	&_today,
+	&_next7 {
+		@extend %encodeSans-semibold;
+
+		font-size: 14px;
+		color: $color-text-dark;
+		line-height: 56px;
+		text-transform: uppercase;
+	}
+}
+
+.projects {
+
+	&__create-new {
+		@extend %encodeSans-reg;
+
+		height: 44px;
+		line-height: 44px;
+		text-align: center;
+	}
+
+	&-item {
+		@extend %encodeSans-reg;
+
+		position: relative;
+		//display: table;
+		//width: 100%;
+
+		line-height: 56px;
+		padding-left: 18px;
+
+		border-left: 8px solid $bdr-projects-item;
+		border-bottom: 1px solid $bdr-projects-item;
+
+		&_project-1 {
+			border-left: 8px solid $project-color1;
+		}
+
+		&_project-2 {
+			border-left: 8px solid $project-color2;
+		}
+
+		&_project-3 {
+			border-left: 8px solid $project-color3;
+		}
+
+		&_project-4 {
+			border-left: 8px solid $project-color4;
+		}
+
+		&_project-5 {
+			border-left: 8px solid $project-color5;
+		}
+
+		&_project-6 {
+			border-left: 8px solid $project-color6;
+		}
+
+		&__number {
+			@extend %encodeSans-reg;
+			font-size: 11px;
+			line-height: 11px+14px;
+			color: #ffffff;
+			text-align: center;
+
+			width: 22px;
+			height: 22px;
+			border-radius: 22px;
+
+			background-color: $bdr-projects-item;
+			//background-origin: content-box;
+			//display: table-cell;
+			//vertical-align: middle;
+
+			display: inline-block;
+			position: absolute;
+			right: 0;
+			top: 25%;
+			margin-right: 17px;
+			//margin-top: 17px;
+			//margin-bottom: 17px;
+
+			.projects-item_project-1 & {
+				background-color: $project-color1;
+			}
+
+			.projects-item_project-2 & {
+				background-color: $project-color2;
+			}
+
+			.projects-item_project-3 & {
+				background-color: $project-color3;
+			}
+
+			.projects-item_project-4 & {
+				background-color: $project-color4;
+			}
+
+			.projects-item_project-5 & {
+				background-color: $project-color5;
+			}
+
+			.projects-item_project-6 & {
+				background-color: $project-color6;
+			}
+		}
+	}
+}
