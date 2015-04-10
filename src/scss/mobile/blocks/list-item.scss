@@ -5,9 +5,12 @@
 
   height: $list-item-height;
   line-height: $list-item-height  - 1px; //avoid bottom border
+
   color: $gray-scale-5;
   background-color: $gray-scale-0;
   border-bottom: 1px solid $gray-scale-2;
+
+  text-decoration: none;
 
   @include font-regular(15px);
 
