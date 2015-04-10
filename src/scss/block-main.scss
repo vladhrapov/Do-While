@@ -5,6 +5,7 @@
 }
 
 .list {
+    position: relative;
     height: 55px;
     display: table;
     border-bottom: 1px solid $task-underline;
@@ -123,5 +124,65 @@
         &::before {
             background: $project-color-orange;
         }
+    }
+}
+
+.hover {
+    display: table;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+    background: rgba(170,180,190,.5);
+    &--action {
+        border: 0;
+        display: table-cell;
+        height: 100%;
+        width: 70px;
+        float: right;
+        cursor: pointer;
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            text-transform: uppercase;
+            font-family: EncodeSansWide-Bold;
+            font-size: 9px;
+            color: $white-color;
+        }
+        &_edit {
+            background: $button-edit-color;
+            &::before {
+                content: "";
+                display: inline-block;
+                height: 15px;
+                width: 100%;
+                background: url("../img/edit2-button.gif") center no-repeat;
+                background-size: contain;
+            }
+            &::after {
+                content:"Edit";
+            }
+        }
+        &_start {
+            background: $button-start-color;
+            &::before {
+                content: "";
+                display: inline-block;
+                height: 15px;
+                width: 100%;
+                background: url("../img/start2-button.gif") center no-repeat;
+                background-size: contain;
+            }
+            &::after {
+                content:"Start";
+            }
+        }
+    }
+    &_none {
+        display: none;
     }
 }

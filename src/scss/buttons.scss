@@ -41,6 +41,15 @@
                 border-color: $dark-grey-color;
             }
         }
+        &_hovered {
+            border-color: $hover-button-content;
+            &::before {
+                background-color: $hover-button-box;
+            }
+            &::after {
+                border-color: $hover-button-content;
+            }
+        }
     }
     &-edit-project {
         height:10px;
@@ -99,6 +108,15 @@
             }
             &::before {
                 border-color: $dark-grey-color;
+            }
+        }
+        &_hovered {
+            background-color: $hover-button-box;
+            &::after {
+                border-color: $hover-button-content;
+            }
+            &::before {
+                border-color: $hover-button-content;
             }
         }
     }
