@@ -1,17 +1,14 @@
 @mixin font-regular($size) {
-  font-family: EncodeSansWide, Helvetica, Arial, sans-serif;
   font-weight: $font-weight-regular;
   font-size: $size;
 }
 
 @mixin font-semi-bold($size) {
-  font-family: EncodeSansWide, Helvetica, Arial, sans-serif;
   font-weight: $font-weight-semi-bold;
   font-size: $size;
 }
 
 @mixin font-bold($size) {
-  font-family: EncodeSansWide, Helvetica, Arial, sans-serif;
   font-weight: $font-weight-bold;
   font-size: $size;
 }
