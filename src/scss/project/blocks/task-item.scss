@@ -5,11 +5,18 @@
 
 %i-task-item__button {
   @include font-bold(9px);
-  position: absolute;
+  @include media-mobile-tablet() {
+    position: absolute;
+    top: 0;
+    height: $list-item-height + 1px;
+  }
+  @include media-only-desktop() {
+    display: inline-block;
+    height: $list-item-height - 1px;
+  }
+
   box-sizing: border-box;
-  top: 0;
   width: $task-item__button-width;
-  height: $list-item-height + 1px;
   text-transform: uppercase;
   border-left: 1px solid $gray-scale-0;
 
@@ -86,27 +93,42 @@
   //region overlap buttons group
 
   &__buttons {
-    display: none;
+    @include media-mobile-tablet() {
+      display: none;
 
-    &_active {
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 100%;
-      left: 0;
-      top: 0;
-      background-color: $hover-color;
+      &_active {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background-color: $hover-color;
+      }
+    }
+
+    @include media-only-desktop() {
+      display: table-cell;
+      width: $task-item__button-width *2;
     }
   }
 
   &__edit {
     @extend %i-task-item__button;
-    right: $task-item__button-width;
+    @include media-mobile-tablet() {
+      right: $task-item__button-width;
+    }
+    @include media-only-desktop() {
+      float: left;
+    }
   }
 
   &__start {
     @extend %i-task-item__button;
-    right: 0;
+    @include media-mobile-tablet() {
+      right: 0;
+    }
   }
+
   //endregion
 }
