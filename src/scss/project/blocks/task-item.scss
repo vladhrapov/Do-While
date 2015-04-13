@@ -5,15 +5,9 @@
 
 %i-task-item__button {
   @include font-bold(9px);
-  @include media-mobile-tablet() {
-    position: absolute;
-    top: 0;
-    height: $list-item-height + 1px;
-  }
-  @include media-only-desktop() {
-    display: inline-block;
-    height: $list-item-height - 1px;
-  }
+  position: absolute;
+  top: 0;
+  height: $list-item-height + 1px;
 
   box-sizing: border-box;
   width: $task-item__button-width;
@@ -115,19 +109,12 @@
 
   &__edit {
     @extend %i-task-item__button;
-    @include media-mobile-tablet() {
-      right: $task-item__button-width;
-    }
-    @include media-only-desktop() {
-      float: left;
-    }
+    right: $task-item__button-width;
   }
 
   &__start {
     @extend %i-task-item__button;
-    @include media-mobile-tablet() {
-      right: 0;
-    }
+    right: 0;
   }
 
   //endregion

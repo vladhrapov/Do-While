@@ -1,12 +1,11 @@
 .page_menu {
 
   &_closed {
-    .page__header {
-      margin-left: 0;
-    }
 
     .page__menu {
-      display: none;
+      @include media-only-mobile{
+        display: none;
+      }
     }
 
     .page__task-list {
