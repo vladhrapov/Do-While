@@ -50,7 +50,6 @@ $header-text-color: $gray-scale-4;
 
   &__add-task-button {
     @extend %header-button;
-    float: right;
   }
 }
 
