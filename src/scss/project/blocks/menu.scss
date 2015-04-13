@@ -30,4 +30,16 @@
   &__create-project {
     text-align: center;
   }
+
+  //region modifyers
+  @include media-only-mobile {
+
+    &_closed {
+      display: none;
+      + .page__main .page__main-overlap {
+        display: none;
+      }
+    }
+  }
+  //endregion
 }

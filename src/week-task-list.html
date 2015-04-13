@@ -4,8 +4,8 @@
     @@include('./html/_head.html')
 </head>
 <body>
-<div class="page page_menu_closed">
-    @@include('./html/blocks/menu/menu.html')
+<div class="page">
+    @@include('./html/blocks/menu/menu.html', {"mods" : "closed"})
 
     <div class="page__main">
         @@include('./html/blocks/header.html', {"color": "default", "title" : "29 mar 2015", "title_icon": false})
@@ -14,8 +14,9 @@
             @@include('./html/blocks/week-calendar.html')
             @@include('./html/pages/week/today-task-list.html', {})
             @@include('./html/pages/week/tomorrow-task-list.html', {})
-            <div class="page__task-list-overlap">
-            </div>
+        </div>
+
+        <div class="page__main-overlap">
         </div>
     </div>
 </div>
