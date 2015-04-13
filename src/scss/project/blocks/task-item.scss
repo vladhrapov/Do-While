@@ -3,8 +3,6 @@
   vertical-align: middle;
 }
 
-$task-item__button-width: 73px;
-
 %i-task-item__button {
   @include font-bold(9px);
   position: absolute;
