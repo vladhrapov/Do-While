@@ -7,7 +7,7 @@
   @include font-bold(9px);
   position: absolute;
   top: 0;
-  height: $list-item-height + 1px;
+  height: $list-item-height;
 
   box-sizing: border-box;
   width: $task-item__button-width;
