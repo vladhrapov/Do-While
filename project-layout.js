@@ -59,8 +59,8 @@ var patterns = new Layout({
     },
     bower: {
         _root: paths.bower,
-        js: glob(['/*/dist/*', '/*/dist/js/*'], 'js'),
-        css: glob(['/*/*', '/*/css/*', '/*/dist/*', '/*/dist/css/*'], 'css')
+        js: glob(['/*/dist/*','/*/dest/*', '/*/dist/js/*'], 'js'),
+        css: glob(['/*/*', '/*/css/*', '/*/dist/*','/*/dest/*', '/*/dist/css/*'], 'css')
     },
     dist: {
         html: {
