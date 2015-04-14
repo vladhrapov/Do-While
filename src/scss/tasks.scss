@@ -7,6 +7,14 @@
 	height: 0;
 }
 
+.main {
+	width: $width;
+	//background-color: #0f0;
+	position: absolute;
+	margin-left: 272px;
+	z-index: 6;
+}
+
 .tasks {
 
 	&__header {
@@ -17,6 +25,7 @@
 		line-height: 9px + 13px;
 		color: white;
 		background-color: $bg-tasks-header;
+		list-style: none;
 	}
 
 	&-item {
@@ -66,9 +75,10 @@
 
 			display: inline-block;
 			position: relative;
+			top: 3px;
 			padding-left: 8px + 4px;
 
-			width: $width - 40px - 78px;
+			//width: $width - 40px - 78px;
 			text-overflow: ellipsis;
 			white-space: nowrap;
 			overflow: hidden;
@@ -96,6 +106,22 @@
 				.tasks-item_project-6 & {
 					background-color: $project-color6;
 				}
+			}
+
+			&_today {
+				margin-left: -5px;
+			}
+
+			&_kids:before {
+				background-color: $project-color4;
+			}
+
+			&_home:before {
+				background-color: $project-color2;
+			}
+
+			&_education:before {
+				background-color: $project-color1;
 			}
 		}
 
@@ -125,8 +151,9 @@
 			background-color: $bg-item-hover-opasity;
 
 			// Bug - I can't click onto checkbox;
-			.tasks-item:hover & {
+			&_active {
 				visibility: visible;
+				z-index: 20;
 			}
 		}
 
