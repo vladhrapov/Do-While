@@ -5,15 +5,15 @@
 	<title>Task list</title>
 	<link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="clearfix">
+<body class="body">
 	<aside class="menu">
 		<ul>
 			<li class="menu-item menu-item_settings">settings</li>
 			<li class="menu-item menu-item_today">
-				today 
-				<span class="tasks-item__project tasks-item__project_menu">&nbsp;</span>
-				<span class="tasks-item__project tasks-item__project_menu">&nbsp;</span>
-				<span class="tasks-item__project tasks-item__project_menu">&nbsp;</span>
+				<span class="menu-item__name">today</span>
+				<span class="tasks-item__project tasks-item__project_today tasks-item__project_kids">&nbsp;</span>
+				<span class="tasks-item__project tasks-item__project_today tasks-item__project_home">&nbsp;</span>
+				<span class="tasks-item__project tasks-item__project_today tasks-item__project_education">&nbsp;</span>
 			</li>
 			<li class="menu-item menu-item_next7">next 7 days</li>
 		</ul>
@@ -47,681 +47,686 @@
 		</ul>
 	</aside>
 	<main class="main">
-		<header class="header">
-			<div class="header-nav">
-				<button class="header__button_menu">&nbsp;</button>
-				<span class="header__title">29 mar 2015</span>
-				<button class="header__button_add">&nbsp;</button>
-			</div>
-			<ul class="header-subnav clearfix">
-				<li class="header-subnav-item"><span class="header-subnav-item__dayNumber">28</span> <span class="header-subnav-item__dayName">sun</span></li>
-				<li class="header-subnav-item"><span class="header-subnav-item__dayNumber">29</span> <span class="header-subnav-item__dayName">mon</span></li>
-				<li class="header-subnav-item"><span class="header-subnav-item__dayNumber">30</span> <span class="header-subnav-item__dayName">tue</span></li>
-				<li class="header-subnav-item"><span class="header-subnav-item__dayNumber">31</span> <span class="header-subnav-item__dayName">wed</span></li>
-				<li class="header-subnav-item"><span class="header-subnav-item__dayNumber">01</span> <span class="header-subnav-item__dayName">thu</span></li>
-				<li class="header-subnav-item"><span class="header-subnav-item__dayNumber">02</span> <span class="header-subnav-item__dayName">fri</span></li>
-				<li class="header-subnav-item"><span class="header-subnav-item__dayNumber">03</span> <span class="header-subnav-item__dayName">sat</span></li>
+		<div class="block-wrapper">
+			<header class="header">
+				<div class="header-nav">
+					<button class="header__button_menu">&nbsp;</button>
+					<span class="header__title">29 mar 2015</span>
+					<button class="header__button_add">&nbsp;</button>
+				</div>
+				<ul class="header-subnav clearfix">
+					<li class="header-subnav-item header-subnav-item_active"><span class="header-subnav-item__dayNumber">28</span> <span class="header-subnav-item__dayName">sun</span></li>
+					<li class="header-subnav-item"><span class="header-subnav-item__dayNumber">29</span> <span class="header-subnav-item__dayName">mon</span></li>
+					<li class="header-subnav-item"><span class="header-subnav-item__dayNumber">30</span> <span class="header-subnav-item__dayName">tue</span></li>
+					<li class="header-subnav-item"><span class="header-subnav-item__dayNumber">31</span> <span class="header-subnav-item__dayName">wed</span></li>
+					<li class="header-subnav-item"><span class="header-subnav-item__dayNumber">01</span> <span class="header-subnav-item__dayName">thu</span></li>
+					<li class="header-subnav-item"><span class="header-subnav-item__dayNumber">02</span> <span class="header-subnav-item__dayName">fri</span></li>
+					<li class="header-subnav-item"><span class="header-subnav-item__dayNumber">03</span> <span class="header-subnav-item__dayName">sat</span></li>
+				</ul>
+			</header>
+
+			<ul class="tasks">
+				<li class="tasks__header">28 sun</li>
+				<li class="tasks-item tasks-item_project-1">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Lesson</div>
+							<div class="tasks-item__project">education</div>
+						</div>
+					</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__alarm">19:00</div>
+							<div class="tasks-item__measurement">12:43:34</div>
+						</div>
+					</div>
+
+					<div class="tasks-item__hover tasks-item__hover_active">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
+					</div>
+				</li>
+				<li class="tasks-item tasks-item_project-1">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Do the home work</div>
+							<div class="tasks-item__project">education</div>
+						</div>
+					</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">&nbsp;</div>
+					</div>
+
+					<div class="tasks-item__hover tasks-item__hover_active">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
+					</div>
+				</li>
+				<li class="tasks-item tasks-item_project-2">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Buy food in Wallmart</div>
+							<div class="tasks-item__project">home</div>
+						</div>
+					</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__alarm">19:00</div>
+						</div>
+					</div>
+
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
+					</div>
+				</li>
+				<li class="tasks-item tasks-item_project-6">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Gym</div>
+							<div class="tasks-item__project">health</div>
+						</div>
+					</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__measurement">12:43:34</div>
+						</div>
+					</div>
+
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
+					</div>
+				</li>
 			</ul>
-		</header>
+			<ul class="tasks">
+				<li class="tasks__header">29 mon</li>
+				<li class="tasks-item tasks-item_project-1">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Lesson</div>
+							<div class="tasks-item__project">education</div>
+						</div>
+					</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__alarm">19:00</div>
+							<div class="tasks-item__measurement">12:43:34</div>
+						</div>
+					</div>
 
-		<ul class="tasks">
-			<li class="tasks__header">28 sun</li>
-			<li class="tasks-item tasks-item_project-1">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Lesson</div>
-						<div class="tasks-item__project">education</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__alarm">19:00</div>
-						<div class="tasks-item__measurement">12:43:34</div>
+				</li>
+				<li class="tasks-item tasks-item_project-1">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Do the home work</div>
+							<div class="tasks-item__project">education</div>
+						</div>
 					</div>
-				</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">&nbsp;</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-1">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Do the home work</div>
-						<div class="tasks-item__project">education</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">&nbsp;</div>
-				</div>
+				</li>
+				<li class="tasks-item tasks-item_project-2">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Buy food in Wallmart</div>
+							<div class="tasks-item__project">home</div>
+						</div>
+					</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__alarm">19:00</div>
+						</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-2">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Buy food in Wallmart</div>
-						<div class="tasks-item__project">home</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__alarm">19:00</div>
+				</li>
+				<li class="tasks-item tasks-item_project-6">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Gym</div>
+							<div class="tasks-item__project">health</div>
+						</div>
 					</div>
-				</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__measurement">12:43:34</div>
+						</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-6">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Gym</div>
-						<div class="tasks-item__project">health</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__measurement">12:43:34</div>
+				</li>
+			</ul>
+			<ul class="tasks">
+				<li class="tasks__header">30 tue</li>
+				<li class="tasks-item tasks-item_project-1">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Lesson</div>
+							<div class="tasks-item__project">education</div>
+						</div>
 					</div>
-				</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__alarm">19:00</div>
+							<div class="tasks-item__measurement">12:43:34</div>
+						</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-		</ul>
-		<ul class="tasks">
-			<li class="tasks__header">29 mon</li>
-			<li class="tasks-item tasks-item_project-1">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Lesson</div>
-						<div class="tasks-item__project">education</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__alarm">19:00</div>
-						<div class="tasks-item__measurement">12:43:34</div>
+				</li>
+				<li class="tasks-item tasks-item_project-1">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Do the home work</div>
+							<div class="tasks-item__project">education</div>
+						</div>
 					</div>
-				</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">&nbsp;</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-1">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Do the home work</div>
-						<div class="tasks-item__project">education</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">&nbsp;</div>
-				</div>
+				</li>
+				<li class="tasks-item tasks-item_project-2">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Buy food in Wallmart</div>
+							<div class="tasks-item__project">home</div>
+						</div>
+					</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__alarm">19:00</div>
+						</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-2">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Buy food in Wallmart</div>
-						<div class="tasks-item__project">home</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__alarm">19:00</div>
+				</li>
+				<li class="tasks-item tasks-item_project-6">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Gym</div>
+							<div class="tasks-item__project">health</div>
+						</div>
 					</div>
-				</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__measurement">12:43:34</div>
+						</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-6">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Gym</div>
-						<div class="tasks-item__project">health</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__measurement">12:43:34</div>
+				</li>
+			</ul>
+			<ul class="tasks">
+				<li class="tasks__header">31 wed</li>
+				<li class="tasks-item tasks-item_project-1">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Lesson</div>
+							<div class="tasks-item__project">education</div>
+						</div>
 					</div>
-				</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__alarm">19:00</div>
+							<div class="tasks-item__measurement">12:43:34</div>
+						</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-		</ul>
-		<ul class="tasks">
-			<li class="tasks__header">30 tue</li>
-			<li class="tasks-item tasks-item_project-1">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Lesson</div>
-						<div class="tasks-item__project">education</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__alarm">19:00</div>
-						<div class="tasks-item__measurement">12:43:34</div>
+				</li>
+				<li class="tasks-item tasks-item_project-1">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Do the home work</div>
+							<div class="tasks-item__project">education</div>
+						</div>
 					</div>
-				</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">&nbsp;</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-1">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Do the home work</div>
-						<div class="tasks-item__project">education</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">&nbsp;</div>
-				</div>
+				</li>
+				<li class="tasks-item tasks-item_project-2">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Buy food in Wallmart</div>
+							<div class="tasks-item__project">home</div>
+						</div>
+					</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__alarm">19:00</div>
+						</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-2">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Buy food in Wallmart</div>
-						<div class="tasks-item__project">home</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__alarm">19:00</div>
+				</li>
+				<li class="tasks-item tasks-item_project-6">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Gym</div>
+							<div class="tasks-item__project">health</div>
+						</div>
 					</div>
-				</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__measurement">12:43:34</div>
+						</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-6">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Gym</div>
-						<div class="tasks-item__project">health</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__measurement">12:43:34</div>
+				</li>
+			</ul>
+			<ul class="tasks">
+				<li class="tasks__header">01 thu</li>
+				<li class="tasks-item tasks-item_project-1">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Lesson</div>
+							<div class="tasks-item__project">education</div>
+						</div>
 					</div>
-				</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__alarm">19:00</div>
+							<div class="tasks-item__measurement">12:43:34</div>
+						</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-		</ul>
-		<ul class="tasks">
-			<li class="tasks__header">31 wed</li>
-			<li class="tasks-item tasks-item_project-1">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Lesson</div>
-						<div class="tasks-item__project">education</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__alarm">19:00</div>
-						<div class="tasks-item__measurement">12:43:34</div>
+				</li>
+				<li class="tasks-item tasks-item_project-1">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Do the home work</div>
+							<div class="tasks-item__project">education</div>
+						</div>
 					</div>
-				</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">&nbsp;</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-1">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Do the home work</div>
-						<div class="tasks-item__project">education</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">&nbsp;</div>
-				</div>
+				</li>
+				<li class="tasks-item tasks-item_project-2">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Buy food in Wallmart</div>
+							<div class="tasks-item__project">home</div>
+						</div>
+					</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__alarm">19:00</div>
+						</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-2">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Buy food in Wallmart</div>
-						<div class="tasks-item__project">home</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__alarm">19:00</div>
+				</li>
+				<li class="tasks-item tasks-item_project-6">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Gym</div>
+							<div class="tasks-item__project">health</div>
+						</div>
 					</div>
-				</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__measurement">12:43:34</div>
+						</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-6">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Gym</div>
-						<div class="tasks-item__project">health</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__measurement">12:43:34</div>
+				</li>
+			</ul>
+			<ul class="tasks">
+				<li class="tasks__header">02 fri</li>
+				<li class="tasks-item tasks-item_project-1">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Lesson</div>
+							<div class="tasks-item__project">education</div>
+						</div>
 					</div>
-				</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__alarm">19:00</div>
+							<div class="tasks-item__measurement">12:43:34</div>
+						</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-		</ul>
-		<ul class="tasks">
-			<li class="tasks__header">01 thu</li>
-			<li class="tasks-item tasks-item_project-1">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Lesson</div>
-						<div class="tasks-item__project">education</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__alarm">19:00</div>
-						<div class="tasks-item__measurement">12:43:34</div>
+				</li>
+				<li class="tasks-item tasks-item_project-1">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Do the home work</div>
+							<div class="tasks-item__project">education</div>
+						</div>
 					</div>
-				</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">&nbsp;</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-1">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Do the home work</div>
-						<div class="tasks-item__project">education</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">&nbsp;</div>
-				</div>
+				</li>
+				<li class="tasks-item tasks-item_project-2">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Buy food in Wallmart</div>
+							<div class="tasks-item__project">home</div>
+						</div>
+					</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__alarm">19:00</div>
+						</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-2">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Buy food in Wallmart</div>
-						<div class="tasks-item__project">home</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__alarm">19:00</div>
+				</li>
+				<li class="tasks-item tasks-item_project-6">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Gym</div>
+							<div class="tasks-item__project">health</div>
+						</div>
 					</div>
-				</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__measurement">12:43:34</div>
+						</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-6">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Gym</div>
-						<div class="tasks-item__project">health</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__measurement">12:43:34</div>
+				</li>
+			</ul>
+			<ul class="tasks">
+				<li class="tasks__header">03 sat</li>
+				<li class="tasks-item tasks-item_project-1">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Lesson</div>
+							<div class="tasks-item__project">education</div>
+						</div>
 					</div>
-				</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__alarm">19:00</div>
+							<div class="tasks-item__measurement">12:43:34</div>
+						</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-		</ul>
-		<ul class="tasks">
-			<li class="tasks__header">02 fri</li>
-			<li class="tasks-item tasks-item_project-1">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Lesson</div>
-						<div class="tasks-item__project">education</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__alarm">19:00</div>
-						<div class="tasks-item__measurement">12:43:34</div>
+				</li>
+				<li class="tasks-item tasks-item_project-1">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Do the home work</div>
+							<div class="tasks-item__project">education</div>
+						</div>
 					</div>
-				</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">&nbsp;</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-1">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Do the home work</div>
-						<div class="tasks-item__project">education</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">&nbsp;</div>
-				</div>
+				</li>
+				<li class="tasks-item tasks-item_project-2">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Buy food in Wallmart</div>
+							<div class="tasks-item__project">home</div>
+						</div>
+					</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__alarm">19:00</div>
+						</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-2">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Buy food in Wallmart</div>
-						<div class="tasks-item__project">home</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__alarm">19:00</div>
+				</li>
+				<li class="tasks-item tasks-item_project-6">
+					<div class="tasks-item__checkbox">&nbsp;</div>
+					<div class="tasks-item-content">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__name">Gym</div>
+							<div class="tasks-item__project">health</div>
+						</div>
 					</div>
-				</div>
+					<div class="tasks-item-time">
+						<div class="tasks-item-wrapper">
+							<div class="tasks-item__measurement">12:43:34</div>
+						</div>
+					</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-6">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Gym</div>
-						<div class="tasks-item__project">health</div>
+					<div class="tasks-item__hover">
+						<button class="tasks-item__button tasks-item__button_start">
+							<span class="tasks-item__start">start</span>
+						</button>
+						<button class="tasks-item__button tasks-item__button_edit">
+							<span class="tasks-item__edit">edit</span>
+						</button>
 					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__measurement">12:43:34</div>
-					</div>
-				</div>
+				</li>
+			</ul>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-		</ul>
-		<ul class="tasks">
-			<li class="tasks__header">03 sat</li>
-			<li class="tasks-item tasks-item_project-1">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Lesson</div>
-						<div class="tasks-item__project">education</div>
-					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__alarm">19:00</div>
-						<div class="tasks-item__measurement">12:43:34</div>
-					</div>
-				</div>
+			<div class="block-wrapper__hover block-wrapper__hover_active"></div>
+		</div>
 
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-1">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Do the home work</div>
-						<div class="tasks-item__project">education</div>
-					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">&nbsp;</div>
-				</div>
-
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-2">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Buy food in Wallmart</div>
-						<div class="tasks-item__project">home</div>
-					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__alarm">19:00</div>
-					</div>
-				</div>
-
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-			<li class="tasks-item tasks-item_project-6">
-				<div class="tasks-item__checkbox">&nbsp;</div>
-				<div class="tasks-item-content">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__name">Gym</div>
-						<div class="tasks-item__project">health</div>
-					</div>
-				</div>
-				<div class="tasks-item-time">
-					<div class="tasks-item-wrapper">
-						<div class="tasks-item__measurement">12:43:34</div>
-					</div>
-				</div>
-
-				<div class="tasks-item__hover">
-					<button class="tasks-item__button tasks-item__button_start">
-						<span class="tasks-item__start">start</span>
-					</button>
-					<button class="tasks-item__button tasks-item__button_edit">
-						<span class="tasks-item__edit">edit</span>
-					</button>
-				</div>
-			</li>
-		</ul>
 	</main>
 </body>
 </html>

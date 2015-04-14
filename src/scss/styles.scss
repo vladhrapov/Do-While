@@ -1,5 +1,6 @@
 $width: 320px;
 $width-of-menu: 272px;
+$width-btn-header: 44px;
 $height-header: 44px;
 $height-tasks-item: 56px;
 
@@ -62,11 +63,38 @@ $bg-btn-start: $project-color3;
 @import 'menu';
 
 
-
-body {
+html {
+  //background-color: #ff0;
+}
+.body {
 //  font-family: "EncodeSansWide-reg";
-  //width: $width;
+  width: $width;
   //height: 100%;
-  //overflow: hidden;
+  padding-bottom: 100%;
+  //max-width: $width;
+  //padding-bottom: 100%;
+  overflow-x: hidden;
+  position: relative;
+  //z-index: 15;
+  //background-color: #00f;
 //  margin: 0 auto;
+}
+.block-wrapper {
+  position: relative;
+  overflow: hidden;
+
+  &__hover {
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+
+    background-color: $bg-item-hover-opasity;
+
+    &_active {
+      visibility: visible;
+      z-index: 20;
+    }
+  }
 }

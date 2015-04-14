@@ -135,6 +135,10 @@
       cursor: pointer;
       float: left;
 
+      &_active {
+        border-bottom: 4px solid $project-color3;
+      }
+
       &:first-child {
         margin-left: 5px;
       }
@@ -151,7 +155,7 @@
         @extend %encodeSans-reg;
         margin-top: 2px;
 
-        .header-subnav-item:hover & {
+        .header-subnav-item_active & {
           color: $txt-header-on-hover;
         }
       }
@@ -163,7 +167,7 @@
         line-height: 7px + 8px;
         color: $color-text-light;
 
-        .header-subnav-item:hover & {
+        .header-subnav-item_active & {
           color: $txt-header-on-hover;
         }
       }
