@@ -33,9 +33,10 @@
 
     &_menu,
     &_add {
-      width: 44px;
-      height: 44px;
+      width: $width-btn-header;
+      height: $width-btn-header;
       position: absolute;
+      top: 0;
       z-index: 5;
 
       &:hover {
@@ -67,8 +68,7 @@
   &__title {
     @extend %encodeSans-semibold;
 
-    //width: 232px;
-    width: 315px;
+    width: $width - 2*$width-btn-header;
     position: relative;
 
     text-overflow: ellipsis;
@@ -84,8 +84,10 @@
     text-transform: uppercase;
     font-size: 14px;
     line-height: $height-header;
-    padding-left: 44px + 12px;
-    padding-right: 44px + 12px;
+    margin-left: $width-btn-header;
+    margin-right: $width-btn-header;
+    padding-left: 12px;
+    padding-right: 12px;
 
     .header-nav_project-3 & {
       color: white;
