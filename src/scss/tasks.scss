@@ -40,15 +40,15 @@
 
 		&__checkbox {
 			line-height: $height-tasks-item;
-			margin-left: 12px;
-			margin-right: 12px;
-			width: 16px;
+			padding-left: 12px;
+			padding-right: 12px;
+			width: 16px + 2*12px;
 			background: url(../img/inputCheckBox0.png) center center no-repeat transparent;
 
 			float: left;
 			cursor: pointer;
 
-			&:hover {
+			&_active {
 				background-image: url(../img/inputCheckBox1.png);
 			}
 		}
