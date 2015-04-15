@@ -1,6 +1,3 @@
-$(function () {
-    console.log('Hello world!');
-});
 var main_hover = $(".block-wrapper__hover"),
     main_menu = $(".menu"),
     main_content = $(".main"),
@@ -31,9 +28,13 @@ $(".tasks-item__checkbox").click(function(e){
 
 $(".tasks-item-content, .tasks-item-time").click(function(){
   var $this = $(this),
-      parent = $this.offsetParent(),
       hover_item = $this.nextAll(".tasks-item__hover"),
+      all_hovered_active_items = $(".tasks-item__hover_active");
 
-      console.log($this);
+      all_hovered_active_items.removeClass("tasks-item__hover_active");
       hover_item.addClass("tasks-item__hover_active");
 });
+
+$(".tasks-item__hover").click(function(){
+  $(this).removeClass("tasks-item__hover_active");
+})
