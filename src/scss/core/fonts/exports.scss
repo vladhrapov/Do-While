@@ -18,3 +18,13 @@
   font-weight: $font-weight-bold;
   src: url('#{$fonts-root}/EncodeSansWide-Bold.ttf') format('truetype')
 }
+
+@font-face {
+  font-family: EncodeSansWide-Regular;
+  src: url('#{$fonts-root}/EncodeSansWide-Regular.ttf') format('truetype')
+}
+
+@font-face {
+  font-family: EncodeSansWide-Bold;
+  src: url('#{$fonts-root}/EncodeSansWide-Bold.ttf') format('truetype')
+}

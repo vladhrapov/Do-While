@@ -1,57 +1,50 @@
 .week-calendar {
-  display: table;
-  box-sizing: border-box;
-  width: 100%;
-  height: $header-size;
-  @include colorize-normal($gray-scale-5, $gray-scale-0);
-
-  text-align: center;
-
-  &-day {
-    position: relative;
-    display: table-cell;
-    vertical-align: middle;
-    height: 100%;
-    text-transform: uppercase;
-
-    width: (80% / 7);
-
-    //region elements
-
-    &__number, &__text {
-      display: block;
-      padding-top: 4px;
+    height: $header-size;
+    width: 100%;
+    @include colorize-normal($gray-scale-5, $gray-scale-0);
+    &-radioform {
+        display: table;
+        height: 100%;
+        width: 100%;
+        border-spacing: 10px 0;
     }
 
-    &__number {
-      @include font-regular(15px);
-      color: $gray-scale-5;
-    }
-
-    &__text {
-      @include font-bold(7px);
-      color: $gray-scale-3;
-    }
-
-    &_today {
-      .week-calendar-day {
+    &-day {
+        display: table-cell;
+        height: 100%;
+        padding: 0 5px;
+        box-sizing: border-box;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        width: 14%;
+        text-transform: uppercase;
         &__number, &__text {
-          color: $color-blue;
+            margin: 0;
         }
-      }
-      &.week-calendar-day {
-        &:after {
-          content: '';
-          position: absolute;
-          left: 10%;
-          bottom: 0;
-          width: 80%;
-          height: 5px;
-          background-color: $color-blue;
+        &__number {
+            font-size: 15px;
+            color: $gray-scale-5;
+            font-family: EncodeSansWide-Regular;
         }
-      }
-    }
-    //endregion
 
-  }
+        &__text {
+            font-size: 7px;
+            color: $gray-scale-3;
+            font-family: EncodeSansWide-Bold;
+            margin-top: 3px;
+        }
+    }
+    &__radiobutton {
+        display: none;
+    }
+}
+
+.week-calendar__radiobutton:checked + .week-calendar-day {
+    border-bottom: 4px solid $color-blue;
+    border-top: 4px solid transparent;
+}
+
+.week-calendar__radiobutton:checked + .week-calendar-day > p {
+    color: $color-blue;
 }
