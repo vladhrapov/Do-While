@@ -2,6 +2,10 @@ var glob = require('./lib/glob'),
     Layout = require('./lib/layout');
 
 var paths = new Layout({
+    server: {
+        app: 'bin/www',
+        public: 'public'
+    },
     src: {
         scss: {
             main: 'styles.scss',
@@ -17,6 +21,7 @@ var paths = new Layout({
         }
     },
     dist: {
+        _root: 'server/public',
         html: '',
         js: 'js',
         css: 'css',
@@ -59,10 +64,12 @@ var patterns = new Layout({
     },
     bower: {
         _root: paths.bower,
-        js: glob(['/*/dist/*','/*/dest/*', '/*/dist/js/*'], 'js'),
-        css: glob(['/*/*', '/*/css/*', '/*/dist/*','/*/dest/*', '/*/dist/css/*'], 'css')
+        js: glob(['/*/dist/*', '/*/dest/*', '/*/dist/js/*'], 'js'),
+        css: glob(['/*/*', '/*/css/*', '/*/dist/*', '/*/dest/*', '/*/dist/css/*'], 'css')
     },
     dist: {
+        _root: paths.server.public,
+        all: glob.deepAllOfType(),
         html: {
             _root: '/',
             all: glob.allOfType()
@@ -70,8 +77,8 @@ var patterns = new Layout({
         js: {all: glob.deepAllOfType()},
         css: {all: glob.deepAllOfType()},
         img: {
-            icons: glob('/icons*','png'),
-            pictures: [glob.deepAllOfType(), glob('/icons*','png').exclude()],
+            icons: glob('/icons*', 'png'),
+            pictures: [glob.deepAllOfType(), glob('/icons*', 'png').exclude()],
             all: glob.deepAllOfType()
         },
         fonts: {all: glob.deepAllOfType()},
