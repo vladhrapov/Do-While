@@ -24,7 +24,11 @@ var paths = new Layout({
     },
     dist: {
         _root: 'server/public',
-        html: '',
+        html: {
+            _root: '/',
+            pages: '',
+            views: 'views'
+        },
         js: 'js',
         css: 'css',
         img: {
@@ -44,8 +48,8 @@ var patterns = new Layout({
     src: {
         html: {
             _root: '/',
-            all: glob(['/*', '/html/**/*'], 'html'),
-            pages: glob.allOfType('html')
+            pages: glob.allOfType('html'),
+            views: glob.deepAllOfType('html').build('js')
         },
         js: {all: glob.deepAllOfType('js')},
         scss: {all: glob.deepAllOfType('scss')},
@@ -63,7 +67,8 @@ var patterns = new Layout({
         all: glob.deepAllOfType(),
         html: {
             _root: '/',
-            all: glob.allOfType()
+            pages: glob.allOfType(),
+            views: glob.deepAllOfType().build('views')
         },
         js: {all: glob.deepAllOfType()},
         css: {all: glob.deepAllOfType()},
