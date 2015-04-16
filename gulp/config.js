@@ -49,6 +49,7 @@ var patterns = new Layout({
         html: {
             _root: '/',
             pages: glob.allOfType('html'),
+            pageComponents: glob.deepAllOfType('html').build('html'),
             views: glob.deepAllOfType('html').build('js')
         },
         js: glob.deepAllOfType('js').build('js'),
