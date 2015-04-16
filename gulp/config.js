@@ -51,8 +51,8 @@ var patterns = new Layout({
             pages: glob.allOfType('html'),
             views: glob.deepAllOfType('html').build('js')
         },
-        js: {all: glob.deepAllOfType('js')},
-        scss: {all: glob.deepAllOfType('scss')},
+        js: glob.deepAllOfType('js').build('js'),
+        scss: glob.deepAllOfType('scss').build('scss'),
         img: {
             icons: {
                 all: glob.allOfType('png'),
@@ -60,7 +60,7 @@ var patterns = new Layout({
             },
             all: glob.allOfType()
         },
-        fonts: {all: glob.deepAllOfType()}
+        fonts: glob.deepAllOfType().build('fonts')
     },
     dist: {
         _root: paths.server.public,
@@ -70,15 +70,15 @@ var patterns = new Layout({
             pages: glob.allOfType(),
             views: glob.deepAllOfType().build('views')
         },
-        js: {all: glob.deepAllOfType()},
-        css: {all: glob.deepAllOfType()},
+        js: glob.deepAllOfType().build('js'),
+        css: glob.deepAllOfType().build('css'),
         img: {
             icons: glob('/icons*', 'png'),
             pictures: [glob.deepAllOfType(), glob('/icons*', 'png').exclude()],
             all: glob.deepAllOfType()
         },
-        fonts: {all: glob.deepAllOfType()},
-        vendor: {all: glob.deepAllOfType()}
+        fonts: glob.deepAllOfType().build('fonts'),
+        vendor: glob.deepAllOfType().build('vendor')
     }
 });
 

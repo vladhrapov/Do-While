@@ -1,6 +1,5 @@
 var gulp = require('gulp'),
     del = require('del'),
-    rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     liveReload = require('gulp-livereload'),
     path = require('path'),
@@ -22,7 +21,7 @@ gulp.task('build:scss_light', ['clean:css'], function () {
 });
 
 gulp.task('clean:css', function (onDone) {
-    del(config.patterns.dist.css.all, onDone);
+    del(config.patterns.dist.css, onDone);
 });
 
 

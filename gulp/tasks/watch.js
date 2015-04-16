@@ -4,7 +4,7 @@ var gulp = require('gulp'),
 
 gulp.task('watch', ['build'], function () {
     liveReload.listen();
-    gulp.watch(config.patterns.src.html.all, ['build:html']);
-    gulp.watch(config.patterns.src.scss.all, ['build:scss_light']);
-    gulp.watch(config.patterns.src.js.all, ['copy:js']);
+    gulp.watch(config.patterns.src.html, ['build:html']);
+    gulp.watch(config.patterns.src.scss, ['build:scss_light']);
+    gulp.watch(config.patterns.src.js, ['copy:js']);
 });

@@ -12,5 +12,5 @@ gulp.task('build:js', ['clean:js'], function () {
 });
 
 gulp.task('clean:js', function (onDone) {
-    del(config.patterns.dist.js.all, onDone);
+    del(config.patterns.dist.js, onDone);
 });

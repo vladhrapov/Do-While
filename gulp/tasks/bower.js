@@ -13,5 +13,5 @@ gulp.task('copy:bower', ['clean:vendor'], function () {
 });
 
 gulp.task('clean:vendor', function (onDone) {
-    del(config.patterns.dist.vendor.all, onDone);
+    del(config.patterns.dist.vendor, onDone);
 });
