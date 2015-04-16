@@ -11,7 +11,9 @@ var paths = new Layout({
             main: 'styles.scss',
             core: 'core'
         },
-        js: 'js',
+        js: {
+            main: 'app.js'
+        },
         img: 'img',
         fonts: 'fonts',
         html: {
