@@ -45,8 +45,25 @@
     "main-bower-files": "^2.6.2"
   },
   "scripts": {
-    "preinstall": "bower install",
-    "postinstall": "gulp",
     "start": "gulp server"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim",
+      "browserify-ngannotate"
+    ]
+  },
+  "browser": {
+    "angular": "./bower_components/angular/angular.js",
+    "angular-route": "./bower_components/angular-route/angular-route.js"
+  },
+  "browserify-shim": {
+    "angular": {
+      "exports": "angular"
+    },
+    "angular-route": {
+      "depends": "angular",
+      "exports": "angular.module('ngRoute').name"
+    }
   }
 }
