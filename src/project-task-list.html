@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="App">
 <head lang="en">
     @@include('./html/_head.html')
 </head>
 <body>
+<div ng-view></div>
 <div class="page">
     @@include('./html/blocks/menu/menu.html', {"mods" : "opened"})
 
@@ -18,5 +19,6 @@
         </div>
     </div>
 </div>
+<script src="/js/app.js"></script>
 </body>
 </html>
