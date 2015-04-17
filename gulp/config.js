@@ -7,6 +7,7 @@ var paths = new Layout({
         public: 'public'
     },
     src: {
+        _root: 'client',
         scss: {
             main: 'styles.scss',
             core: 'core'
@@ -46,6 +47,7 @@ var paths = new Layout({
 
 var patterns = new Layout({
     src: {
+        _root: paths.src._root,
         html: {
             _root: '/',
             pages: glob.allOfType('html'),
