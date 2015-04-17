@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     liveReload = require('gulp-livereload'),
     del = require('del'),
     path = require('path'),
-    config = require('../config');
+    config = require('../config'),
+    errorDebug = require('../lib/error-debug');
 
 gulp.task('build:img', ['copy:img:pictures', 'build:img:icons']);
 
@@ -16,7 +17,7 @@ gulp.task('copy:img:pictures', ['clean:img:pictures'], function () {
 });
 
 gulp.task('clean:img:pictures', function (onDone) {
-    del(config.patterns.dist.img.pictures, onDone);
+    del(config.patterns.dist.img.pictures, errorDebug(onDone));
 });
 
 //endregion
@@ -47,7 +48,7 @@ gulp.task('build:img:icons', ['clean:img:icons'], function () {
 });
 
 gulp.task('clean:img:icons', function (onDone) {
-    del(config.patterns.dist.img.icons, onDone);
+    del(config.patterns.dist.img.icons, errorDebug(onDone));
 });
 
 //endregion

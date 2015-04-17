@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
     del = require('del'),
-    config = require('../config');
+    config = require('../config'),
+    errorDebug = require('../lib/error-debug');
 
 gulp.task('copy:fonts', ['clean:fonts'], function () {
     return gulp.src(config.patterns.src.fonts)
@@ -8,5 +9,5 @@ gulp.task('copy:fonts', ['clean:fonts'], function () {
 });
 
 gulp.task('clean:fonts', function (onDone) {
-    del(config.patterns.dist.fonts, onDone);
+    del(config.patterns.dist.fonts, errorDebug(onDone));
 });

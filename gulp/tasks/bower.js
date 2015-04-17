@@ -2,7 +2,9 @@ var gulp = require('gulp'),
     del = require('del'),
     bowerFiles = require('main-bower-files'),
     bowerNormalize = require('gulp-bower-normalize'),
-    config = require('../config');
+    config = require('../config'),
+    errorDebug = require('../lib/error-debug');
+
 
 gulp.task('copy:bower', ['clean:vendor'], function () {
     return gulp.src(bowerFiles(), {base: config.paths.bower})
@@ -13,5 +15,5 @@ gulp.task('copy:bower', ['clean:vendor'], function () {
 });
 
 gulp.task('clean:vendor', function (onDone) {
-    del(config.patterns.dist.vendor, onDone);
+    del(config.patterns.dist.vendor, errorDebug(onDone));
 });

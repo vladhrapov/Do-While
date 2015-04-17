@@ -3,7 +3,8 @@ var gulp = require('gulp'),
     sass = require('gulp-sass'),
     liveReload = require('gulp-livereload'),
     path = require('path'),
-    config = require('../config');
+    config = require('../config'),
+    errorDebug = require('../lib/error-debug');
 
 function buildScss() {
     return gulp.src(config.paths.src.scss.main)
@@ -21,7 +22,7 @@ gulp.task('build:scss_light', ['clean:css'], function () {
 });
 
 gulp.task('clean:css', function (onDone) {
-    del(config.patterns.dist.css, onDone);
+    del(config.patterns.dist.css, errorDebug(onDone));
 });
 
 
