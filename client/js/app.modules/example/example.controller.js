@@ -2,7 +2,7 @@
  * @ngInject
  * */
 module.exports = function ($scope, $timeout) {
-    $scope.text = "Hello";
+    $scope.text = "";
     $scope.isHidden = false;
 
     $scope.hide = function () {

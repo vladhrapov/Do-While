@@ -1,6 +1,6 @@
 var angular = require('angular');
 
-var authModule = angular.module('Auth', [])
+var exampleModule = angular.module('example', [require('../../shared.modules/greet')])
     .controller('ExampleController', require('./example.controller.js'))
     .config(function ($routeProvider) {
         $routeProvider.when('/', {
@@ -8,4 +8,4 @@ var authModule = angular.module('Auth', [])
             controller: 'ExampleController'
         });
     });
-module.exports = authModule;
+module.exports = exampleModule;
