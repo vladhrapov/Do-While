@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    jshint = require('gulp-jshint'),
     liveReload = require('gulp-livereload'),
     browserify = require('gulp-browserify'),
     del = require('del'),
@@ -7,6 +8,9 @@ var gulp = require('gulp'),
 
 gulp.task('build:js', ['clean:js'], function () {
     return gulp.src(config.paths.src.js.main)
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish'))
+        .pipe(jshint.reporter('fail'))
         .pipe(browserify())
         .on('error', errorDebug.errorHandler)
         .pipe(gulp.dest(config.paths.dist.js))
