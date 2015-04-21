@@ -7,7 +7,9 @@ var gulp = require('gulp'),
 
 gulp.task('build:js', ['clean:js'], function () {
     return gulp.src(config.paths.src.js.main)
-        .pipe(browserify())
+        .pipe(browserify({
+            debug : !gulp.env.production
+        }))
         .on('error', errorDebug.errorHandler)
         .pipe(gulp.dest(config.paths.dist.js))
         .pipe(liveReload());
