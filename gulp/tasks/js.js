@@ -11,7 +11,9 @@ gulp.task('build:js', ['clean:js'], function () {
         .pipe(jshint())
         .pipe(jshint.reporter('jshint-stylish'))
         .pipe(jshint.reporter('fail'))
-        .pipe(browserify())
+        .pipe(browserify({
+            debug : !gulp.env.production
+        }))
         .on('error', errorDebug.errorHandler)
         .pipe(gulp.dest(config.paths.dist.js))
         .pipe(liveReload());
