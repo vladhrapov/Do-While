@@ -1,11 +1,7 @@
 var gulp = require('gulp'),
-    browserSync = require('browser-sync'),
     config = require('../config');
 
 gulp.task('watch', ['build'], function () {
-    browserSync.init({
-        proxy: "localhost:3000"
-    });
     gulp.watch([
             config.patterns.src.html.pages,
             config.patterns.src.html.pageComponents
