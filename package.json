@@ -45,7 +45,10 @@
     "main-bower-files": "^2.6.2"
   },
   "scripts": {
-    "start": "gulp server"
+    "start": "gulp server",
+    "presetup": "bower install",
+    "setup": "npm install",
+    "postsetup": "gulp build"
   },
   "browserify": {
     "transform": [
