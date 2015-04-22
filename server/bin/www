@@ -5,7 +5,6 @@ var app = require('../app.bootstrap'),
     debug = require('debug')('server:server'),
     http = require('http');
 
-//Get port from environment and store in Express.
 app.set('port', config.port);
 
 //Create HTTP server.
@@ -22,9 +21,7 @@ function onError(error) {
         throw error;
     }
 
-    var bind = typeof port === 'string'
-        ? 'Pipe ' + port
-        : 'Port ' + port;
+    var bind = 'Port ' + config.port;
 
     // handle specific listen errors with friendly messages
     switch (error.code) {
