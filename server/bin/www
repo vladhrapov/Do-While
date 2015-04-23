@@ -17,9 +17,8 @@ server.on('listening', onListening);
 
 // Event listener for HTTP server "error" event.
 function onError(error) {
-    if (error.syscall !== 'listen') {
+    if (error.syscall !== 'listen')
         throw error;
-    }
 
     var bind = 'Port ' + config.port;
 
