@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
+	browserSync = require('browser-sync'),
     jshint = require('gulp-jshint'),
-    liveReload = require('gulp-livereload'),
     browserify = require('gulp-browserify'),
     del = require('del'),
     config = require('../config'),
@@ -13,7 +13,7 @@ gulp.task('build:js', ['clean:js', 'hint:js'], function () {
         }))
         .on('error', errorDebug.errorHandler)
         .pipe(gulp.dest(config.paths.dist.js))
-        .pipe(liveReload());
+        .pipe(browserSync.reload({stream:true}));
 });
 
 gulp.task('clean:js', function (onDone) {
