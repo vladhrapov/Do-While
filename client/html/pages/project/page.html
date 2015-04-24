@@ -1,4 +1,4 @@
-<div class="page">
+<div class="page" ng-controller="mainCtrl">
     @@include('../../blocks/menu/menu.html', {"mods" : "opened"})
 
     <div class="page__main">
@@ -8,7 +8,7 @@
             @@include('./task-list.html')
         </div>
 
-        <div class="page__main-overlap">
+        <div class="page__main-overlap" ng-click="isNavHide = !isNavHide">
         </div>
     </div>
 </div>
