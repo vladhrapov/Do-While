@@ -1,7 +1,7 @@
 /**
  * @ngInject
  * */
-module.exports = function ($scope, $http){
+module.exports = function ($scope, $http, mainPageInfo){
     $scope.isNavHide = true;
-    $scope.$watch("isNavHide",function(oldValue, newValue){console.log(newValue);});
+    $scope.mainPageInfo = mainPageInfo;
 };
