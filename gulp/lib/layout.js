@@ -1,8 +1,8 @@
-var path = require('path'),
+var path = require('path').posix,
     util = require('./util'),
     glob = require('./glob');
 
-const CURRENT_DIR = './';
+const CURRENT_DIR = '.' + path.sep;
 
 var Layout = function (root, paths) {
 

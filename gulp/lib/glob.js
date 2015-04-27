@@ -1,6 +1,6 @@
-var path = require('path');
+var path = require('path').posix;
 
-const CURRENT_DIR = './';
+const CURRENT_DIR = '.' + path.sep;
 const PATTERN_ALL = '*';
 
 var Builder = function(pattern, ext) {
@@ -36,7 +36,7 @@ Builder.prototype._buildPatternItem = function(root, pattern) {
     if (this._isExclude)
         result = '!' + result;
     return result;
-}
+};
 
 Builder.prototype._buildPatternWithExtension = function(pattern) {
     return pattern + '.' + this._extension;
