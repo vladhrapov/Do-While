@@ -1,6 +1,7 @@
 /**
  * @ngInject
  * */
-module.exports = function ($scope, $http, globalData){
-    $scope.globalData = globalData;
+module.exports = function ($scope, $http, mainPageInfo){
+    $scope.isNavHide = true;
+    $scope.mainPageInfo = mainPageInfo;
 };
