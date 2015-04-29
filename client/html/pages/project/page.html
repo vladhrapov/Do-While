@@ -2,7 +2,7 @@
     @@include('../../blocks/menu/menu.html')
 
 
-    <div class="page__main" ng-controller="mainCtrl">
+    <div class="page__main" ng-controller="MainCtrl as MainCtrl">
         <!-- @@include('../../blocks/header.html', {"color" : "blue", "title" : "work", "title_icon": true}) -->
         <dw-header-block class="header_project-view"> Work </dw-header-block>
 
@@ -10,7 +10,7 @@
             @@include('./task-list.html')
         </div>
 
-        <div class="page__main-overlap" ng-click="globalData.menuShowHide()">
+        <div class="page__main-overlap" ng-click="MainCtrl.GlobalData.menuShowHide()">
         </div>
     </div>
 </div>
