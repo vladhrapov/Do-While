@@ -4,7 +4,7 @@ $header-text-color: $gray-scale-4;
   vertical-align: middle;
   padding: 0;
   width: $header-size;
-  max-width: $header-size;
+  cursor: pointer;
 }
 
 .header {
@@ -46,7 +46,7 @@ $header-text-color: $gray-scale-4;
     text-align: center;
     vertical-align: middle;
 
-    max-width: $mobile-min-width - 2 * $header-size;
+    min-width: $mobile-min-width - 2 * $header-size;
 
     &_project {
       &:after {
