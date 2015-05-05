@@ -14,7 +14,65 @@
 <body>
 <div ng-view>
 </div>
-@@include('./html/pages/project/page.html')
+
+<div class="page">
+    <nav class="menu page__menu">
+        <div class="list action-list">
+            <a href="#" class="list-item list-item_small menu__settings">
+                Settings
+            </a>
+
+            <a href="#" class="list-item menu__today">
+                today
+                <div class="badge-group">
+                    <i class="badge color_yellow"></i>
+                    <i class="badge color_red"></i>
+                    <i class="badge color_green"></i>
+                </div>
+            </a>
+
+            <a href="#" class="list-item menu__next-seven-days">
+                next 7 days
+            </a>
+        </div>
+
+        <div class="separator"> projects</div>
+
+        <div class="list project-list">
+            <a href="#" class="list-item list-item_small menu__create-project">
+                Create new..
+            </a>
+        </div>
+
+    </nav>
+
+
+    <div class="page__main">
+        <header class="header page__header">
+            <a href="" class="header__menu-button button">
+                <i class="icon icon_hamburger"></i>
+            </a>
+
+            <span class="header__title">
+                29 MAR 2015
+            </span>
+
+            <a href="#" class="header__add-task-button button">
+                <i class="icon icon_plus"></i>
+            </a>
+        </header>
+
+        <div class="page__task-list">
+
+          <ul class="list task-list"></ul>
+
+        </div>
+
+        <div class="page__main-overlap">
+        </div>
+    </div>
+</div>
+
 <script src="/js/app.js"></script>
 </body>
 </html>
