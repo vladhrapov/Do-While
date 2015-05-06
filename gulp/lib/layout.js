@@ -1,8 +1,8 @@
-var path = require('path').posix,
+var path = require('path'),
     util = require('./util'),
     glob = require('./glob');
 
-const CURRENT_DIR = '.' + path.sep;
+var CURRENT_DIR = './';
 
 var Layout = function (root, paths) {
 
@@ -58,7 +58,7 @@ Layout.prototype._resolveGlobProperty = function (property, value) {
 };
 
 Layout.prototype._resolveObjectProperty = function (property, value) {
-    var valueRoot =  util.isUndefined(value._root) ? property : value._root;
+    var valueRoot = util.isUndefined(value._root) ? property : value._root;
     delete value._root;
     return new Layout(path.join(this._root, valueRoot), value);
 };
