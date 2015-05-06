@@ -2,6 +2,8 @@ var path = require('path'),
     util = require('./util'),
     glob = require('./glob');
 
+var CURRENT_DIR = './';
+
 var Layout = function (root, paths) {
 
     if (util.isUndefined(paths) && util.isObject(root)) {
@@ -56,7 +58,7 @@ Layout.prototype._resolveGlobProperty = function (property, value) {
 };
 
 Layout.prototype._resolveObjectProperty = function (property, value) {
-    var valueRoot =  util.isUndefined(value._root) ? property : value._root;
+    var valueRoot = util.isUndefined(value._root) ? property : value._root;
     delete value._root;
     return new Layout(path.join(this._root, valueRoot), value);
 };
@@ -78,7 +80,7 @@ Layout.prototype._resolveArrayItemProperty = function (property, value) {
 };
 
 Layout.prototype._resolveStringProperty = function (property, value) {
-    return path.join(this._root, '' + value);
+    return CURRENT_DIR + path.join(this._root, '' + value);
 };
 
 Layout.prototype._filterProperty = function (property) {
