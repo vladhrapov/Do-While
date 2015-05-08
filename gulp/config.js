@@ -13,7 +13,7 @@ var paths = new Layout({
             core: 'core'
         },
         js: {
-            main: 'app.js',
+            main: 'app.js'
         },
         img: 'img',
         fonts: 'fonts',
@@ -29,6 +29,7 @@ var paths = new Layout({
     },
     dist: {
         _root: 'server/public',
+        data: 'data',
         html: {
             _root: '/',
             pages: '',
@@ -53,6 +54,7 @@ var paths = new Layout({
 var patterns = new Layout({
     src: {
         _root: paths.src._root,
+        data: glob.deepAllOfType('json').build('data'),
         html: {
             _root: '/',
             pages: glob.allOfType('html'),
@@ -73,6 +75,7 @@ var patterns = new Layout({
     dist: {
         _root: paths.server.public,
         all: glob.deepAllOfType(),
+        data: glob.deepAllOfType('json').build('data'),
         html: {
             _root: '/',
             pages: glob.allOfType(),
