@@ -1,10 +1,11 @@
 // branding colors
-$color-red: #E74C3C;
-$color-green: #1ABC9C;
-$color-blue: #3799D7;
-$color-yellow: #F0C33C;
-$color-orange: #E77A35;
-$color-violet: #9E54B2;
+$color-red: #e74c3c;
+$color-green: #1abc9c;
+$color-light-blue: #42aadf;
+$color-blue: #3799d7;
+$color-yellow: #f0c33c;
+$color-orange: #e77a35;
+$color-violet: #9e54b2;
 
 $colors: (
         red: $color-red,
@@ -18,9 +19,9 @@ $colors: (
 $hover-color: rgba(170,180,190, .5);
 
 // gray scale
-$gray-scale-0: #FFF;
-$gray-scale-1: #F1F3F6;
-$gray-scale-2: #D3DBE3;
-$gray-scale-3: #B9C1C9;
-$gray-scale-4: #ABB4BE;
-$gray-scale-5: #57626B;
+$gray-scale-0: #fff;
+$gray-scale-1: #f1f3f6;
+$gray-scale-2: #d3dbe3;
+$gray-scale-3: #b9c1c9;
+$gray-scale-4: #abb4be;
+$gray-scale-5: #57626b;
