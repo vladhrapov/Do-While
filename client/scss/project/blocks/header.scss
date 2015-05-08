@@ -21,10 +21,8 @@ $header-text-color: $gray-scale-4;
 
   &__menu-button {
     @extend %i-header__button;
-    @include media-only-mobile() {
-      display: table-cell;
-    }
-    @include media-tablet-desktop() {
+    display: table-cell;
+    @include media-tablet() {
       display: none;
     }
   }
@@ -39,6 +37,7 @@ $header-text-color: $gray-scale-4;
     padding: 0;
     @include font-semi-bold(14px);
     text-transform: uppercase;
+
     text-overflow: ellipsis;
     word-break: keep-all;
     overflow: hidden;
@@ -50,6 +49,7 @@ $header-text-color: $gray-scale-4;
   &__project {
     text-decoration: none;
     color: inherit;
+
     &:after {
       content: "";
       margin-left: 3px;

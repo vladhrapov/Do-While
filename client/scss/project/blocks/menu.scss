@@ -21,7 +21,7 @@
     .badge-group {
       display: inline-block;
       float: right;
-      padding-right: $menu-icon-right-padding + 12px;
+      padding-right: $menu-icon-right-padding + 8px;
     }
   }
 
@@ -30,12 +30,18 @@
   }
 
   //region modifyers
-  @include media-only-mobile {
-
-    &_closed {
+  &_closed {
+    display: none;
+    + .page__main .page__main-overlap {
       display: none;
+    }
+  }
+
+  @include media-tablet() {
+    &_closed {
+      display: block;
       + .page__main .page__main-overlap {
-        display: none;
+        display: block;
       }
     }
   }
