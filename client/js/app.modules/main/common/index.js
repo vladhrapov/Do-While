@@ -1,3 +1,4 @@
 module.exports = [
-    require('./menu')
+    require('./menu'),
+    require('./header')
 ];
