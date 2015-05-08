@@ -14,3 +14,4 @@ $tablet-min-width: $mobile-max-width + 1px;
 $tablet-max-width: $tablet-min-width + 2 * $task-item__button-width - 1;
 
 $desktop-min-width: $tablet-max-width + 1px;
+$desktop-max-width: 950px;

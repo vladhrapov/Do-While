@@ -3,6 +3,8 @@
   position: relative;
   width: 100%;
   min-width: $mobile-min-width;
+  max-width: $desktop-max-width;
+  margin: 0 auto;
   height: 100vh;
 
   &__menu {
