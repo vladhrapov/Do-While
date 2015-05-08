@@ -10,6 +10,8 @@ module.exports = function (viewResolver) {
             color: '=',
             menuClick: '&'
         },
+        controller: require('./header.directive.controller'),
+        controllerAs: 'header',
         templateUrl: viewResolver.resolve('header.template.html', __dirname)
     };
 };

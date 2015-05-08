@@ -1,7 +1,8 @@
 /**
  * @ngInject
  * */
-module.exports = function () {
+module.exports = function ($scope, menuService) {
     var vm = this;
-    // todo main page logic here
+    this.toggleMenuVisibility = menuService.toggleVisibility;
+    $scope.$onRootScope('$stateChangeSuccess', menuService.hide);
 };
