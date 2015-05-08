@@ -1,4 +1,5 @@
 module.exports = [
     require('./menu'),
-    require('./header')
+    require('./header'),
+    require('./taskList')
 ];
