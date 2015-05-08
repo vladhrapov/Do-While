@@ -4,10 +4,11 @@ $header-text-color: $gray-scale-4;
   vertical-align: middle;
   padding: 0;
   width: $header-size;
-  max-width: $header-size;
+  cursor: pointer;
 }
 
 .header {
+  @include background-colors();
   display: table;
   z-index: 10;
   position: absolute;
@@ -43,20 +44,19 @@ $header-text-color: $gray-scale-4;
     overflow: hidden;
     text-align: center;
     vertical-align: middle;
+    min-width: $mobile-min-width - 2 * $header-size;
+  }
 
-    max-width: $mobile-min-width - 2 * $header-size;
-
-    &_project {
-      &:after {
-        margin-left: 6px;
-        content: "";
-        vertical-align: baseline;
-        @extend .icon;
-        text-overflow: clip;
-        @include retina-sprite($icon-create-group);
-      }
+  &__project {
+    text-decoration: none;
+    color: inherit;
+    &:after {
+      content: "";
+      margin-left: 3px;
+      vertical-align: baseline;
+      @extend .icon;
+      text-overflow: clip;
+      @include retina-sprite($icon-create-group);
     }
   }
 }
-
-@include colors-state-normal-for('.header');
