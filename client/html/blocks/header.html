@@ -3,8 +3,14 @@
         <i class="icon icon_hamburger @@if (color !== 'default') { icon_inverted }"></i>
     </a>
 
-    <span class="header__title @@if(title_icon === true){header__title_project}">
+    <span class="header__title">
+        @@if(title_icon === true){
+            <a href="#" class="header__project">
+        }
         @@title
+        @@if(title_icon === true) {
+            </a>
+        }
     </span>
 
     <a href="#" class="header__add-task-button button">
