@@ -1,7 +1,7 @@
 /**
  * @ngInject
  * */
-module.exports = function ($scope, $http, mainPageInfo){
-    $scope.isNavHide = true;
-    $scope.mainPageInfo = mainPageInfo;
+module.exports = function () {
+    var vm = this;
+    // todo main page logic here
 };
