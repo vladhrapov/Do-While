@@ -3,7 +3,7 @@
  */
 module.exports = function ($stateProvider) {
     $stateProvider.state('main', {
-        url: '/',
+        abstract: true,
         controller: require('./main.controller'),
         controllerAs: 'page',
         templateUrl: {
