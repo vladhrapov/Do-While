@@ -1,9 +1,6 @@
 var angular = require('angular'),
     path = require('path');
 
-/**
- * @ngInject
- */
 module.exports = function (viewBasePath) {
 
     this.resolve = function (viewName, root) {

@@ -1,6 +1,6 @@
 var angular = require('angular'),
     appConfig = require('../../app.config.json'),
-    ViewResolverService = require('./viewResolver.service');
+    ViewResolverService = require('./viewResolver.service.js');
 
 /**
  * @ngInject
