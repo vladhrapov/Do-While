@@ -1,8 +1,8 @@
 var angular = require('angular');
 
 var appDependencies = []
-    .concat(require('./vendor.modules'))
-    .concat(require('./shared.modules'))
-    .concat(require('./app.modules'));
+    .concat(require('./vendor'))
+    .concat(require('./common'))
+    .concat(require('./app/index'));
 
 angular.module('doWhileApp', appDependencies);
