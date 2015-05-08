@@ -1,10 +1,7 @@
 var angular = require('angular');
 
-var vendorDependencies = [
-    require('ui-router')
-];
-
-var appDependencies = vendorDependencies
+var appDependencies = []
+    .concat(require('./vendor.modules'))
     .concat(require('./shared.modules'))
     .concat(require('./app.modules'));
 
