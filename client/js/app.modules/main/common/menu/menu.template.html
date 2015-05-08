@@ -1,0 +1,30 @@
+<nav class="menu" ng-class="{menu_closed: !isVisible}">
+    <div class="list action-list">
+        <a ui-sref="todo" class="list-item list-item_small menu__settings">
+            Settings
+        </a>
+
+        <a ui-sref="todo" class="list-item menu__today">
+            today
+            <div class="badge-group">
+                <i class="badge color_yellow"></i>
+                <i class="badge color_red"></i>
+                <i class="badge color_green"></i>
+            </div>
+        </a>
+
+        <a ui-sref="todo" class="list-item menu__next-seven-days">
+            next 7 days
+        </a>
+    </div>
+
+    <div class="list project-list">
+        <div class="list__title"> projects</div>
+
+        <a ui-sref="todo" class="list-item list-item_small menu__create-project">
+            Create new..
+        </a>
+
+        <!--todo place projects here-->
+    </div>
+</nav>
