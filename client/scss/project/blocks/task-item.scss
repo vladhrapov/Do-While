@@ -13,6 +13,11 @@
   border-left: 1px solid $gray-scale-0;
   text-transform: uppercase;
 }
+%text-in-one-line {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 
 @mixin task-item__button($bg-color, $icon-group , $text) {
   @extend %i-task-item__button;
@@ -54,6 +59,16 @@
   &__name {
     @include font-regular(15px);
     display: block;
+
+    @extend %text-in-one-line;
+    max-width: $tablet-min-width - $menu-width - $checkbox-width - $notification-width;
+
+    @include media-tablet() {
+      max-width: $desktop-min-width - $menu-width - $checkbox-width - $notification-width - 5;
+    }
+    @include media-desktop() {
+      max-width: $desktop-max-width - $menu-width - $checkbox-width - $notification-width - 2*$task-item__button-width;
+    }
   }
 
   //endregion
@@ -74,6 +89,9 @@
     display: block;
     color: $gray-scale-3;
     text-transform: uppercase;
+
+    @extend %text-in-one-line;
+    max-width: 200px;
 
     &_project, &_date, &_access-time {
       margin-top: 4px;

@@ -38,9 +38,9 @@ $header-text-color: $gray-scale-4;
     @include font-semi-bold(14px);
     text-transform: uppercase;
 
-    text-overflow: ellipsis;
-    word-break: keep-all;
-    overflow: hidden;
+    @extend %text-in-one-line;
+    max-width: 200px;
+
     text-align: center;
     vertical-align: middle;
     min-width: $mobile-min-width - 2 * $header-size;

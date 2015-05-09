@@ -15,12 +15,7 @@ $menu-width: $mobile-min-width - $header-size - 4px;
 $menu-text-left-padding: 23px;
 $menu-icon-right-padding : 28px;
 
-$mobile-max-width: $menu-width + $mobile-min-width - 1px;
+$tablet-min-width: $menu-width + $mobile-min-width;
 
-$tablet-min-width: $mobile-max-width + 1px;
-$tablet-max-width: $tablet-min-width + 2 * $task-item__button-width - 1px;
-
-$desktop-min-width: $tablet-max-width + 1px;
+$desktop-min-width: $tablet-min-width + 2 * $task-item__button-width;
 $desktop-max-width: 950px;
-
-$task-item-width: $desktop-max-width - $checkbox-width - $notification-width - 2 * $task-item__button-width;
