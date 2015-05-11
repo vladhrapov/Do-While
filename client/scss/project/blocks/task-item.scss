@@ -38,6 +38,7 @@
 .task-item {
   position: relative;
   display: table;
+  table-layout:fixed;
   line-height: normal;
   border-bottom: 0;
 
