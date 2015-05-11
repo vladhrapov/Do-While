@@ -1,14 +1,22 @@
 %clearfix {
   *zoom: 1;
+
   &:before,
   &:after {
     display: table;
-    content: "";
+    content: '';
     // Fixes Opera/contenteditable bug:
     // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
     line-height: 0;
   }
+
   &:after {
     clear: both;
   }
+}
+
+%text-in-one-line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

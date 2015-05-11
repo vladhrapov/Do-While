@@ -13,11 +13,6 @@
   border-left: 1px solid $gray-scale-0;
   text-transform: uppercase;
 }
-%text-in-one-line {
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-}
 
 @mixin task-item__button($bg-color, $icon-group , $text) {
   @extend %i-task-item__button;
@@ -28,6 +23,7 @@
     @include retina-sprite($icon-group);
     text-align: center;
   }
+
   &:after {
     content: $text;
     display: block;
@@ -85,7 +81,9 @@
 
     @extend %text-in-one-line;
 
-    &_project, &_date, &_access-time {
+    &_project,
+    &_date,
+    &_access-time {
       margin-top: 4px;
     }
 
@@ -106,6 +104,7 @@
 
   &__buttons {
     display: none;
+
     &_active {
       position: absolute;
       display: block;

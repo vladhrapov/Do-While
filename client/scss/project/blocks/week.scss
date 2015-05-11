@@ -18,7 +18,8 @@
     width: 14%;
     text-transform: uppercase;
 
-    &__number, &__text {
+    &__number,
+    &__text {
       display: block;
       margin: 0;
       color: inherit;
@@ -37,7 +38,8 @@
 
     &:hover {
 
-      > .week-day__text, > .week-day__number {
+      > .week-day__text,
+      > .week-day__number {
         color: $color-light-blue;
       }
     }
@@ -46,7 +48,8 @@
       border-bottom: 4px solid $color-blue;
       border-top: 4px solid transparent;
 
-      > .week-day__text, > .week-day__number {
+      > .week-day__text,
+      > .week-day__number {
         color: $color-light-blue;
       }
     }

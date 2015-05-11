@@ -10,7 +10,8 @@
     @include after-icon-center($icon-triangle-gray-group, $list-item-small-height, 22px);
   }
 
-  &__today, &__next-seven-days {
+  &__today,
+  &__next-seven-days {
     @include font-semi-bold(14px);
     text-transform: uppercase;
     padding-left: $menu-text-left-padding;
