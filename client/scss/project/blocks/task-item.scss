@@ -62,14 +62,6 @@
     display: block;
 
     @extend %text-in-one-line;
-    max-width: $tablet-min-width - $menu-width - $checkbox-width - $notification-width;
-
-    @include media-tablet() {
-      max-width: $desktop-min-width - $menu-width - $checkbox-width - $notification-width - 5;
-    }
-    @include media-desktop() {
-      max-width: $desktop-max-width - $menu-width - $checkbox-width - $notification-width - 2*$task-item__button-width;
-    }
   }
 
   //endregion
@@ -92,7 +84,6 @@
     text-transform: uppercase;
 
     @extend %text-in-one-line;
-    max-width: 200px;
 
     &_project, &_date, &_access-time {
       margin-top: 4px;
