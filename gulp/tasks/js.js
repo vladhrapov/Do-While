@@ -1,4 +1,5 @@
 var gulp = require('gulp'),
+    gutil = require('gulp-util'),
     browserSync = require('browser-sync'),
     jshint = require('gulp-jshint'),
     browserify = require('browserify'),
@@ -12,7 +13,9 @@ var gulp = require('gulp'),
 var bundleOptions = {
     entries: './' + config.paths.src.js.__layout.main,
     basedir: './' + config.paths.src.js._root,
-    debug: !gulp.env.production
+    debug: !gulp.env.production,
+    cache: {},
+    packageCache: {}
 };
 
 var isWatch = false;
@@ -21,7 +24,7 @@ var bundler = browserify(bundleOptions);
 
 function bundleTask() {
     return bundler.bundle()
-        .on('error', errorDebug.errorHandler)
+        .on('error', errorDebug.errorHandler('Browserify'))
         .pipe(sourceStream(config.paths.src.js.__layout.main))
         .pipe(gulp.dest(config.paths.dist.js))
         .pipe(gulpIf(isWatch, browserSync.reload({stream: true})));
@@ -30,8 +33,9 @@ function bundleTask() {
 function watchifyBundler(bundler) {
     watchify(bundler)
         .on('update', bundleTask)
-        .on('log', console.log.bind(console));
+        .on('log', gutil.log.bind(gutil, 'Watchify'));
     isWatch = true;
+    gutil.log('Watchify start watching...');
 }
 
 gulp.task('watch:js', ['clean:js', 'hint:js'], function (cb) {
