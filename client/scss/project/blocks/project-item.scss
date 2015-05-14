@@ -1,8 +1,3 @@
-$marker-width: 8px;
-$count-padding-right: 16px;
-$count-badge-width: 22px;
-$scroll-bar-width: 20px;
-
 .project-item {
   @include property-colors(border-left-color);
 
@@ -12,13 +7,13 @@ $scroll-bar-width: 20px;
   border-collapse: collapse;
 
   &__title {
+    @extend %text-in-one-line;
+    max-width: $menu-width - $menu-text-left-padding - $count-badge-width - $count-padding-right - $scroll-bar-width - 1;
+
     display: table-cell;
     padding-left: $menu-text-left-padding - $marker-width;
     vertical-align: middle;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    max-width: $menu-width - $menu-text-left-padding - $count-badge-width - $count-padding-right - $scroll-bar-width;
-    overflow: hidden;
+
     &:first-letter {
       text-transform: uppercase;
     }
@@ -35,8 +30,8 @@ $scroll-bar-width: 20px;
     display: table-cell;
     float: right;
     padding-right: $count-padding-right;
+
     .badge {
-      margin-top: -1px;
       height: $count-badge-width;
       width: $count-badge-width;
       line-height: $count-badge-width;

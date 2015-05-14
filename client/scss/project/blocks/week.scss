@@ -4,6 +4,8 @@
   width: 100%;
   display: table;
   border-spacing: 10px 0;
+  padding-left: 0;
+  margin: 0;
 
   &-day {
     display: table-cell;
@@ -15,7 +17,9 @@
     cursor: pointer;
     width: 14%;
     text-transform: uppercase;
-    &__number, &__text {
+
+    &__number,
+    &__text {
       display: block;
       margin: 0;
       color: inherit;
@@ -31,14 +35,22 @@
       color: $gray-scale-3;
       margin-top: 2px;
     }
-  }
-  &__radiobutton {
-    display: none;
-    &:checked + .week-day {
+
+    &:hover {
+
+      > .week-day__text,
+      > .week-day__number {
+        color: $color-light-blue;
+      }
+    }
+
+    &_checked {
       border-bottom: 4px solid $color-blue;
       border-top: 4px solid transparent;
-      > .week-day__text, > .week-day__number {
-        color: $color-blue;
+
+      > .week-day__text,
+      > .week-day__number {
+        color: $color-light-blue;
       }
     }
   }

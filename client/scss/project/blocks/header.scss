@@ -10,6 +10,7 @@ $header-text-color: $gray-scale-4;
 .header {
   @include background-colors();
   display: table;
+  table-layout:fixed;
   z-index: 10;
   position: absolute;
   top: 0;
@@ -21,10 +22,8 @@ $header-text-color: $gray-scale-4;
 
   &__menu-button {
     @extend %i-header__button;
-    @include media-only-mobile() {
-      display: table-cell;
-    }
-    @include media-tablet-desktop() {
+    display: table-cell;
+    @include media-tablet() {
       display: none;
     }
   }
@@ -39,9 +38,9 @@ $header-text-color: $gray-scale-4;
     padding: 0;
     @include font-semi-bold(14px);
     text-transform: uppercase;
-    text-overflow: ellipsis;
-    word-break: keep-all;
-    overflow: hidden;
+
+    @extend %text-in-one-line;
+
     text-align: center;
     vertical-align: middle;
     min-width: $mobile-min-width - 2 * $header-size;
@@ -50,6 +49,7 @@ $header-text-color: $gray-scale-4;
   &__project {
     text-decoration: none;
     color: inherit;
+
     &:after {
       content: "";
       margin-left: 3px;
