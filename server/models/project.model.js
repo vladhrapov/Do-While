@@ -5,12 +5,6 @@ var db = require('./../bootstrap/db.connection.js');
 var projectListSchema = db.mongoose.Schema({
     name: String,
     color: String,
-    //tasks: [{
-    //    name: String,
-    //    date: String,
-    //    notificationTime: String,
-    //    accessTime: String
-    //}],
     taskCount: Number
 });
 
