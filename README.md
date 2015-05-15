@@ -44,9 +44,9 @@ For more info see: __http://jshint.com/docs/options/__
 Old html markup now placed on the next route: __http://localhost:3000/markup/__
 
 ##Install mongoDB
-Here is link for those who have Ubuntu(eng): __http://www.liquidweb.com/kb/how-to-install-mongodb-on-ubuntu-14-04/__
-Here is link for those who have Ubuntu(rus) __http://poleshuk.ru/ustanovka-mongodb-na-ubuntu/__
-Here is link for those who have Windows: __https://www.youtube.com/watch?v=6aWbOrZqvec__
++ Here is link for those who have Ubuntu(eng): __http://www.liquidweb.com/kb/how-to-install-mongodb-on-ubuntu-14-04/__
++ Here is link for those who have Ubuntu(rus) __http://poleshuk.ru/ustanovka-mongodb-na-ubuntu/__
++ Here is link for those who have Windows: __https://www.youtube.com/watch?v=6aWbOrZqvec__
                                       or __https://www.youtube.com/watch?v=QljgMnFFfiM__
                                       or __https://www.youtube.com/watch?v=qIu9qq2UIys__
-                                       for your choise
+                                       __"for your choise"__
