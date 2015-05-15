@@ -17,8 +17,6 @@ router.get('/', function(req, res) {
 // This route for getting project data from client and saving them to DB
 router.post('/add', function(req, res){
 
-    console.log(req.body.name + '---' + req.body.color);
-
     var newProject = Project({
         name: req.body.name,
         color: req.body.color,
