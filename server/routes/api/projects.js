@@ -9,15 +9,15 @@ router.get('/', function(req, res) {
         if(!err){
             res.json({items: result});
         }
-        console.log('There is some problems with getting data from DB!!!'.toUpperCase());
+        else{
+            console.log('There is some problems with getting data from DB!!!'.toUpperCase());
+        }
     });
 
 });
 
 // This route for getting project data from client and saving them to DB
 router.post('/add', function(req, res){
-
-    console.log(req.body.name + '---' + req.body.color);
 
     var newProject = Project({
         name: req.body.name,
