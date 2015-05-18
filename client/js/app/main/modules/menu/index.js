@@ -1,8 +1,7 @@
 var angular = require('angular');
 
 var menuModule = angular.module('menuModule', [
-    require('./projectList'),
-    require('./createProject')
+    require('./projectList')
 ])
     .directive('dwMenu', require('./menu.directive'))
     .service('menuService', require('./menu.service'));
