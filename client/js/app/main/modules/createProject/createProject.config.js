@@ -3,7 +3,7 @@
  */
 module.exports = function ($stateProvider) {
     $stateProvider.state('main.createProject', {
-        url: '/project/create',
+        url: '/projects/create',
         templateUrl: {
             root: __dirname,
             name: 'createProject.view.html'
