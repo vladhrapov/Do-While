@@ -12,4 +12,8 @@ module.exports = function ($http, apiConfig) {
         $http.get(apiConfig.basePath + '/projects/' + id + '/tasks.json')
             .then(callback);
     };
+
+    this.create = function (project) {
+        $http.post('/api/projects/add', { name: project.name, color: project.color });
+    };
 };
